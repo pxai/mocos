@@ -1,0 +1,26 @@
+{
+  "name": "mocos",
+  "version": "1.0.0",
+  "description": "Mocos presentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pxai/mocos.git"
+  },
+  "keywords": [
+    "mocos",
+    "python"
+  ],
+  "author": "Pello Xabier Altadill Izura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pxai/mocos/issues"
+  },
+  "homepage": "https://github.com/pxai/mocos#readme",
+  "devDependencies": {
+    "mdx-deck": "^4.1.1"
+  }
+}
