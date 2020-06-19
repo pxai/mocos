@@ -4,7 +4,8 @@
   "description": "Mocos presentation",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "start": "mdx-deck src/deck.mdx"
   },
   "repository": {
     "type": "git",
