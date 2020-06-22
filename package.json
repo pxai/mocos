@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/pxai/mocos#readme",
   "devDependencies": {
+    "markdownlint": "^0.20.4",
     "mdx-deck": "^4.1.1"
   }
 }
