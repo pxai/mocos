@@ -4,7 +4,7 @@
   "description": "Mocos presentation",
   "main": "index.js",
   "scripts": {
-    "test": "npm test",
+    "test": "npx remark book/*.md",
     "start": "mdx-deck src/deck.mdx"
   },
   "repository": {
@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/pxai/mocos#readme",
   "devDependencies": {
-    "markdownlint": "^0.20.4",
+    "remark-cli": "^8.0.0",
+    "remark-lint": "^7.0.0",
+    "remark-preset-lint-recommended": "^4.0.0",
     "mdx-deck": "^4.1.1"
   }
 }
