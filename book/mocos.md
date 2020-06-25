@@ -22,7 +22,58 @@ Si quieres instalarte un entorno de programación convencional, ve al apéndice 
 ```Python
 print("Hola mundo!")
 ```
-Si pruebas esto
+Si pruebas esto deberías ver por la pantalla algo así:
+
+```console
+Hola mundo!
+``` 
+
+# Variables
+Las variables sirven para guardar datos. Los programas de ordenador se dedican, básicamente, a manejar datos para solucionar un problema y ofrecer un resultado. En todo ese proceso es necesario guardar datos, y para eso se utilizan las variables. Las variables son como contenedores de datos. En cierto modo es como los vasos, platos, fuentes que se utilizan para cocinar: contienen algo, se trabajo con ello, se mezcla, se procesa y se consigue un resultado. Con un poco de suerte algo rico.
+Para definir una variable en python basta con indicar su nombre y darla algún valor. Por ejemplo:
+```Python
+nombre = "Ada"
+```
+
+Acabamos de crear una variable que contiene el valor "Ada". "Ada" es un dato, de tipo texto. Ahora podemos mostrar el valor de esa variable por la pantalla:
+
+```Python
+print(nombre)
+```
+Que por pantalla sería
+
+```console
+Ada
+``` 
+En cualquier momento, podríamos cambiar el valor de esa variable:
+```Python
+nombre = "Ada"
+print(nombre)
+nombre = "Neko"
+print(nombre)
+```
+Y por pantalla veríamos:
+```console
+Ada
+Neko
+```
+
+Nota:
+También se puede mostrar el contenido de una variable como parte del mensaje:
+```Python
+print("Hola, me llamo %s" % nombre)
+```
+Que por pantalla sería
+
+```console
+Hola, me llamo Ada
+``` 
+A continuación, vamos a ver los tipos básicos de datos
+## Números
+
+## Texto
+
+## Booleanos
 
 ## Python {#python}
 
