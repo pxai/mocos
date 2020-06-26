@@ -28,6 +28,28 @@ Si pruebas esto deberías ver por la pantalla algo así:
 Hola mundo!
 ``` 
 
+## Comentarios
+
+En un programa, se pueden poner comentarios. Se trata de texto que no se ejecuta y que el ordenador ignora completamente. ¿para qué se utiliza? Generalmente los comentarios se utilizan para explicar determinadas partes del programa.
+
+```Python
+# Este programa dice Hola
+print("Hola")
+```
+Python ignora el comentario y mostrará `Hola` por pantalla.
+También se pueden hacer comentarios de varias líneas:
+
+```Python
+"""
+Este es un programa python
+creado por Ada 
+y revisado por Neko
+"""
+```
+A veces, los comentarios se utilizan de manera temporal para "desactivar" una parte del código que no queremos que se ejecute.
+
+Nota: en general tienes que evitar los comentarios. Un buen programador tiene que intentar escribir programas tan fáciles de entender que no necesiten comentario alguno.
+
 # Variables
 Las variables sirven para guardar datos. Los programas de ordenador se dedican, básicamente, a manejar datos para solucionar un problema y ofrecer un resultado. En todo ese proceso es necesario guardar datos, y para eso se utilizan las variables. Las variables son como contenedores de datos. En cierto modo es como los vasos, platos, fuentes que se utilizan para cocinar: contienen algo, se trabajo con ello, se mezcla, se procesa y se consigue un resultado. Con un poco de suerte algo rico.
 Para definir una variable en python basta con indicar su nombre y darla algún valor. Por ejemplo:
