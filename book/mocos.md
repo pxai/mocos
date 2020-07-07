@@ -26,7 +26,7 @@ Si pruebas esto deberías ver por la pantalla algo así:
 
 ```console
 Hola mundo!
-``` 
+```
 
 ## Comentarios
 
@@ -42,7 +42,7 @@ También se pueden hacer comentarios de varias líneas:
 ```Python
 """
 Este es un programa python
-creado por Ada 
+creado por Ada
 y revisado por Neko
 """
 ```
@@ -66,7 +66,7 @@ Que por pantalla sería
 
 ```console
 Ada
-``` 
+```
 En cualquier momento, podríamos cambiar el valor de esa variable:
 ```Python
 nombre = "Ada"
@@ -89,9 +89,25 @@ Que por pantalla sería
 
 ```console
 Hola, me llamo Ada
-``` 
+```
+# Tipos de datos
+¡Datos! Es la materia prima con la que trabajan los programas. Son el elemento que transforman. Un programa recibe datos, los transforma y los devuelve como un resultado.
+Los datos pueden ser de distinto tipo, según lo que nuestro programa tenga que hacer. Pueden ser números, puedes ser palabras o textos, pueden incluso ser nulos o vacíos.
+Para guardar los datos, generalmente usamos variables.
+Si comparamos la programación con la cocina, el azúcar, la harina y los huevos serían datos, los recipientes serían variables: la tarta sería otro dato, el resultado y la receta sería el programa.
+¿Cómo sabe Python que tipo de dato maneja? No hace falta indicarselo como en otros lenguajes. Por eso es un lenguaje más simple y flexible. Aunque tampoco podremos hacer lo que nos de la gana con los datos.
+
 A continuación, vamos a ver los tipos básicos de datos
+
 ## Números
+Se trata de todos los tipos de números:
+- Enteros:
+1, 2, 3, 4,...
+- Con decimales:
+Los números con decimales se expresan utilizando un `.` para separar la parte entera de la decimal, como 4.5 o 3.1415. Es probable que en clase de mates utilices una coma para separar las decimales, pero en programación se usa el formato inglés y debemos usar un `.`.
+
+- Negativos:
+Los números menores que 0 se expresan con un guión por delante: -4, -5, -3.1415,...
 
 ## Texto
 
