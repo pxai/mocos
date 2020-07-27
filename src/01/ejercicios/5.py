@@ -1,18 +1,9 @@
-peso = input("Introduce tu peso: ")
-altura = input("Introduce tu altura: ")
-peso = int(peso)
-altura = int(altura)
+numero1 = input("Introduce un número: ")
+numero2 = input("Introduce otro número: ")
 
-imc = peso / (altura * altura)
+resto = int(numero1) % int(numero2)
 
-imcRedondeado = (imc * 10000)
-print("Tu imc: ", imcRedondeado)
-
-if imcRedondeado < 16 :
-  print("Necesitas comer más")
-elif imcRedondeado >= 16 and imcRedondeado < 25:
-  print("Estás bien")
-elif imcRedondeado >= 25 and imcRedondeado < 30:
-  print("Tienes sobrepeso")
+if resto == 0:
+  print(numero1, " es múltiplo de ", numero2)
 else:
-  print("Tienes un problema de obesidad")
+  print(numero1, " NO es múltiplo de ", numero2)

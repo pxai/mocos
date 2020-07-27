@@ -1,9 +1,6 @@
-numero1 = input("Introduce un número: ")
-numero2 = input("Introduce otro número: ")
+texto = input("Introduce un texto: ")
 
-if numero1 > numero2:
-  print(numero1, " es mayor que ", numero2)
-elif numero1 < numero2:
-  print(numero1, " es menor que ", numero2)
+if texto == "saludo":
+    print("Hola!")
 else:
-  print(numero1, " es igual que ", numero2)
+    print("No entiendo.")
