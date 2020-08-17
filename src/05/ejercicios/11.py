@@ -1,37 +1,63 @@
-class Jugador:
-    def __init__(self,nombre, posicion, dorsal):
+class Dispositivo:
+    def __init__(self, nombre, precio):
         self._nombre = nombre
-        self._posicion = posicion
-        self._dorsal = dorsal
+        self._precio = precio
 
-    def informe ():
-        return f"{self._nombre} {self._posicion} {self._dorsal}"
+    def get_nombre ():
+        return self._nombre
 
-
-class Equipo:
-    def __init__(self, nombre, fundacion, presupuesto):
+    def set_nombre (nombre):
         self._nombre = nombre
-        self._fundacion = fundacion
-        self._presupuesto = presupuesto
-        self._jugadores = []
 
-    def ficharJugador (self, jugador):
-        self._jugadores.append(jugador)
+    def get_precio ():
+        return self._precio
 
-    def mostrarJugadores (self):
-        for jugador in self._jugadores:
-            print(jugador.informe())
+    def set_precio (precio):
+        self._precio = precio
 
+    def toString (self):
+        return f"{self._nombre} {self._precio}";
 
 
+class Movil(Dispositivo):
+    def __init__(self, nombre, precio, numero):
+        super().__init__(nombre, precio)
+        self._numero = numero
 
-jugador1 = Jugador("Maradona", "Delantero", 10)
-jugador2 = Jugador("Beckenbauer", "Defensa", 4)
+    @property
+    def numero (self):
+        return self._numero
 
-print(jugador1.informe())
+    @numero.setter
+    def numero (self, numero):
+        self._numero = numero
 
-equipo = Equipo("New Team", 1983, 39944.45)
-equipo.ficharJugador(jugador1)
-equipo.ficharJugador(jugador2)
+    def toString (self):
+        return f"{super().toString()} {self._numero}"
 
-equipo.mostrarJugadores()
+    def llamar (numero):
+        print("Llamando a", numero)
+
+
+class Ordenador(Dispositivo):
+    def __init__(self, nombre, precio, procesador):
+        super().__init__(nombre, precio)
+        self._procesador = procesador
+
+    @property
+    def procesador (self):
+        return self._procesador
+
+    @procesador.setter
+    def procesador (self, procesador):
+        self._procesador = procesador
+
+    def toString (self):
+        return f"{super().toString()} {self._procesador}"
+
+
+ordenador = Ordenador("Dell", 4553.4, "Lentium 4")
+telefono = Movil("Chanmhung", 434.4, 665745345)
+
+print("Ordenador: ", ordenador.toString())
+print("Telefono: ", telefono.toString())

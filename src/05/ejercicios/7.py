@@ -1,8 +1,8 @@
 class Piloto:
-    def __init__(selfnombre):
+    def __init__(self, nombre):
         self._nombre = nombre
 
-    @attribute
+    @property
     def nombre (self):
         return self._nombre
 
@@ -18,7 +18,7 @@ class Aeroplano:
         self._piloto = piloto
         self._copiloto = copiloto
 
-    @attribute
+    @property
     def modelo (self):
         return self._modelo
 

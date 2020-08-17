@@ -1,10 +1,16 @@
-class Hola:
-    def __init__(self):
-        self.saludo = "Hola"
+import random
 
-    def decirHola (self):
-        print(self.saludo)
+def aleatorio (max):
+    return random.randint(0, max)
 
+class Moneda:
+    def tirar (self):
+        lados = ["cara", "cruz"]
+        numero = aleatorio(1)
 
-hola = Hola()
-hola.decirHola()
+        return lados[numero]
+
+moneda = Moneda()
+
+for i in range(10):
+    print(moneda.tirar())

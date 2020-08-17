@@ -1,63 +1,94 @@
-class Dispositivo:
-    def __init__(self, nombre, precio):
+class Comida:
+    def __init__(self, nombre, peso):
         self._nombre = nombre
-        self._precio = precio
+        self._peso = peso
 
-    def get_nombre ():
+    @property
+    def nombre (self):
         return self._nombre
 
-    def set_nombre (nombre):
+    @nombre.setter
+    def nombre (self, nombre):
         self._nombre = nombre
 
-    def get_precio ():
-        return self._precio
+    @property
+    def peso (self):
+        return self._peso
 
-    def set_precio (precio):
-        self._precio = precio
+    @peso.setter
+    def peso (self, peso):
+        self._peso = peso
 
     def toString (self):
-        return f"{self._nombre} {self._precio}";
+        return f"{self._nombre} {self._peso}"
 
 
-class Movil(Dispositivo):
-    def __init__(self, nombre, precio, numero):
-        super().__init__(nombre, precio)
-        self._numero = numero
-
-    @property
-    def numero (self):
-        return self._numero
-
-    @numero.setter
-    def numero (self, numero):
-        self._numero = numero
-
-    def toString ():
-        return f"{super().toString()} {self._numero}"
-
-    def llamar (numero):
-        print("Llamando a", numero)
-
-
-class Ordenador(Dispositivo):
-    def __init__(self, nombre, precio, procesador):
-        super().__init__(nombre, precio)
-        self._procesador = procesador
+class Fruta(Comida):
+    def __init__(self, nombre, peso, vitamina):
+        super().__init__(nombre, peso)
+        self._vitamina = vitamina
 
     @property
-    def procesador (self):
-        return self._procesador
+    def vitamina (self):
+        return self._vitamina
 
-    @procesador.setter
-    def procesador (self, procesador):
-        self._procesador = procesador
+    @vitamina.setter
+    def vitamina (self, vitamina):
+        self._vitamina = vitamina
 
     def toString (self):
-        return f"{super().toString()} {self._procesador}"
+        return f"{super().toString()} {self._vitamina}"
 
 
-ordenador = Ordenador("Dell", 4553.4, "Lentium 4")
-telefono = Movil("Chanmhung", 434.4, 665745345)
+class Caramelo(Comida):
+    def __init__(self, nombre, peso, calorias):
+        super().__init__(nombre, peso)
+        self._calorias = calorias
 
-print("Ordenador: ", ordenador)
-print("Telefono: ", telefono.toString())
+    @property
+    def calorias (self):
+        return self._calorias
+
+    @calorias.setter
+    def calorias (self, alorias):
+        self._calorias = calorias
+
+    def toString (self):
+        return f"{super().toString()} {self._calorias}"
+
+
+class Cesta:
+    def __init__(self):
+        self._alimentos = []
+
+    def meterComida (self, comida):
+        self._alimentos.append(comida)
+
+    def pesoTotal (self):
+        total = 0
+        for alimento in self._alimentos:
+            total += alimento.peso
+
+        return total
+
+    def toString (self):
+        info = ""
+        for alimento in self._alimentos:
+            info = info + alimento.toString() + "\n"
+
+        return info
+
+
+chicle = Caramelo("Cheiw", 0.2, 100)
+gominola = Caramelo("Fresa", 0.3, 210)
+pera = Fruta("Pera", 0.1, "B")
+manzana = Fruta("Manzana", 0.15, "A")
+
+cesta = Cesta()
+cesta.meterComida(chicle)
+cesta.meterComida(gominola)
+cesta.meterComida(pera)
+cesta.meterComida(manzana)
+
+print("Contenido cesta: ", cesta.toString())
+print("Peso total:", cesta.pesoTotal())

@@ -2,7 +2,7 @@ class Vehiculo:
     def __init__(self, matricula):
         self._matricula = matricula
 
-    @attribute
+    @property
     def matricula (self):
         return self._matricula
 

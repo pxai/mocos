@@ -1,16 +1,10 @@
-class Persona:
-    def dormir (self):
-        print("ZZZZZ...")
+class Hola:
+    def __init__(self):
+        self.saludo = "Hola"
 
-    def comer (self):
-        print("Ñam, Ñam...")
-
-    def saludar (self):
-        print("Hola, qué tal!")
+    def decirHola (self):
+        print(self.saludo)
 
 
-persona = Persona()
-
-persona.dormir()
-persona.comer()
-persona.saludar()
+hola = Hola()
+hola.decirHola()
