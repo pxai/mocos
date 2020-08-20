@@ -231,6 +231,81 @@ dato = None
 ```
 En realidad no se suele utilizar para crear variables. None representa un valor en situaciones especiales. Por ejemplo, si se trata de sacar información de un sitio en el que no hay nada como un fichero, o un dato que el usuario no nos da.
 
+# Leyendo datos
+Para que un programa pueda hacer algo, muchas veces necesita que el usuario introduzca un dato. Por ejemplo, si queremos que un programa nos diga cuantas letras tiene nuestro nombre, o cuanto falta para nuestro cumpleaños, lo primero que tendrá que hacer el programa es pedir un dato.
+
+Los programas básicos como los que estamos viendo de momento, utilizan la consola para ejecutarse. Son esas pantallas negras donde se ponen órdenes escritas ;)
+
+Para poder pedirle al usuario un dato y guardarlo en una variable, se utiliza la función `input`:
+
+```python
+nombre = input("Dime tu nombre: ")
+print("Hola ", nombre)
+```
+
+En la pantalla verías lo siguiente:
+
+```code
+Dime tu nombre: 
+```
+La función input hace que el mensaje `Dime tu nombre: ` aparezca en pantalla. También hace que el programa se pare a la espera de que el usuario escriba algo.
+Si el usuario escribe `Rosa` en la consola, se vería:
+
+```code
+Dime tu nombre: Rosa
+Hola Rosa
+```
+
+## Cuidado con los datos
+Cada vez que uses la funcion `input` para que el usuario escriba algo, sea lo que sea **se guardará como texto**. Aunque se escriba un número:
+
+
+```python
+valor = input("Dame un número: ")
+doble = valor + valor
+print(doble)
+```
+
+Si el usuario introduce un número como `4` este sería el resultado:
+
+```console
+Dame un número: 4
+44
+```
+En lugar de sumar `4 + 4` y mostrar `8`, lo que ha hecho es unir `4` y `4`, porque en realidad, cuando se ha leido a través de `input` ese `4` es texto: `"4"`
+
+Para evitarlo, tenemos que usar otra función para convertir ese dato en número entero: `int()`
+
+```python
+valor = input("Dame un número: ")
+doble = int(valor) + int(valor)
+print(doble)
+```
+
+O incluso lo podemos convertir antes:
+
+```python
+valor = input("Dame un número: ")
+valor = int(valor)
+doble = valor + valor
+print(doble)
+```
+
+O incluso aplicarlo a `input`: 
+
+
+```python
+valor = int(input("Dame un número: "))
+doble = valor + valor
+print(doble)
+```
+
+Ahora sí:
+```console
+Dame un número: 4
+8
+```
+
 # Operadores
 Los programas necesitan hacer cálculos con números, procesar datos, tomar decisiones según los valores. Para ello necesitamos los operadores.
 
