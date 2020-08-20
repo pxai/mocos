@@ -81,7 +81,25 @@ Neko
 ```
 
 Nota:
-También se puede mostrar el contenido de una variable como parte del mensaje:
+También se puede mostrar el contenido de una variable como parte del mensaje.
+Existen varias opciones para ello:
+## Separar por comas
+Basta con intercalar las variables y el texto con comas:
+```Python
+nombre = "Bug"
+edad = 10
+print("Hola, me llamo", nombre)
+print("Soy", nombre, "tengo", edad, "años")
+```
+Que por pantalla sería
+
+```console
+Hola, me llamo Bug
+Soy Bug tengo 10 años
+```
+
+## Sustitución de porcentaje
+Se crea un mensaje donde los elementos %s son sustituidos por variables.
 ```Python
 print("Hola, me llamo %s" % nombre)
 ```
@@ -89,6 +107,19 @@ Que por pantalla sería
 
 ```console
 Hola, me llamo Ada
+```
+
+Puedes hacer lo mismo con varias variables
+```Python
+nombre = "Neko"
+edad = 5
+
+print("Hola, me llamo %s y tengo %d años" % (nombre, edad))
+```
+Que por pantalla sería:
+
+```console
+Hola, me llamo Neko y tengo 5 años
 ```
 # Tipos de datos
 ¡Datos! Es la materia prima con la que trabajan los programas. Son el elemento que transforman. Un programa recibe datos, los transforma y los devuelve como un resultado.
@@ -103,15 +134,87 @@ A continuación, vamos a ver los tipos básicos de datos
 Se trata de todos los tipos de números:
 - Enteros:
 1, 2, 3, 4,...
+
+```python
+contador = 10
+edad = 12
+```
+
 - Con decimales:
 Los números con decimales se expresan utilizando un `.` para separar la parte entera de la decimal, como 4.5 o 3.1415. Es probable que en clase de mates utilices una coma para separar las decimales, pero en programación se usa el formato inglés y debemos usar un `.`.
+
+```python
+peso = 34.67
+precio = 242.9943
+```
 
 - Negativos:
 Los números menores que 0 se expresan con un guión por delante: -4, -5, -3.1415,...
 
+```python
+nota = -5
+temperaturaEnMarte = -50.676
+```
+
 ## Texto
+El texto, también llamados cadenas o *strings* son cualquier conjunto de palabras entre comillas dobles o simples.
+
+```python
+nombre = "Ada"
+frase = ""
+palabras = 'Voy a trabajar'
+novia = 'Solo quiero que seamos "amigos"'
+```
+En el caso del texto, podemos meter una serie de caracteres especiales que nos permiten efectos interesantes. Esos caracteres se escriben con una contrabarra o backslash por delante: `\`
+
+- Salto de linea
+Esto añade un salto de línea al texto si este se muestra por pantalla:
+
+```python
+frase = "Hola,\n qué tal"
+```
+se mostrará así:
+```shell
+Hola,
+qué tal
+```
+
+- Tabulaciones
+Esto añade una tabulación (varios espacios) al texto si este se muestra por pantalla:
+
+```python
+frase = "Nombre\tApellido\tEdad"
+```
+se mostrará así:
+```shell
+Nombre	Apellido	Edad
+```
+Otros caracteres especiales:
+
+- \\ Para mostrar la contrabarra en un texto.
+- \" Para mostrar una comilla doble en un texto.
+- \' Para mostrar una comilla simple en un texto.
+- \a Para hacer sonar un pitido.
 
 ## Booleanos
+El tipo booleano solo puede tener dos valores posibles:
+`True` o `False`, es decir verdadero o false. Se trata de un tipo de dato fundamental en programación ya que se utiliza para tomar decisiones.
+
+```python
+terminado = False
+esMayor = True
+pythonMola = True
+```
+
+## None
+Aunque suene un poco raro, en los programas a veces hay que tratar con algo que representa el vacío, la nada. 
+Existe una palabra que nos permite representar la nada en Python, y esa es: `None`
+
+```python
+valorInicial = None
+dato = None
+```
+En realidad no se suele utilizar para crear variables. None representa un valor en situaciones especiales. Por ejemplo, si se trata de sacar información de un sitio en el que no hay nada como un fichero, o un dato que el usuario no nos da.
 
 ## Python {#python}
 
