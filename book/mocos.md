@@ -340,6 +340,117 @@ Si un dato tiene determinado valor, se procesa de una forma y si no, de otra. ¿
 
 Las condiciones son estructuras de programación que nos permiten que un código se ejecute solo cuando se cumplan unas condiciones.
 
+## if
+La estructura más simple para hacer una condición es el `if`, el cual tiene este aspecto:
+
+```python
+if *condicion*:
+	*instrucciones*
+	*instrucciones*
+	*...*
+```
+
+Como puedes observar, `if` comienza con una condición. La condición puede ser cualquier expresión que devuelva un booleano, es decir, será True o False, verdadero o falso.
+Si es True, las instrucciones dentro del `if` se ejecutarán, y si no se saltarán.
+Por ejemplo
+
+```python
+valor = -2
+if valor < 0:
+	print("El valor es menor que 0")
+print("Fin del programa")
+```
+
+Resultaría en:
+
+```console
+El valor es menor que 0
+Fin del programa
+```
+En cambio:
+
+```python
+valor = 5
+if valor < 0:
+	print("El valor es menor que 0")
+print("Fin del programa")
+```
+
+Resultaría en:
+
+```console
+Fin del programa
+```
+
+Nota:
+También debes observar algo muy importante: las instrucciones dentro del `if` van detrás de unos espacios o una tabulación. Esa es una peculiaridad del lenguaje de programación Python: en cualquier bloque como una condicón, un bucle, una función, su contenido debe ir tabulado. Esa es una forma que facilita la lectura y permite reconocer fácilmente la estructura de un programa para otros programadores. Incluso para ti mismo si lo has creado.
+
+## if else
+Con el if podemos crear un bloque que solo se ejecute si se cumple una condición. Pero ¿Qué pasa si queremos que el programa haga una cosa u otra según una condición?
+Para poder meter "la otra" opción, utilizamos una estructura if-else:
+
+```python
+if *condicion*:
+	*instrucciones*
+else:
+	*instrucciones*
+```
+
+Por ejemplo:
+
+```python
+nombre = input("Dime tu nombre: ")
+if nombre != "":
+	print("Hola ", nombre)
+else:
+	print("¡No has metido nada!")
+```
+
+Podría verse algo así, según lo que meta el usuario:
+
+```console
+Dime tu nombre: Ada
+Hola Ada
+```
+
+Pero si el usuario simplemente pulsa enter sin escribir nada:
+
+```console
+Dime tu nombre:
+¡No has metido nada!
+```
+
+## if elif else
+Existe otra variante cuando necesitamos comprobar varias condiciones. Para eso existe la estructura if-elif-else:
+
+```python
+if *condicion1*:
+	*instrucciones*
+elif: *condicion2*:
+	*instrucciones*
+elif *condicion3*
+	*instrucciones*
+else:
+	*instrucciones*
+```
+
+Supongamos que queremos un programa que sea capaz de saludar en distintos idiomas. Podriamos crear un programa como el siguiente:
+
+```python
+idioma = input("¿Qué idioma hablas?")
+
+if idioma == "Español":
+	print("Hola"):
+elif idioma == "Inglés":
+	print("Hello"):
+elif idioma == "Francés":
+	print("Salut")
+else:
+	print("No conozco ese idioma")
+```
+
+Podemos tener tantos `elif` como hagan falta.
+
 # Bucles
 Como decíamos al principio, los ordenadores son muy muy tontos. Solo hacen lo que se les diga. Pero por contra, tienen enormes capacidades y una paciencia infinita. No les importará lo más mínimo hacer lo que sea tantas veces como sea necesario.
 
