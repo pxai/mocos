@@ -248,7 +248,7 @@ Las operaciones básicas en programación son:
 - multiplicación: `*`
 - división: `/`
 
-Puedes hacer operaciones tan complejas como hagan falta:
+Por ejemplo para calcular el total de segundos que tiene un día:
 ```python
 minutos = 60
 segundos = 60
@@ -256,6 +256,170 @@ horas = 24
 
 totalSegundos = segundos * minutos * horas
 ```
+
+Puedes hacer operaciones tan complejas como hagan falta:
+
+# Condiciones
+En algún momento, los programas necesitan hacer una cosa u otra dependiendo de una condición. Por ejemplo, si un usuario introduce un dato incorrecto, el programa se acaba.
+Si un dato tiene determinado valor, se procesa de una forma y si no, de otra. ¿Cómo se consigue ese comportamiento? Mediante condiciones.
+
+Las condiciones son estructuras de programación que nos permiten que un código se ejecute solo cuando se cumplan unas condiciones.
+
+# Bucles
+Como decíamos al principio, los ordenadores son muy muy tontos. Solo hacen lo que se les diga. Pero por contra, tienen enormes capacidades y una paciencia infinita. No les importará lo más mínimo hacer lo que sea tantas veces como sea necesario.
+
+Una de las tareas más típicas para un ordenador es repetir una instrucción. Esto es algo que se puede conseguir mediante estructuras de bucle. Un bucle es una acción que se repite. Generalmente un bucle tiene una condición para ejecutarse. Si esas condiciones se cumplen, entonces se ejecutarán las órdenes que contenga ese bucle.
+Puedes ver un bucle como una montaña rusa en la que das varias vueltas. 
+A continuación veremos distintos tipos de bucle.
+
+## Bucle while
+Un bucle while se ejecuta mientras una condición se cumpla. Su estructura es muy simple:
+
+```python
+while *condicion*:
+	*instrucciones*
+```
+Por ejemplo, vamos a ejecutar un bucle mientras el valor de una variable sea mayor que 0.
+
+```python
+contador = 10
+while contador > 0:
+	print("Estoy dentro del bucle")
+	contador = contador - 1
+```
+
+Nota: ¡Ojo! ¿Te has fijado en que dentro del bucle estamos restando un valor a `contador`? Si no tenemos cuidado y nos olvidamos de hacer eso, el valor de contador nunca cambiaría y crearíamos un bucle infinito. ¡El programa nunca terminaría y se quedaría atascado para siempre!
+
+Veamos otro ejemplo. El siguiente programa solicita un dato al usuario en un bucle. El programa no saldrá del bucle mientras el usuario no meta un dato distinto de vacío `""`:
+
+```python
+nombre = ""
+while nombre == "":
+	nombre = input("¿Cómo te llamas?")
+
+print("Hola", nombre)
+```
+
+## Bucle For
+El bucle for lo utilizamos para repetir una acción un número concreto de veces. Más que una condición, utiliza una especie de contador:
+
+```python
+for *variable* in *rango*:
+	*instrucciones*
+```
+
+Por ejemplo, el siguiente bucle mostrará el mensaje `hola` 5 veces:
+
+```python:
+for i in range(4):
+	print("Hola")
+```
+El resultado sería:
+```code
+Hola
+Hola
+Hola
+Hola
+```
+
+Algo muy interesante en los bucles for es que la variable `i`, la cual podría tener el nombre que queramos, tendrá el valor correspondiente a cada vuelta del bucle. Para verlo mejor, basta con cambiar un poco el programa anterior:
+
+```python:
+for i in range(4):
+	print("Hola", i)
+```
+
+Y comprobar el resultado:
+
+```code
+Hola 0
+Hola 1
+Hola 2
+Hola 3
+```
+
+### Cambiar el rango
+Por defecto, `range(4)` está devolviendo una lista de 0 a 3, es decir: 0, 1, 2, 3. Son un total de cuatro elementos y por tanto el bucle dará cuatro vueltas.
+
+Obviamente, se puede crear cualquier tipo de rango. Si no se indica nada, el rango comienza en 0. Pero se puede indicar un rango entre dos números:
+range(0, 4) # 0, 1, 2, 3
+range(2, 6) # 2, 3, 4, 5
+
+Por ejemplo:
+
+```python:
+for i in range(5, 9):
+	print("Hola", i)
+```
+El resultado sería:
+```code
+Hola 5
+Hola 6
+Hola 7
+Hola 8
+```
+
+También se puede indicar un tercer parámetro para indicar cómo se salta de un valor a otro. Por ejemplo de 2 en 2:
+```python
+range(1, 11, 2) # 1, 3,
+```
+
+En el siguiente ejemplo, el bucle se haría con números pares.
+```python:
+for i in range(0, 6, 2):
+	print("Hola", i)
+```
+El resultado sería:
+```code
+Hola 0
+Hola 2
+Hola 4
+```
+
+### Hacia atrás
+También se podría recorrer el bucle hacia atrás, utilizando un salto negativo
+
+```python:
+print("Iniciando cuenta atrás: ")
+for i in range(5, 0, -1):
+	print(i)
+```
+
+El resultado sería:
+
+```code
+5
+4 
+3
+2
+1
+```
+
+## ¿Cuándo usar while o for?
+Aunque con los dos podrías hacer lo mismo, realmente cada uno tiene un uso más lógico.
+
+El bucle for se utiliza claramente cuando se quiere ejecutar algo un número concreto de veces, ni más ni menos. O bien, como veremos más adelante, cuando se quieren recorrer estructuras de datos como listas de principio a fin.
+
+El bucle while se puede utilizar cuando las condiciones no son muy concretas. Por ejemplo, si queremos que el usuario introduzca un dato, lo podemos hacer en un bucle. El bucle no terminará hasta que el usuario no introduzca un dato bueno (esa sería la condición).
+
+# Estructuras de datos
+
+## Listas
+
+## Diccionarios
+
+## Listas de diccionarios
+
+## Bucle sobre estructuras
+
+# Funciones
+
+## Retorno
+
+## Parámetros
+
+# Librerías
+
 ## Python {#python}
 
 For a developer is not enough to know one programming language, it is often said that is good to know many of them. After all the language is but a mere tool to build programs. Python has been around for many years and one of my pending task was to take a look at it. Some friends (<a href="http://twitter.com/Eugenia4v">@Eugenia4v</a>,<a href="http://twitter.com/Claw_Shadow">@Claw_Shadow</a>,<a href="http://twitter.com/@D00m3dr4v3n">@D00m3dr4v3n</a>) are always telling me about the benefits of Python not to mention plenty of papers where Python is even recommended as the language of choice to get into programming. I guess that when Google itself has been using Python from the beginning, and when this language is a requirement for many job offers there is something about it. Despite the title of this post, I spent more than 21 minutes coding around and trying the basics so don't expect a deep dive into Python. This is just a quick guide
