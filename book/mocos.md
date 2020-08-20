@@ -98,6 +98,21 @@ Hola, me llamo Bug
 Soy Bug tengo 10 años
 ```
 
+## String de formato
+Un mensaje que precedido de la letra `f` y las variables entre llaves:
+```Python
+nombre = "Bug"
+edad = 10
+print(f"Hola, me llamo {nombre}")
+print(f"Soy {nombre} tengo {edad} años")
+```
+Que por pantalla sería
+
+```console
+Hola, me llamo Bug
+Soy Bug tengo 10 años
+```
+
 ## Sustitución de porcentaje
 Se crea un mensaje donde los elementos %s son sustituidos por variables.
 ```Python
@@ -216,6 +231,31 @@ dato = None
 ```
 En realidad no se suele utilizar para crear variables. None representa un valor en situaciones especiales. Por ejemplo, si se trata de sacar información de un sitio en el que no hay nada como un fichero, o un dato que el usuario no nos da.
 
+# Operadores
+Los programas necesitan hacer cálculos con números, procesar datos, tomar decisiones según los valores. Para ello necesitamos los operadores.
+
+## Operadores aritméticos
+Son todos aquellos que te permitirán hacer sumas, restas y todas los cálculos básicos con valores y con aquello que se guarde en variables, como por ejemplo, la suma:
+
+```python
+chicles = 4
+chicles = chicles + 2
+```
+El programa calcula que de tener 4 chicles, has pasado a tener 6.
+Las operaciones básicas en programación son:
+- suma: `+`
+- resta: `-`
+- multiplicación: `*`
+- división: `/`
+
+Puedes hacer operaciones tan complejas como hagan falta:
+```python
+minutos = 60
+segundos = 60
+horas = 24
+
+totalSegundos = segundos * minutos * horas
+```
 ## Python {#python}
 
 For a developer is not enough to know one programming language, it is often said that is good to know many of them. After all the language is but a mere tool to build programs. Python has been around for many years and one of my pending task was to take a look at it. Some friends (<a href="http://twitter.com/Eugenia4v">@Eugenia4v</a>,<a href="http://twitter.com/Claw_Shadow">@Claw_Shadow</a>,<a href="http://twitter.com/@D00m3dr4v3n">@D00m3dr4v3n</a>) are always telling me about the benefits of Python not to mention plenty of papers where Python is even recommended as the language of choice to get into programming. I guess that when Google itself has been using Python from the beginning, and when this language is a requirement for many job offers there is something about it. Despite the title of this post, I spent more than 21 minutes coding around and trying the basics so don't expect a deep dive into Python. This is just a quick guide
