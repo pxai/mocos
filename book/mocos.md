@@ -332,7 +332,135 @@ horas = 24
 totalSegundos = segundos * minutos * horas
 ```
 
-Puedes hacer operaciones tan complejas como hagan falta:
+Puedes hacer operaciones tan complejas como hagan falta. Para que estas sean más fáciles de leer se pueden utillizar paréntesis como se hace en mates:
+
+```python
+ada = 14
+bug = 10
+neko = 2
+media = (ada + bug + neko) / 3
+```
+
+### Módulo y exponencial
+Hay una operación muy importante en programación, que quizá no sea tan frecuente en las mates: se trata del **módulo**. Es una división que devuelve el residuo en lugar del resultado de la división:
+
+```python
+valor = 8
+resultado = valor % 3
+```
+El valor de resultado será: `2`.
+
+El exponencial es el resultado de multiplicar un número por sí mismo varias veces. En Python se puede hacer esta operación con el operador `**`:
+
+```python
+valor = 2
+resultado = valor ** 3 # equivale a: 2 * 2 * 2
+```
+
+El resultado sería `8`.
+
+## Operadores de comparación
+Se trata de operadores que nos permiten comparar un valor con otro. Generalmente se usa con números y el resultado de estas operaciones es `True`o `False`.
+
+Por ejemplo, para comprobar si un valor es igual a otro usamos el operador: `==`
+
+```python
+valor = 5
+resultado = valor == 5
+```
+
+El resultado sería `True`.
+
+Los operadores de comparación serían:
+
+- Igual: `==`
+- Distinto: `!=`
+- Mayor que: `>`
+- Menor que: `<`
+- Mayor o igual: `>=`
+- Menor o igual: `<=`
+
+También puede utilizarse este operador con texto, tanto para comprobar igualdad:
+
+```python
+nombre = "Ada"
+resultado = nombre == "Bug"
+```
+El resultado sería `False`.
+También nos permite comparar si un texto es mayor o menor en orden alfabético:
+
+```python
+nombre = "Ada"
+resultado = "Ada" < "Bug"
+```
+
+El resultado sería `True`.
+
+## Operadores booleanos
+Los operadores booleanos nos permiten hacer operaciones con valores booleanos `True`o `False`. 
+
+### and
+Este operador solo devuelve `True` si los dos operandos también son `True`:
+
+```python
+valor = 5
+resultado = (valor == 5) and True;
+```
+
+El resultado sería `True`.
+Para resumir todas las posibles opciones, esta sería lo que se denomina tabla de la verdad del operador `and`.
+
+|a | | b| resultado |
+|--|--|--|--|
+|`False` | `and` |`False` |`False` |
+|`False` | `and` |`True` |`False` |
+|`True` | `and` |`False` |`False` |
+|`True` | `and` |`True` |`True` |
+
+### or
+Este operador solo devuelve `True` si cualquiera de los dos operandos también son `True`:
+
+```python
+valor = 5
+resultado = (valor == 5) or True;
+```
+
+El resultado sería `True`.
+Para resumir todas las posibles opciones, esta sería lo que se denomina tabla de la verdad del operador `or`.
+
+|a | | b| resultado |
+|--|--|--|--|
+|`False` | `or` |`False` |`False` |
+|`False` | `or` |`True` |`True` |
+|`True` | `or` |`False` |`True` |
+|`True` | `or` |`True` |`True` |
+
+### not
+Este operador solo devuelve `True` si los dos operandos también son `True`:
+
+```python
+valor = True
+resultado = not valor;
+```
+
+El resultado sería `False`.
+Para resumir todas las posibles opciones, esta sería lo que se denomina tabla de la verdad del operador `not`.
+
+| | a| resultado |
+|--|--|--|
+| `not` |`False` |`False` |
+| `not` |`True` |`False` |
+
+### Combinando operadores
+Podemos combinar los operadores tanto como necesitemos:
+
+```python
+jubilado = 65
+if edad > 17 and edad < (jubilado + 1):
+	print("Ya puedes trabajar")
+```
+
+Generalmente, los operadores condicionales se utilizan dentro de las condiciones de los bloques condicionales, bucles, etc.
 
 # Condiciones
 En algún momento, los programas necesitan hacer una cosa u otra dependiendo de una condición. Por ejemplo, si un usuario introduce un dato incorrecto, el programa se acaba.
