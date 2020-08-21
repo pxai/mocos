@@ -970,11 +970,199 @@ Pero ¿Cómo sé que tipo de estructura debo diseñar? Depende de cómo la vayas
 
 
 # Funciones
+Las funciones son pequeños programas dentro de los programas. Esta sería una función que simplemente saca un saludo por pantalla:
+
+```python
+def saludo ():
+	print "Hola"
+```
+Como se puede ver, una función se define utilizando la palabra `def` seguida del nombre de la función, en este caso `saludo` y la lista de parámetros `()`, la cual está vacía en este caso.
+En el cuerpo de la función, podemos poner las instrucciones que queramos
+
+Una vez definida esa función, cada vez que la utilicemos se ejecutará el código que hay en ella:
+
+```python
+saludo()
+```
+Lo cual mostrará:
+```console
+Hola
+```
+
+## Parámetros
+Las funciones pueden recibir parámetros. Estos se convierten en variables dentro de la función y nos permiten que la función haga cosas diferentes según lo que les pasemos.
+
+Por ejemplo, podemos crear una función que salude a alguien:
+
+```python
+def saluda(persona):
+	print("Hola", persona)
+```
+Dentro de la función, el valor de `persona` será distinto según lo que se le pase en la llamada
+Se podría usar así:
+
+```python
+saluda("Neko")  # persona será "Neko"
+saluda("Ada")   # persona será "Ada"
+```
+Lo que resultaría en:
+
+```
+Hola Neko
+Hola Ada
+```
+
+### Parámetro con valor por defecto
+Los parámetros de una función pueden tener un valor por defecto. Es decir, se les puede asignar un valor concreto y si no se pasa ese parámetro en la llamada, el parámetro tomará ese valor por defecto.
+
+
+```python
+def saluda(persona, veces = 3):
+	for i in range(veces):
+		print("Hola", persona)
+```
+Si se le llama con:
+```python
+saluda("Neko", 2)
+```
+
+Se vería:
+```
+Hola Neko
+Hola Neko
+```
+
+En cambio
+```python
+saluda("Bug")
+```
+
+Sería:
+```console
+Hola Bug
+Hola Bug
+Hola Bug
+```
 
 
 ## Retorno
+Las funciones pueden hacer todas las operaciones que sean necesarias, pero son más útiles cuando devuelven un resultado.
 
-## Parámetros
+Para eso se utiliza la instrucción `return`, la cual solo puede devolver un dato concreto o una estructura de datos.
+
+Por ejemplo, una función que calcule la suma de dos valores:
+
+```python
+def suma(a, b):
+	resultado = a + b
+	return resultado
+```
+Se puede abreviar un poco haciendo directamente:
+
+```python
+def suma(a, b):
+	return a + b
+```
+
+Se podría usar la función así:
+
+```python
+print(suma(40, 2))  # 42
+```
+
+Debes tener en cuenta un par de cosas con el `return`:
+1- Una vez se hace `return`, el programa sale de la función.
+2- Puedes tener más de un `return` en la función, pero solo se ejecutará uno de ellos. 
+
+Otro ejemplo, una función que multiplique un valor varias veces. Si el número de veces es menor que 1 devolverá un 0:
+
+```python
+def multiplica(numero, veces):
+	if (veces > 0): 
+		total = 1
+		for i in range(veces):
+			total = total * numero
+	else:
+		return 0
+
+multiplica(2, 3) # 8
+```
+
+Nota: la función anterior queda más clara así.
+```python
+def multiplica(numero, veces):
+	if (veces < 1): return 0 
+
+	total = 1
+	for i in range(veces):
+		total = total * numero
+```
+## ¿Por qué usar funciones?
+
+Ok, ¿para qué necesitamos crear funciones? Pues lo cierto es... que son fundamentales.
+
+Hasta ahora hemos visto programas que son una simple secuencia de órdenes, las cuales se ejecutan desde el principio hasta el final.
+
+Eso está bien cuando los programas son simples y tienen que hacer pocas cosas, pero cuando el programa tiene que hacer algo más complejo es muy probable que tengas que usar funciones, por varios motivos.
+
+### Motivo 0: divide y vencerás
+Los programas tratan de resolver problemas ofreciendo una solución. En ocasiones los problemas pueden ser muy complejos de afrontar. Las funciones te permiten abordad esos problemas por partes. Cada función te puede dar la solución para una parte del problema. Por lo tanto, puedes dividir el problema en muchos pequeños problemas y solucionar cada problema con una función.
+Escribir el código en funciones es el primer paso que te permite¡irá diseñar programas más complejos.
+
+### Motivo 1: no repetir el código
+Si tu programa tiene que hacer alguna cosa varias veces, tendrías que repetir el código tantas veces como fuera necesario. Imagina que tienes que recibir varios datos del usuario, y que cada vez que lo haces tienes que comprobar que el dato no está vacío:
+
+```python
+dato = ""
+
+while dato == "":
+	dato = input("Por favor, introduce un dato: ")
+	if dato == "":
+		print("¡El dato está vacío!)
+```
+
+Si solicitas al usuario 3 datos, ¡tendrías que repetir ese código 3 veces! En cambio si creas una función con ese mismo código, solo lo tendrás que escribir una vez y luego podrás usarlo tantas veces como necesites.
+
+Nota: NO repetir el código es una de las reglas más importantes que debe seguir todo buen programador.
+
+### Motivo 2: reutilizar código
+Además de no repetir el código, una función nos permite que un mismo código sirva para distintos tipos de datos. ¡Para eso se utilizan los parámetros!
+
+```python
+def saludar(saludo, veces):
+	for i in range(veces):
+		print(saludo)
+```
+Se le puede llamar con distintos valores:
+
+```python
+saludar("Holi", 3)
+saludar("Aupa", 1)
+```
+Sería:
+
+```console
+Holi
+Holi
+Holi
+Aupa
+```
+
+## Motivo 3: facilitar el mantenimiento
+Si el código solo está en un sitio, es más fácil corregirlo, cambiarlo, mejorarlo y mantenerlo en general. Crear un programa desde cero es muy bonito, pero el verdadero trabajo es mantener el código a lo largo del tiempo.
+Si tenemos nuestras funciones bien definidas, nos ahorraremos muuuuucho trabajo.
+
+### Motivo 4: permite hacer tests
+Quiza seas un poco joven para esto, pero las verdaderas pros como yo testeamos nuestros programas. ¿Qué significa eso? Que escribimos programas cuya única función es comprobar que nuestros programas hacen lo que deben.
+Si tu código tiene funciones, podrás escribir tests para comprobar que esas funciones hacen lo que deben.
+
+En realidad, cuando ya eres un experto, lo suyo es que escribas el test antes que la función en si misma!
+
+## Cómo hacer buenas funciones
+Cualquiera puede escribir funciones y agrupar el código en pequeñas partes. Pero si quieres escribir funciones como un pro, tienes que procurar lo siguiente:
+- Una función debe hacer solo una cosa. Es mejor tener muchas pequeñas funciones que pocas funciones haciendo muchas cosas. Si tu función no cabe en la pantalla o pasa de 24 líneas, quizá debas dividirla en pequeás partes.
+- Una función no debería cambiar nada que haya fuera. Si no quieres tener sorpresas, una función no debería liarla dentro del programa.
+- Una función debería retornar algo, y ese algo siempre debería ser lo mismo para determinados parámetros.
 
 # Librerías
 
