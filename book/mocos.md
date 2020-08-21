@@ -1262,6 +1262,55 @@ print(miGato.nombre)  # Pixi
 miGato.nombre = "Pixel"
 miGato.maulla() # Miau, soy Pixel
 ```
+Acceder a una propiedad de forma tan directa no está mal, pero las buenas programadoras como yo tratamos de encapsular la clase. ¿Qué significa eso? Que no se permite que se pueda acceder o cambiar directamente las propiedades o métodos de la misma. Solo aquello que sea necesario para quienes usen la clase.
+Dicho de otra forma, los programadores deben tratar de crear clases que parezcan "cajas negras". En el caso de las propiedades como el nombre, en Python se puede añadir los siguientes métodos:
+Un método para devolver el valor de la propiedad nombre, también conocido como "getter":
+```python
+	@property 
+	def nombre ():
+		return self._nombre
+```
+
+Un método para poder modificar el valor del nombre, también conocido como "setter":
+```python
+	@nombre.setter
+	def nombre (nombre):
+		if nombre != "":
+			self._nombre = nombre
+```
+
+La clase quedaría así:
+```python
+class Gato:
+	def __init__(self, nombre):
+		self._nombre = nombre
+	
+	@property 
+	def nombre ():
+		return self._nombre
+	
+	@nombre.setter
+	def nombre (nombre):
+		if nombre != "":
+			self._nombre = nombre
+
+	def maulla(self):
+		print("Miau, soy", self.nombre)
+```
+Observa que la propiedad `nombre` es ahora `_nombre`. Es una manera de expresar que esa propiedad es "privada", y que no se debería acceder a ella desde fuera de la clase.
+
+Ahora cuando usemos la clase `Gato` e intentemos acceder a la propiedad `. nombre`, se hará a través de esas nuevas funciones.
+```python
+miGato = Gato("Pixi")
+print(miGato.nombre)  # llama al método `def nombre ():`
+miGato.nombre = "Pixel" # llama al método `def nombre (nombre):`
+miGato.maulla() # Miau, soy Pixel
+```
+
+¿Qué ventaja puede tener la encapsulación?
+Básicamente que desde "fuera" no se pueda manipular la clase sin control. De ahí que sea como una caja negra, como una videoconsola. Si para jugar un juego tuvieras que abrirla y soldar las conexiones a mano probablemente te acabarías cargando la consola. Por eso los aparatos se diseñan como cajas negras, solo te permiten manipularlas desde fuera.
+
+En el caso de la clase Gato, no permitimos que el nombre se pueda cambiar directamente. A través del método "setter" podemos controlar que el nombre que se quiera asignar sea correcto.
 
 ## ¿Por qué usar clases?
 Las clases nos permiten aplicar una técnica llamada programación orientada a objetos. Es otra estrategia para resolver problemas complejos. 
