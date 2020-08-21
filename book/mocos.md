@@ -781,10 +781,80 @@ El bucle for se utiliza claramente cuando se quiere ejecutar algo un número con
 El bucle while se puede utilizar cuando las condiciones no son muy concretas. Por ejemplo, si queremos que el usuario introduzca un dato, lo podemos hacer en un bucle. El bucle no terminará hasta que el usuario no introduzca un dato bueno (esa sería la condición).
 
 # Estructuras de datos
+Hasta ahora hemos estado jugando con datos simples, variables que contienen un número, un texto, etc. Pero existen otros tipos que nos permiten crear datos más complejos. No es que sean difíciles, simplemente pueden contener algo más que un simple número.
+
+Los programas de ordenador pueden hacer cosas muy complicadas, pero en esencia, todo lo que hacen es procesar datos. A continuación vamos a ver algunos tipos de datos.
 
 ## Listas
+Las listas son un conjunto de datos indexados numéricamente. Esa es la definición formal, pero su propio nombre ya te dice lo que son: ¡una lista! En el capítulo sobre tipos de datos ya presentamos las listas y vimos cómo se crean:
+
+```python
+idiomas = ["Inglés", "Español", "Francés"]
+``` 
+Recuerda que puedes acceder a los elementos a través de un índice:
+
+```python
+idiomas = ["Inglés", "Español", "Francés"]
+print(idiomas[2]) # Francés
+``` 
+La lista se puede representar así:
+
+|0|1|2|
+|--|--|--|
+|"Inglés"|"Español"|"Francés"|
+
+Si queremos añadir un elemento a una lista, basta con utilizar la función `append`:
+
+```python
+idiomas = ["Inglés", "Español", "Francés"]
+idiomas.append("Italiano")
+print(idiomas) # ["Inglés", "Español", "Francés", "Italiano"]
+```
+
+Y si queremos eliminar un elemento del array, se puede usar la orden del:
+
+```python
+idiomas = ["Inglés", "Español", "Francés"]
+del idiomas[1]
+print(idiomas) # ["Inglés", "Francés"]
+```
+
+¡Pero OJO!
+En Python **NO** se puede cambiar el valor de un elemento del array:
+
+```python
+idiomas = ["Inglés", "Español", "Francés"]
+idiomas[2] = "Italiano" # ¡ERROR!
+```
+
+Y recuerda, para recorrer la lista, podemos usar un bucle `for`:
+
+```python
+idiomas = ["Inglés", "Español", "Francés"]
+for idioma in idiomas:
+	print(idioma)
+```
+
+En otros lenguajes, a las listas se les llama arrays.
+Ya los deberías conocer, pero te lo volvemos a recordar.
 
 ## Diccionarios
+Los diccionarios son conjuntos de datos donde cada elemento tiene una clave y un valor.
+Dichos de otra manera, son como una lista, pero en lugar de tener un índice numérico como 0,1, 2,... tienen el valor que tú quieras.
+
+Por ejemplo, podemos definir un diccionario que contenga las edades de varias personas, donde el nombre es la clave y la edad el valor:
+
+```python
+edades = { "Ada": 14, "Bug": 10, "Neko": 2 }
+print(edades["Ada"])  #  14
+```
+El diccionario se puede representar así:
+
+|"Ada"|"Bug"|"Neko"|
+|--|--|--|
+|14|10|2|
+
+En otros lenguajes, a los diccionarios se les llama `hash` o `hashtables`
 
 ## Listas de diccionarios
 
