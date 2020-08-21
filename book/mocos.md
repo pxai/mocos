@@ -221,6 +221,33 @@ esMayor = True
 pythonMola = True
 ```
 
+## Listas
+Las listas son conjuntos de datos, que se definen de la siguiente manera:
+
+```python
+amigas = ["Ada", "Miranda", "Ruby"]
+```
+Pueden ser de cualquier tipo, pero lo normal es que todos los elementos de una lista sean del mismo tipo:
+
+```python
+enemigas = []
+edades = [12, 16, 30, 0, 22, 1, 1, 12]
+verdades = [True, False, False, True]
+```
+Para poder referirnos a un valor concreto de la lista, tenemos que indicar la posición del elemento de la lista que nos interesa, empezando desde 0:
+
+```python
+nombres = ["Ada", "Neko", "Bug"]
+print(nombres[0])  # "Ada"
+```
+En el caso de la lista `nombres`, las posiciones posibles serán 0, 1 y 2.
+¡Pero ojo! si pasas una posición demasiado grande, el programa terminará con error:
+```python
+nombres = ["Ada", "Neko", "Bug"]
+print(nombres[4])  # ¡ERROR!
+```
+Volveremos sobre las listas y otras estructuras más adelante. 
+
 ## None
 Aunque suene un poco raro, en los programas a veces hay que tratar con algo que representa el vacío, la nada. 
 Existe una palabra que nos permite representar la nada en Python, y esa es: `None`
@@ -707,6 +734,43 @@ El resultado sería:
 3
 2
 1
+```
+
+### Bucles sobre listas
+Los bucles `for` son especialmente útiles cuando queremos recorrer todos los elementos de una lista, para mostrarlos, procesarlos o lo que sea. La forma es muy sencilla:
+
+```python
+objetos = ["estrella", "seta", "flor"]
+for objeto in objetos:
+	print(objetos)
+```
+En cada vuelta del bucle la varialbe `objeto` tomara un valor de la lista `objetos`, así que el resultado sería el siguiente:
+
+```console
+estrella
+seta
+flor
+```
+
+### Saliendo del bucle
+En ocasiones puede que nos interese salir de un bucle y no seguir procesando nada más. Supongamos que tenemos un programa para buscar un nombre dentro de una lista:
+
+```python
+nombres = ["Mia", "Jon", "Arya", "Ane", "Bug", "Ada", "Lisp"]
+for nombre in nombres:
+	if nombre == "Ane":
+		print("Ane está en la lista")
+```
+El problema de ese programa es que aunque encuentre a `Ane`, el bucle seguirá hasta el final de la lista. Si esa lista es muy grande, nuestro programa será ineficiente! Como decíamos al principio, los ordenadores son muy tontos. Si no les decimos que paren, seguirán adelante.
+
+Por suerte, en los bucles podemos usar la instrucción `break`, la cual conseguirá que el bucle termine de golpe:
+
+```python
+nombres = ["Mia", "Jon", "Arya", "Ane", "Bug", "Ada", "Lisp"]
+for nombre in nombres:
+	if nombre == "Ane":
+		print("Ane está en la lista")
+		break
 ```
 
 ## ¿Cuándo usar while o for?
