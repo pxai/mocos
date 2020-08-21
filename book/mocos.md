@@ -1164,6 +1164,114 @@ Cualquiera puede escribir funciones y agrupar el código en pequeñas partes. Pe
 - Una función no debería cambiar nada que haya fuera. Si no quieres tener sorpresas, una función no debería liarla dentro del programa.
 - Una función debería retornar algo, y ese algo siempre debería ser lo mismo para determinados parámetros.
 
+# Clases
+
+Una clase es una estructura de programación que nos permite representar una entidad con sus propiedades y métodos. Es decir, una clase:
+- Tiene propiedades (variables propias)
+- Hace cosas (funciones)
+
+Por ejemplo, la siguiente clase representa a un gato muy simple, con una función para maullar:
+
+```python
+class Gato:
+	def maulla(self):
+		print("Miau")
+```
+Como se puede ver, para definir la clase utilizamos la palabra `class` seguida del nombre de la clase, con la primera letra en mayúscula. Todo lo que vaya dentro de ese bloque será parte de la clase.
+
+Por otro lado, debes tener en cuenta de que **todas** las funciones de una clase deben tener el parámetros `self`, aunque no se use. Ese parámetro se refiere a la propia clase, y se utiliza para referirse a las propiedades y funciones de ella misma, como veremos ahora.
+
+La clase no es más que la definición del gato. Pero para crear un gato en nuestro programa, debemos crear una instancia. Se hace así:
+
+```python
+gato = Gato()
+gato.maulla()
+```
+Por pantalla veremos:
+
+```console
+Miau
+```
+
+## Función constructora
+Ese gato hace más bien poco. Vamos a darle una propiedad `nombre`. Además, vamos a crear una función especial que debe llamarse `__init__`.
+
+`__init__` es lo que se conoce como **función constructora**. Esta función se llama cuando se crea un objeto de la clase, y por tanto es el lugar ideal para iniciar las propiedades de la clase:
+
+```python
+class Gato:
+	def __init__(self, nombre):
+		self.nombre = nombre
+	
+	def maulla(self):
+		print("Miau, soy", self.nombre)
+```
+
+Ahora, cuando creemos objetos de la clase Gato le pasaremos un nombre y este se quedará como propiedad:
+
+```python
+gato = Gato("Pixi")
+gato.maulla()
+
+otroGato = Gato("Cheto")
+otroGato.maulla()
+```
+Y en este caso veremos:
+
+```console
+Miau, soy Pixi
+Miau, soy Cheto
+```
+
+## Herencia
+La herencia es un mecanismo que tienen las clases para la reutilización de código. Supongamos que queremos hacer una clase que represente a un cachorro de gato. Queremos que haga lo mismo que la clase Gato pero que además ronronee.
+La clase cachorro podría heredar de la clase Gato, de la siguiente manera:
+
+```python
+class Cachorro(Gato):
+	def ronronea(self):
+		print("Purrrr")
+```
+Ahora podemos hacer lo siguiente. Crear un objeto Cachorro, con las mismas propiedades que la clase Gato. De forma automática, heredará la propiedad `nombre` y el método `maulla`:
+
+```python
+gatito = Cachorro("Lucifur") 
+gatito.ronronea()
+gatito.maulla()
+```
+Se vería como:
+
+```console
+Purrrr
+Miau, soy Lucifur
+```
+
+## Encapsulación
+
+En el ejemplo del gato, se puede hacer acceder a la propiedad nombre de forma directa.
+Para eso, en los objetos basta con poner algo así:
+
+```python
+objeto.nombrePropiedad
+```
+
+El gato tiene una propiedad llamada `nombre`.
+```python
+miGato = Gato("Pixi")
+print(miGato.nombre)  # Pixi
+miGato.nombre = "Pixel"
+miGato.maulla() # Miau, soy Pixel
+```
+
+## ¿Por qué usar clases?
+Las clases nos permiten aplicar una técnica llamada programación orientada a objetos. Es otra estrategia para resolver problemas complejos. 
+Con las funciones, dividimos un problema en pequeños problemas. En cambio, con la programación orientada a objetos, lo que tratamos de hacer es dividir el problema en clases. ¿Pero cómo?  representando todo aquello que forma parte del problema utilizando clases.
+
+Imagina que tuvieramos que hacer el programa de un juego de carreras como Mario Kart. Utilizando la programación orientada a objetos podriamos representar los elementos del juego con clases como:
+- Personaje, con su nombre y otras propiedades.
+- Coche, con sus características de velocidad, resistencia, funciones de aceleración, etc.
+- Circuito, con su longitud, sus túneles, sus premios, etc.
+
 # Librerías
 
 ## Python {#python}
