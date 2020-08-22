@@ -19,14 +19,18 @@ Nota2:
 Si quieres instalarte un entorno de programación convencional, ve al apéndice X.
 
 # Hola mundo
-```Python
-print("Hola mundo!")
+El primer programa que suelen escribir los programadores es uno que simplemente saque un mensaje por pantalla. Y ese mensaje suele ser un saludo al mundo: "¡Hola mundo!"
+Se hace así:
+```python
+print("¡Hola mundo!")
 ```
 Si pruebas esto deberías ver por la pantalla algo así:
 
 ```console
-Hola mundo!
+¡Hola mundo!
 ```
+
+`print` es una función del lenguaje Python que nos permite mostrar mensajes por pantalla y la utillizaremos a menudo para mostrar mensajes, resultados, etc.
 
 ## Comentarios
 
@@ -41,7 +45,7 @@ También se pueden hacer comentarios de varias líneas:
 
 ```Python
 """
-Este es un programa python
+Este es un programa Python
 creado por Ada
 y revisado por Neko
 """
@@ -83,6 +87,7 @@ Neko
 Nota:
 También se puede mostrar el contenido de una variable como parte del mensaje.
 Existen varias opciones para ello:
+
 ## Separar por comas
 Basta con intercalar las variables y el texto con comas:
 ```Python
@@ -192,6 +197,15 @@ se mostrará así:
 ```shell
 Hola,
 qué tal
+```
+
+También se puede definir un texto de varias líneas así:
+
+```python
+cancion = """Era un domingo
+a la tarde
+fui a los coches 
+de choque"""
 ```
 
 - Tabulaciones
@@ -512,6 +526,363 @@ if edad > 17 and edad < (jubilado + 1):
 ```
 
 Generalmente, los operadores condicionales se utilizan dentro de las condiciones de los bloques condicionales, bucles, etc.
+
+# Soluciones a Ejercicios 1
+
+## Ejercicio 1.0
+Escribe un programa que muestre por consola el texto “Hola Mundo!”.
+
+```python
+print("Hola Mundo!")
+```
+Resultado:
+
+```console
+Hola Mundo!
+```
+
+## Ejercicio 1.1
+Luego define las asigna un valor a las variables nombre y edad y muestra su valor por pantalla.
+```python
+nombre = "Ada"
+edad = 14
+print("Tu nombre es", nombre, ", tienes", edad, "años")
+
+# Alternativa:
+# print("Tu nombre es %s, tienes %d años" % (nombre, edad))
+```
+Resultado:
+
+```console
+Tu nombre es Ada y tienes 14 años.
+```
+
+## Ejercicio 1.2
+Escribe un programa que solicite un nombre al usuario y lo guarde en una variable. A continuación debe mostrar un saludo por consola.
+
+
+```python
+nombre = input("Introduce tu nombre: ")
+print("Hola, qué tal estás ", nombre)
+
+# Alternativa:
+# print("Hola, qué tal estás %s" % nombre)
+```
+
+Resultado:
+
+```console
+Introduce tu nombre: Juan
+Hola, qué tal estás Juan
+```
+
+## Ejercicio 1.3
+Escribe un programa que defina una variable de cada tipo visto aquí, y los muestre por la consola.
+
+```python
+nombre = "Ada"
+edad = 42
+peso = 101.54
+vivo = True
+riquezas = None
+amigas = ["Ada", "Ruby", "Miranda"]
+
+print(nombre)
+print(edad)
+print(peso)
+print(vivo)
+print(riquezas)
+print(amigas)
+```
+
+Resultado:
+
+```console
+Ada
+42
+101.54
+true
+null
+["Ada", "Ruby", "Miranda"]
+```
+
+## Ejercicio 1.4
+Escribe un programa que solicite un número al usuario y le sume 10. A continuación debe mostrar el resultado por la consola. Recuerda que conviene hacer un `int` del valor introducido para convertirlo a número entero.
+
+```python
+valor = input("Introduce un número: ")
+resultado = int(valor) + 10
+
+print("La suma es:", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: 32
+La suma es: 42
+```
+
+## Ejercicio 1.5
+Escribe un programa que solicite un número al usuario y le reste 5. A continuación debe mostrar el resultado por la consola.
+
+```python
+valor = input("Introduce un número: ")
+resultado = int(valor) - 5
+
+print("La resta es:", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: 30
+La resta es: 25
+```
+
+## Ejercicio 1.6
+Escribe un programa que solicite un número al usuario y le multiplique 7. A continuación debe mostrar el resultado por la consola.
+
+```python
+valor = input("Introduce un número: ")
+resultado = int(valor) * 7
+
+print("La multiplicación es:", resultado)
+```
+
+Resultado:
+
+```console
+Introduce un número: 3
+La multiplicación es: 21
+```
+
+## Ejercicio 1.7
+Escribe un programa que solicite un número al usuario y lo divida por 2. A continuación debe mostrar el resultado por la consola.
+
+```python
+valor = input("Introduce un número: ")
+resultado = int(valor) / 2
+
+print("La división es:", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: 60
+La división es: 30
+```
+
+## Ejercicio 1.8
+Escribe un programa que solicite un número al usuario y haga módulo 3. A continuación debe mostrar el resultado por la consola.
+
+```python
+valor = input("Introduce un número: ")
+resultado = int(valor) % 3
+
+print("El módulo es:", resultado)
+```
+
+Resultado:
+
+```console
+Introduce un número: 7
+El módulo es: 1
+```
+
+## Ejercicio 1.9
+Escribe un programa que solicite un número al usuario y le aplique un exponencial de 2. A continuación debe mostrar el resultado por la consola.
+
+```python
+valor = input("Introduce un número: ")
+resultado = int(valor) ** 2
+
+print("El exponencial es:", resultado)
+
+```
+Resultado:
+
+```console
+Introduce un número: 4
+El exponencial es: 16
+```
+
+## Ejercicio 1.10
+Escribe un programa que solicite un número al usuario y lo incremente. A continuación debe mostrar el resultado por la consola. Luego debe decrementar el valor y mostrar el resultado por consola.
+
+```python
+valor = input("Introduce un número: ")
+valor += 1
+
+print("El incremento es", valor)
+
+valor -= 1
+
+print("El decremento es", valor)
+```
+
+Resultado:
+
+```console
+Introduce un número: 6
+El incremento es 7
+El decremento es 6
+```
+
+## Ejercicio 1.11
+Escribe un programa que solicite un número al usuario y le reste 5. A continuación debe cambiarle el signo y mostrar el resultado por la consola.
+
+```python
+valor = input("Introduce un número: ")
+resta = int(valor) - 5
+resultado = -resta
+
+print("La resta final es:", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: 4
+La resta final es: 1
+```
+## Ejercicio 1.11
+Escribe un programa que solicite un número al usuario. Después debe comprobar si la operación % 2 es igual a 0 y mostrar el resultado. Si se divide un número por 2 y la resta es 0, significa que ese número es par.
+
+```python
+valor = input("Introduce un número: ")
+modulo = int(valor) % 2
+
+resultado = modulo == 0
+
+print("¿Valor es par?", resultado)
+```
+Resultado
+
+```console
+Introduce un número: 8
+¿Valor es par? True
+```
+
+## Ejercicio 1.11
+Escribe un programa que solicite dos números al usuario. Después debe comparar su desigualdad y debe mostrar el resultado por la consola.
+
+```python
+valor1 = input("Introduce un número: ")
+valor2 = input("Introduce otro número: ")
+
+resultado = valor1 != valor2
+
+print("¿Son distintos?", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: 42
+Introduce otro número: 42
+¿Son distintos? False
+```
+
+## Ejercicio 1.12
+Escribe un programa que solicite un número al usuario. Después debes comprobar si ese número es mayor o igual que 0, es decir, positivo.
+
+```python
+valor = input("Introduce un número: ")
+
+resultado = int(valor) >= 0
+
+print("¿Es positivo?", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: 6
+¿Es positivo? True
+```
+
+## Ejercicio 1.13
+Escribe un programa que solicite un número al usuario. Después debe comparar si el primero es menor que 0 y mostrar el resultado por la consola. Estaríamos detectando si el número es negativo.
+
+```python
+valor = input("Introduce un número: ")
+
+resultado = int(valor) < 0
+
+print("¿Es negativo?", resultado)
+```
+Resultad:
+
+```console
+Introduce un número: -3
+¿Es negativo? True
+```
+
+## Ejercicio 1.14
+Escribe un programa que solicite un número al usuario. Después debe comparar si el primero es mayor que 0 y además es par.
+
+```python
+valor = input("Introduce un número: ")
+valor = int(valor)
+resultado = (valor >= 0) and (valor % 2 == 0)
+
+print("¿Es par y positivo?", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: 14
+¿Es par y positivo? True
+```
+
+## Ejercicio 1.15
+Escribe un programa que solicite dos números al usuario y compruebe si alguno de los dos es positivo. A continuación debe mostrar el resultado por la consola.
+
+```python
+valor1 = input("Introduce un número: ")
+valor2 = input("Introduce otro número: ")
+
+resultado = (int(valor1) >= 0) or (int(valor2) >= 0)
+
+print("¿Es alguno de los dos positivo?", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: -4
+Introduce otro número: 6
+¿Es alguno de los dos positivo? True
+```
+
+## Ejercicio 1.16
+Escribe un programa que solicite un número al usuario y compruebe que nos es ni positivo ni par.
+
+```python
+valor = input("Introduce un número: ")
+valor = int(valor)
+
+positivoYPar = (valor >= 0) and (valor % 2 == 0)
+resultado = not positivoYPar
+print("¿No es par y positivo?", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: -4
+¿No es par y positivo? True
+```
+
+## Ejercicio 1.17
+Define una lista de nombres y muéstralas por pantalla
+
+```python
+nombres = ["Ada", "Bug", "Neko"]
+
+print(nombres) # ["Ada", "Bug", "Neko"]
+
+```
+Resultado:
+
+```console
+["Ada", "Bug", "Neko"]
+```
+
 
 # Condiciones
 En algún momento, los programas necesitan hacer una cosa u otra dependiendo de una condición. Por ejemplo, si un usuario introduce un dato incorrecto, el programa se acaba.
