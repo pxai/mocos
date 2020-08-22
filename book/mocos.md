@@ -882,8 +882,6 @@ Resultado:
 ```console
 ["Ada", "Bug", "Neko"]
 ```
-
-
 # Condiciones
 En algún momento, los programas necesitan hacer una cosa u otra dependiendo de una condición. Por ejemplo, si un usuario introduce un dato incorrecto, el programa se acaba.
 Si un dato tiene determinado valor, se procesa de una forma y si no, de otra. ¿Cómo se consigue ese comportamiento? Mediante condiciones.
@@ -999,9 +997,7 @@ else:
 	print("No conozco ese idioma")
 ```
 
-Podemos tener tantos `elif` como hagan falta.
-
-# Bucles
+Podemos tener tantos `elif` como hagan falta.# Bucles
 Como decíamos al principio, los ordenadores son muy muy tontos. Solo hacen lo que se les diga. Pero por contra, tienen enormes capacidades y una paciencia infinita. No les importará lo más mínimo hacer lo que sea tantas veces como sea necesario.
 
 Una de las tareas más típicas para un ordenador es repetir una instrucción. Esto es algo que se puede conseguir mediante estructuras de bucle. Un bucle es una acción que se repite. Generalmente un bucle tiene una condición para ejecutarse. Si esas condiciones se cumplen, entonces se ejecutarán las órdenes que contenga ese bucle.
@@ -1174,7 +1170,6 @@ Aunque con los dos podrías hacer lo mismo, realmente cada uno tiene un uso más
 El bucle for se utiliza claramente cuando se quiere ejecutar algo un número concreto de veces, ni más ni menos. O bien, como veremos más adelante, cuando se quieren recorrer estructuras de datos como listas de principio a fin.
 
 El bucle while se puede utilizar cuando las condiciones no son muy concretas. Por ejemplo, si queremos que el usuario introduzca un dato, lo podemos hacer en un bucle. El bucle no terminará hasta que el usuario no introduzca un dato bueno (esa sería la condición).
-
 # Estructuras de datos
 Hasta ahora hemos estado jugando con datos simples, variables que contienen un número, un texto, etc. Pero existen otros tipos que nos permiten crear datos más complejos. No es que sean difíciles, simplemente pueden contener algo más que un simple número.
 
@@ -1338,7 +1333,6 @@ print(pantalla["Luigi"]["vida"])  # 7
 ```
 
 Pero ¿Cómo sé que tipo de estructura debo diseñar? Depende de cómo la vayas a usar. A veces necesitarás recorrer todos, otras veces necesitarás acceder a un elemento concreto,... según lo que requiera tu programa tendrás que diseñar una estructura concreta.
-
 
 # Funciones
 Las funciones son pequeños programas dentro de los programas. Esta sería una función que simplemente saca un saludo por pantalla:
@@ -1534,7 +1528,6 @@ Cualquiera puede escribir funciones y agrupar el código en pequeñas partes. Pe
 - Una función debe hacer solo una cosa. Es mejor tener muchas pequeñas funciones que pocas funciones haciendo muchas cosas. Si tu función no cabe en la pantalla o pasa de 24 líneas, quizá debas dividirla en pequeás partes.
 - Una función no debería cambiar nada que haya fuera. Si no quieres tener sorpresas, una función no debería liarla dentro del programa.
 - Una función debería retornar algo, y ese algo siempre debería ser lo mismo para determinados parámetros.
-
 # Clases
 
 Una clase es una estructura de programación que nos permite representar una entidad con sus propiedades y métodos. Es decir, una clase:
@@ -1691,7 +1684,6 @@ Imagina que tuvieramos que hacer el programa de un juego de carreras como Mario 
 - Personaje, con su nombre y otras propiedades.
 - Coche, con sus características de velocidad, resistencia, funciones de aceleración, etc.
 - Circuito, con su longitud, sus túneles, sus premios, etc.
-
 # Librerías
 Conforme los programas se hacen más y más complejos, es probable que tengamos que definir muchas funciones, o separar el diseño en clases, etc.
 Pese a que podríamos tener todo dentro del mismo fichero, no sería la mejor forma de organizar nuestro código. Lo ideal es que separemos cada clase en su propio fichero y cada función o grupo de funciones en su propio fichero.
@@ -1752,8 +1744,7 @@ Por pantalla se podría ver algo así:
 ```console
 Introduce un número: 6
 7
-```
-# Apéndices
+```# Apéndices
 
 ## Sobre Python
 

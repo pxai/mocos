@@ -7,7 +7,8 @@
     "test": "npm run-script test-md && npm run-script test-py",
     "test-md": "npx remark book/*.md",
     "test-py": "python3 -m compileall src",
-    "start": "mdx-deck src/deck.mdx"
+    "start": "mdx-deck src/deck.mdx",
+    "build": ""
   },
   "repository": {
     "type": "git",

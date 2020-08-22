@@ -14,5 +14,12 @@ pandoc --template=${TEMPL}plantilla-kdp.latex \
     -V documentclass=book\
     -S --latex-engine=xelatex  \
     -o ${DIST}handbook.pdf  \
-    mocos.md \
+    00.md \
+    01.md \
+    02.md \
+    03.md \
+    04.md \
+    05.md \
+    06.md \
+    07.md \
             --toc

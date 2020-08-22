@@ -7,7 +7,7 @@ class Instrumento:
         print("Tocando ", self._nombre)
 
     def info (self):
-        return f"{self._nombre} {self._tipo}"
+        return f"${self._nombre} ${self._tipo}"
 
 
 miGuitarra = Instrumento("Guitarra", "cuerda")
