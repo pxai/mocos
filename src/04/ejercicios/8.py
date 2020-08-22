@@ -1,7 +1,7 @@
 import random
 
 def aleatorio (max):
-    return random.randint(0, max)
+    return random.randint(0, max - 1)
 
 def generarPassword (longitud):
     caracteres = ["a","b","c","d","e","f","g","h","i","j","k","l",
