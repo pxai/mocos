@@ -37,7 +37,7 @@ class Fruta(Comida):
         self._vitamina = vitamina
 
     def toString (self):
-        return f"{super().toString()} {self._vitamina}"
+        return f'{super().toString()} {self._vitamina}'
 
 
 class Caramelo(Comida):
@@ -54,7 +54,7 @@ class Caramelo(Comida):
         self._calorias = calorias
 
     def toString (self):
-        return f"{super().toString()} {self._calorias}"
+        return f'{super().toString()} {self._calorias}'
 
 
 class Cesta:
