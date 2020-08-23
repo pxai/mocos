@@ -16,3 +16,5 @@ cache:
 before_script:
   - npm install
   - npm install -g remark-cli
+
+script: npm test
