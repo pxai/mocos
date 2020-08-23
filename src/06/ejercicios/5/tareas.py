@@ -8,7 +8,7 @@ class Tareas:
 
     def crear (self, id, tarea):
         nueva = { "id": id, "tarea": tarea };
-        #self._tarea
+        self._tareas.append(nueva)
 
     def guardar (self):
         fichero = open("tareas.json", "w")

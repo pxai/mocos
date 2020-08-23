@@ -20,4 +20,4 @@ class Jugador:
         self._dorsal = dorsal
 
     def toString (self):
-        return f"{self._nombre} {self._dorsal}"
+        return self._nombre + " " + str(self._dorsal)

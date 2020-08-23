@@ -1,14 +1,5 @@
 [
- {
-  "id": 3,
-  "tarea": "Aprender Go"
- },
- {
-  "id": 5,
-  "tarea": "Investigar Rust"
- },
- {
-  "id": 10,
-  "tarea": "Dormir más"
- }
+    {"tarea": "Aprender Go", "id": 3}, 
+    {"tarea": "Investigar Rust", "id": 5}, 
+    {"tarea": "Dormir más", "id": 10}
 ]

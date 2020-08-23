@@ -9,4 +9,4 @@ miListado.print()
 
 if miListado.existe("eugene"):
     print("Existe!")
-    #print(miListado.posicion('eugene'))
+    print(miListado.posicion('eugene'))
