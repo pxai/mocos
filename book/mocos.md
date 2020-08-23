@@ -2946,6 +2946,61 @@ Básicamente que desde "fuera" no se pueda manipular la clase sin control. De ah
 
 En el caso de la clase Gato, no permitimos que el nombre se pueda cambiar directamente. A través del método "setter" podemos controlar que el nombre que se quiera asignar sea correcto.
 
+## Clases que contiene otras clases
+Con la programación orientada a objetos, tratamos de representar cosas del mundo real a través de clases. Y esas clases pueden estar relacionadas unas con otras.
+
+Por ejemplo, un Colegio puede tener Aulas, un aula puede tener Alumnos y un Profesor, etc.
+Las clases pueden contener por tanto, propiedades que en realidad son otras clases o incluso listas de otras clases.
+
+```python
+class Alumno:
+    def __init__ (self, nombre):
+        self._nombre = nombre
+
+class Aula:
+    def __init__ (self):
+        self._alumnos = []
+    
+    def meteAlumno (self, alumno):
+        self._alumnos.append(alumno)
+
+    def pasarLista (self):
+        for alumno in self._alumnos:
+            print(alumno._nombre)
+
+alumno1 = Alumno("Gumball")
+alumno2 = Alumno("Darwin")
+
+aula = Aula()
+
+aula.meteAlumno(alumno1)
+aula.meteAlumno(alumno2)
+aula.pasarLista()
+```
+Los diseños pueden ser tan complejos como sea necesario para representar lo que necesitemos.
+
+## Métodos estáticos
+Normalmente, para poder utilizar una clase siempre creamos una instancia de la misma, como haciamos en el ejemplo anterio:
+
+```python
+alumno1 = Alumno("Gumball")
+```
+
+En determinadas ocasiones, puede que nos interese crear una clase de la que no querramos hacer copias y que solo sirva para hacer una tarea concreta, como si fuera una función.
+
+Por ejemplo, podemos hacer una clase que dado un nombre, le de un formato correcto, con la primera letra mayúscula y el resto de letras en minúsculas:
+
+```python
+class Formato:
+    @staticmethod
+    def formato (nombre):
+        return nombre[0].upper() + nombre[1:].lower()
+
+print(Formato.formato("gUmBaLl"))
+```
+
+¿Por qué hacer una clase con un método así y no directamente una función? Hacerlo en una clase puede ser útil cuando se trata de una tarea que hay que dividir en pequeñas tareas. Se pueden meter esas tareas como funciones de la clase y encapsular todo mostrando solo la función estática.
+
 ## ¿Por qué usar clases?
 Las clases nos permiten aplicar una técnica llamada programación orientada a objetos. Es otra estrategia para resolver problemas complejos. 
 Con las funciones, dividimos un problema en pequeños problemas. En cambio, con la programación orientada a objetos, lo que tratamos de hacer es dividir el problema en clases. ¿Pero cómo?  representando todo aquello que forma parte del problema utilizando clases.
@@ -3564,7 +3619,186 @@ Resultado:
 
 ```console
 
-```# Librerías
+```# Excepciones
+A estas alturas puede que ya seas excelente en programación. Pero aún así, tus programas pueden seguir fallando, porque hay cosas que escapan al control de tu programa y hacen que tu programa deje de funcionar.
+Por ejemplo, si tu programa espera que el usuario escriba un número pero este escribe letras o no escribe nada, tu programa fallará.
+Si tu programa tiene que leer un fichero pero este fichero no existe, tu programa fallará.
+Si tu programa necesita conectarse a la red pero tu ordenador no está conectado, tu programa fallará.
+Como puedes ver, hay situaciones sobre las que el programa no puede tener control. Por suerte tenemos un mecanismo que nos permite que si se produce una de esas sesiones, al menos nuestro programa no falle y termine sin más. Y ese mecanismo son las Excepciones.
+## Excepciones en Python
+Por ejemplo, supongamos que tenemos un programa muy simple como el siguiente, en el que se le pide un número al usuario y se hace una multiplicación:
+
+```python
+valor = input("Introduce un número: ")
+valor = int(valor)
+cuadrado = valor * valor
+print("El cuadrado es: ", cuadrado)
+```
+Si el usuario introduce lo que no debe, veremos lo siguiente:
+```console
+Introduce un número: x
+Traceback (most recent call last):
+  File "saltaexcepcion.py", line 2, in <module>
+    valor = int(valor)
+ValueError: invalid literal for int() with base 10: 'x'
+```
+Mediante una excepción, podemos evitar que el programa falle estrepitosamente y al menos mostrar un mensaje de error al usuario. La excepción es una estructura más en el lenguaje, y tiene la siguiente forma:
+
+```python
+try:
+	código_que_puede_fallar
+except:
+	código_que_se_ejecuta_si_hay_error
+```
+
+Veamos el ejemplo anterior, protegiendo el código sensible dentro del bloque de excepción:
+
+```python
+valor = input("Introduce un número: ")
+
+try:
+    valor = int(valor)
+    cuadrado = valor * valor
+    print("El cuadrado es: ", cuadrado)
+except:
+    print("Error al convertir dato!")
+```
+Ahora si se mete un dato incorrecto, veremos lo siguiente:
+
+```console
+Introduce un número: x
+Error al convertir dato!
+```
+
+También se podría mejorar el programa para que volviera a intentar solicitar el valor y no terminar. 
+
+Existen excepciones específicas según el tipo de error, las cuales se pueden usar para mostrar un mensaje de error más específico.
+
+# Manejo de ficheros
+Hasta ahora hemos manejado pocos datos, lo que el usuario escribe por pantalla o lo que tenemos en variables. Pero si queremos utilizar cantidades más grandes de datos, podemos leer y escribir en ficheros.
+Existen toda clase de ficheros, desde texto, multimedia (música, vídeo) hasta binarios. Todos ellos se pueden manejar desde un programa. Como una introducción, vamos a ver cómo podemos manejar ficheros de texto.
+
+## Lectura de ficheros
+Para poder leer un fichero, necesitamos por un lado que exista ese fichero, luego ya lo podemos abrir y leer.
+En el siguiente código, se lee un fichero que está en el mismo sitio que el propio programa:
+
+```python
+fichero = open("texto.txt", "r")
+contenido = fichero.read()
+print(contenido)
+fichero.close()
+```
+A tener en cuenta:
+- Para leer el fichero, primero hay que abrirlo con `open`
+- Al abrir el fichero hay que indicar su nombre y si está en otro directorio, la ruta hacia el mismo. Si estuviera dentro de carpeta `fichero`, la ruta sería `fichero/texto.txt`.
+- El parámetro `"r"` indica que el fichero lo leemos solo en modo lectura o `read`.
+El fichero de texto podría ser algo así, y el programa mostraría eso mismo por pantalla.
+
+```console
+Este es un texto
+de varias líneas
+Y se puede leer
+muy fácilmente
+```
+### ¿Leyendo línea a línea?
+En el ejemplo anterior, hemos leído todo el contenido del fichero de golpe, guardándolo en una variable de texto. Pero a veces, puede que nos interese leer el fichero línea a línea. Para ello debemos utilizar la función `readline` como se ve a continuación:
+
+## Ficheros JSON
+Los ficheros de texto simples como el anterior pueden contener información, pero no se trata de datos muy manejables para un programa. Si queremos leer o guardar datos que un programa pueda manipular fácilmente, conviene usar algún formato concreto.
+Uno de los formatos más populares en programación es el formato JSON. Es un formato que se parece a las estructuras de diccionario en Python. Incluso también tiene la opción de representar listas como las del lenguaje.
+El siguiente contenido está en formato JSON. Se trata de una lista que contiene varios objetos.
+```javascript
+[
+    {"id": 66, "nombre": "Ada"},
+    {"id": 2, "nombre": "Neko"},
+    {"id": 4, "nombre" : "Bug"}
+]
+```
+Lo bueno de ese formato es que se puede importar a nuestro programa Python fácilmente, siempre que sea correcto, claro.
+
+Para poder leer ese contenido y convertir esos datos en una lista de diccionarios, utilizaremos la librería `json`.
+Mediante la función `json.load` podremos cargar de forma automática el contenido de ese fichero en una variable. A partir de ahí podremos manejar todo ese contenido como una lista, ¡donde cada elemento es un diccionario!:
+```python
+import json
+
+fichero = open("texto.json", "r")
+contenido = json.load(fichero)
+
+for personaje in contenido:
+    print(personaje["nombre"])
+
+fichero.close()
+```
+
+Por pantalla veríamos:
+
+```console
+Ada
+Neko
+Bug
+```
+## Escritura de ficheros
+Para escribir ficheros, el proceso es similar pero debemos hacer dos cosas:
+- Abrir el fichero en modo escritura
+- Utilizar la función `write` para escribir contenido.
+
+Con el siguiente código, escribiremos un par de líneas de texto en el fichero:
+
+```python
+fichero = open("texto.txt", "w")
+fichero.write("Escribo una línea\n")
+fichero.write("Escribo otra línea\n")
+fichero.close()
+```
+
+¡OJO! Si escribimos de esa manera, estaremos machacando el contenido del fichero.
+Contenido del fichero:
+
+```console
+Escribo una línea
+Escribo otra línea
+```
+
+Si queremos escribr añadiendo contenido, debemos abrir el fichero en modo`"a"`:
+
+```python
+fichero = open("texto.txt", "a")
+fichero.write("Añado una línea\n")
+fichero.write("Añado otra línea\n")
+fichero.close()
+```
+
+Ahora el contenido del fichero sería:
+
+```console
+Escribo una línea
+Escribo otra línea
+Añado una línea
+Añado otra línea
+```
+
+## Escribir en un fichero json
+En el caso de un fichero en formato JSON, lo que nos tiene que preocupar es que al momento de escribir, convirtamos nuestros datos a texto.
+Por suerte para eso hay una función que lo hace de forma automática: `json.dumps()`
+
+En el siguiente ejemplo, se carga el contenido de un fichero json dentro de una variable.
+Luego añadimos un elemento a esa lista. Abrimos el fichero otra vez, en modo escritura, y hacemos un `write` utilizando json.dumps para convertir el contenido en texto:
+
+```python
+import json
+
+fichero = open("texto.json", "r")
+contenido = json.load(fichero)
+fichero.close()
+
+personaje = { "id": 666, "nombre": "Gumball" }
+contenido.append(personaje)
+
+fichero = open("texto.json", "w")
+fichero.write(json.dumps(contenido))
+fichero.close()
+```
+# Librerías
 Conforme los programas se hacen más y más complejos, es probable que tengamos que definir muchas funciones, o separar el diseño en clases, etc.
 Pese a que podríamos tener todo dentro del mismo fichero, no sería la mejor forma de organizar nuestro código. Lo ideal es que separemos cada clase en su propio fichero y cada función o grupo de funciones en su propio fichero.
 
@@ -3629,15 +3863,412 @@ Introduce un número: 6
 ## Soluciones a Ejercicios 
 
 ### Ejercicio 6.0
+En un ejercicio anterior, se proponía hacer un generador de contraseñas. Utiliza el mismo código pero créalo dentro de un fichero. Crea otro fichero donde debes importar ese código y utilizarlo.
 
+Fichero `generar.py`:
 
 ```python
+import random
 
+def aleatorio (max):
+    return random.randint(0, max - 1)
+
+def generarPassword (longitud):
+    caracteres = ["a","b","c","d","e","f","g","h","i","j","k","l",
+        "m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z",
+        "0","1","2","3","4","5","6","7","8","9",".","-","_","!","$"]
+    password = ""
+
+    for i in range(longitud):
+        caracter = caracteres[aleatorio(len(caracteres))]
+        password = password + caracter
+
+    return password
+```
+Y lo usamos en fichero `1.py`:
+```python
+import generar
+
+password = generar.generarPassword(8)
+
+print(password)
 ```
 Resultado:
 
 ```console
+g3ep-ahx
+```
 
+### Ejercicio 6.0
+Define una clase llamada `Menu` que tenga los siguientes métodos:
+1. `def init__(self)`: recibe como parámetro un array de opciones (strings).
+2. `def mostrar (self)`: muestra las opciones precedidas de un número llamando a console.log
+3. `def seleccionar(self, numero)`: devuelve true si el número seleccionado está en el menú, en caso contrario devuelve false.
+Debes exportar la clase, y utilizarla en otro fichero.
+
+Fichero `menu.py`:
+```python
+class Menu:
+    def __init__ (self, opciones):
+        self._opciones = opciones
+
+    def mostrar (self):
+        for i in range(len(self._opciones)):
+            print(f"{i+1} {self._opciones[i]}")
+
+    def seleccionar (self, numero):
+        return numero > 0 and numero <= len(self._opciones)
+
+```
+
+Fichero `2.py`:
+```python
+import menu
+miMenu = menu.Menu(["Mostrar", "Eliminar", "Salir"])
+
+miMenu.mostrar()
+
+if miMenu.seleccionar(1):
+    print("Opción 1 presente")
+else:
+    print("Opción 1 no presente")
+```
+
+Resultado:
+
+```console
+1 Mostrar
+2 Eliminar
+3 Salir
+Opción 1 presente
+```
+
+### Ejercicio 6.0
+Crea una clase llamada `Fichero` con los siguientes métodos:
+1. `def __init__(self, fichero)`: recibe como parámetro el fichero a abrir.
+2. `def leer(self)`: devuelve una cadena con el contenido del fichero.
+3. `def escribir(self, contenido)`: escribe en el fichero el contenido que se le pasa como parámetro.
+	Debes exportar la clase, y utilizarla en otro fichero.
+
+Fichero `fichero.py`:
+```python
+class Fichero:
+    def __init__ (self, nombreFichero):
+        self._nombreFichero = nombreFichero
+
+    def leer (self):
+        fichero = open(self._nombreFichero, "r")
+        datos = fichero.read()
+        fichero.close()
+
+        return datos
+
+    def escribir (self, contenido):
+        fichero = open(self._nombreFichero, "w+")
+        fichero.write(contenido)
+        fichero.close()
+
+```
+
+Fichero `3.py`:
+```python
+from datetime import date
+
+import fichero
+
+miFichero = fichero.Fichero("3.txt")
+
+print("Contenido anterior: ", miFichero.leer())
+
+miFichero.escribir("Contenido cambiado!!! " + str(date.today()))
+print("Conten", miFichero.leer())
+```
+Fichero de texto `3.txt`:
+```console
+Este es el contenido actual.
+```
+Resultado:
+
+```console
+Contenido anterior:  Contenido cambiado!!! 2020-08-18
+Conten Contenido cambiado!!! 2020-08-23
+```
+
+### Ejercicio 6.0
+Crea una clase llamada `Listado` con los siguientes métodos:
+1. `def __init__(self, fichero)`: recibe como parámetro el nombre de un fichero json cuyo contenido debe cargar en un array llamado `_datos` que se definirá como atributo. El contenido debe ser un array de objetos con el formato `{"id": 1, "nombre": "Juan"}`
+2. `def existe(self, nombre)`: debe devolver `True`/`False` si el nombre que se pasa como parámetro existe en la lista.
+3. `def aMinusculas(self)`: debe pasar todos los nombres de la lista a minúsculas.
+4. `def posicion(self, nombre)`: debe devolver la posición donde se encuentra ese nombre.
+	Debes exportar la clase, y utilizarla en otro fichero.
+
+Fichero `listado.py`:
+```python
+import json
+
+class Listado:
+    def __init__ (self, nombreFichero):
+        contenido = open(nombreFichero, "r")
+        self._datos = json.load(contenido)
+        contenido.close()
+
+    def existe (self, nombre):
+        for dato in self._datos:
+            if dato["nombre"] == nombre:
+                return True
+
+        return False
+
+    def aMinusculas (self):
+        self._datos = list(map(lambda dato: { "id": dato["id"], "nombre": dato["nombre"].lower() }, self._datos))
+
+    def posicion (self, nombre):
+        i = 0
+        for dato in self._datos:
+            if dato["nombre"] == nombre:
+                return i
+            i += 1
+        return -1
+
+    def print (self):
+        for dato in self._datos:
+            print(dato)
+
+```
+
+Fichero `4.py`:
+```python
+import listado
+miListado = listado.Listado("4.json")
+
+if miListado.existe("eugene"):
+    print("Existe!")
+
+miListado.aMinusculas()
+miListado.print()
+
+if miListado.existe("eugene"):
+    print("Existe!")
+    print(miListado.posicion('eugene'))
+```
+
+Fichero `4.json`:
+```javascript
+[
+    {
+        "id": 3,
+        "nombre": "Juan"
+    },
+    {
+        "id": 5,
+        "nombre": "Eugene"
+    },
+    {
+        "id": 10,
+        "nombre": "Paul"
+    }
+]
+```
+Resultado:
+
+```console
+{'id': 3, 'nombre': 'juan'}
+{'id': 5, 'nombre': 'eugene'}
+{'id': 10, 'nombre': 'paul'}
+Existe!
+1
+```
+
+### Ejercicio 6.0
+Crea una clase llamada Tareas con los siguientes métodos:
+1- `def __init__(self)`: debe abrir el fichero llamado tareas.json y cargar en una lista los objetos que tendrán el siguiente formato: {id: 1, tarea: “Aprende algo”}. Esa lista será un atributo.
+2- `def crear(self, tarea)`: genera un nuevo objeto y lo guarda en la lista.
+3- `def eliminar(self, id)`: elimina una tarea de la lista que tenga ese id.
+4- `def guardar(self)`: guarda la lista en el fichero tareas.json.
+5- `def mostrar(self)`: devuelve todas las tareas en un string
+Debes exportar la clase, y utilizarla en otro fichero.
+
+Fichero `tareas.py`
+```python
+import json
+
+class Tareas:
+    def __init__ (self):
+        fichero = open("tareas.json", "r")
+        self._tareas = json.load(fichero)
+        fichero.close()
+
+    def crear (self, id, tarea):
+        nueva = { "id": id, "tarea": tarea };
+        self._tareas.append(nueva)
+
+    def guardar (self):
+        fichero = open("tareas.json", "w")
+        fichero.write(json.dumps(self._tareas))
+        fichero.close()
+
+    def eliminar(self, id):
+        self._tareas = list(filter(lambda dato: dato["id"] != id, self._tareas))
+
+    def mostrar (self):
+        resultado = ""
+        for dato in self._tareas:
+            resultado += json.dumps(dato) + "\n"
+
+        return resultado
+
+```
+
+Fichero `tareas.json`:
+```javascript
+[
+    {"tarea": "Aprender Go", "id": 3}, 
+    {"tarea": "Investigar Rust", "id": 5}, 
+    {"tarea": "Dormir más", "id": 10}
+]```
+
+Fichero `5.py`:
+```python
+import tareas
+misTareas = tareas.Tareas()
+
+print(misTareas.mostrar(), "\n---")
+
+misTareas.crear(2, "Comer")
+print(misTareas.mostrar(), "\n---")
+
+misTareas.eliminar(2)
+print(misTareas.mostrar(), "\n---")
+
+misTareas.crear(66, "Leer")
+print(misTareas.mostrar(), "\n---")
+misTareas.guardar()
+```
+Resultado:
+
+```console
+{"tarea": "Aprender Go", "id": 3}
+{"tarea": "Investigar Rust", "id": 5}
+{"tarea": "Dormir m\u00e1s", "id": 10}
+ 
+---
+{"tarea": "Aprender Go", "id": 3}
+{"tarea": "Investigar Rust", "id": 5}
+{"tarea": "Dormir m\u00e1s", "id": 10}
+{"tarea": "Comer", "id": 2}
+ 
+---
+{"tarea": "Aprender Go", "id": 3}
+{"tarea": "Investigar Rust", "id": 5}
+{"tarea": "Dormir m\u00e1s", "id": 10}
+ 
+---
+{"tarea": "Aprender Go", "id": 3}
+{"tarea": "Investigar Rust", "id": 5}
+{"tarea": "Dormir m\u00e1s", "id": 10}
+{"tarea": "Leer", "id": 66}
+ 
+---
+```
+
+### Ejercicio 6.0
+Crea una clase llamada `Jugador` que contenga lo siguiente:
+1. `def __init__(self, nombre, dorsal)`: asigna los parámetros a los atributos `_nombre` y `_dorsal`.
+2. Métodos get/set para nombre y dorsal
+3. `def info(self)`: devuelve un string con la información del jugador.
+Haz que la clase sea exportable.
+
+Crea una clase llamada `Equipo` que contenga lo siguiente:
+1. `def cargar(self)`: debe abrir un fichero llamado `jugadores.json` que contendrá un array de objetos jugador `[{nombre: "Pele", dorsal: 10},{…},…]`.
+Y debe crear por cada objeto del fichero una instancia de la clase `Jugador` y meterla en una lista llamado `this._jugadores`.
+2. `def mostrar(self)`: debe mostrar toda la lista de jugadores.
+3. `def fichaje(self, nombre, dorsal)`: debe introducir un jugador nuevo en la lista, creando una instancia de `Jugador`.
+En la clase `Equipo` tendrás que importar la clase `Jugador` para poder utilizarla.
+Debes exportar la clase `Equipo`, y utilizarla en otro fichero.
+
+Fichero `jugador.py`:
+```python
+class Jugador:
+    def __init__ (self, nombre, dorsal):
+        self._nombre = nombre
+        self._dorsal = dorsal
+
+    @property
+    def nombre (self):
+        return self._nombre
+
+    @nombre.setter
+    def nombre (self, nombre):
+        self._nombre = nombre
+
+    @property
+    def dorsal (self):
+        return self._dorsal
+
+    @dorsal.setter
+    def dorsal (self, dorsal):
+        self._dorsal = dorsal
+
+    def toString (self):
+        return f"{self._nombre} {self._dorsal}"
+```
+
+Fichero `equipo.py`:
+```python
+import json
+import jugador
+
+class Equipo:
+    def cargar (self):
+        contenido = open("./jugadores.json")
+        jugadores = json.load(contenido)
+        print("Loaded: ", jugadores)
+        self._jugadores = []
+        for j in jugadores:
+            self._jugadores.append(jugador.Jugador(j["nombre"], j["dorsal"]))
+
+    def fichaje (self, nombre, dorsal):
+        nuevoFichaje = jugador.Jugador(nombre, dorsal)
+        self._jugadores.append(nuevoFichaje)
+
+    def mostrar (self):
+        for jugador in self._jugadores:
+            print(jugador.toString())
+```
+
+Fichero `jugadores.json`:
+```python
+[
+    {
+        "nombre": "Maradona",
+        "dorsal": 10
+    },
+    {
+        "nombre": "Pele",
+        "dorsal": 8
+    }
+]
+```
+
+Fichero `6.py`:
+```python
+import equipo
+miEquipo = equipo.Equipo()
+
+miEquipo.cargar()
+miEquipo.mostrar()
+miEquipo.fichaje("Gento", 11)
+miEquipo.mostrar()
+```
+Resultado:
+
+```console
+Loaded:  [{'dorsal': 10, 'nombre': 'Maradona'}, {'dorsal': 8, 'nombre': 'Pele'}]
+Maradona 10
+Pele 8
+Maradona 10
+Pele 8
+Gento 11
 ```# Apéndices
 
 ## Sobre Python
