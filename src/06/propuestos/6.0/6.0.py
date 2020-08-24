@@ -2,7 +2,7 @@ from datetime import date
 
 import fichero
 
-miFichero = fichero.Fichero("3.txt")
+miFichero = fichero.Fichero("6.0.txt")
 
 print("Contenido anterior: ", miFichero.leer())
 
