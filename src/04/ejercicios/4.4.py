@@ -6,12 +6,7 @@ def positivo (valor):
 
 
 def potencia (valor1, valor2):
-    resultado = valor1
-    while valor2 - 1 > 0:
-        resultado *= valor1
-        valor2 = valor2 - 1
-
-    return resultado
+    return valor1 ** valor2
 
 print(positivo(-1))
 print(potencia(2, 3))
