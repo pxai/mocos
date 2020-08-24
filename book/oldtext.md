@@ -527,7 +527,7 @@ if edad > 17 and edad < (jubilado + 1):
 
 Generalmente, los operadores condicionales se utilizan dentro de las condiciones de los bloques condicionales, bucles, etc.
 
-# Soluciones a Ejercicios 1
+# Ejercicios propuestos1
 
 ## Ejercicio 1.0
 Escribe un programa que muestre por consola el texto “Hola Mundo!”.

@@ -528,7 +528,7 @@ if edad > 17 and edad < (jubilado + 1):
 
 Generalmente, los operadores condicionales se utilizan dentro de las condiciones de los bloques condicionales, bucles, etc.
 
-## Soluciones a Ejercicios 
+## Ejercicios propuestos
 
 ### Ejercicio 0.0
 Escribe un programa que muestre por consola el texto “Hola Mundo!”.
@@ -543,7 +543,8 @@ Hola Mundo!
 ```
 
 ### Ejercicio 0.1
-Luego define las asigna un valor a las variables nombre y edad y muestra su valor por pantalla.
+Crea dos variables `nombre` y `edad` y muestra su valor por pantalla.
+
 ```python
 nombre = "Ada"
 edad = 14
@@ -1002,7 +1003,7 @@ Podemos tener tantos `elif` como hagan falta.
 
 ## Ejercicios 
 
-## Soluciones a Ejercicios 
+## Ejercicios propuestos
 
 ### Ejercicio 1.0
 Escribe un programa que solicite un número al usuario y compruebe si es negativo. So es negativo, debe mostrar un mensaje por consola.
@@ -1442,7 +1443,7 @@ El bucle for se utiliza claramente cuando se quiere ejecutar algo un número con
 El bucle while se puede utilizar cuando las condiciones no son muy concretas. Por ejemplo, si queremos que el usuario introduzca un dato, lo podemos hacer en un bucle. El bucle no terminará hasta que el usuario no introduzca un dato bueno (esa sería la condición).
 
 
-## Soluciones a Ejercicios 
+## Ejercicios propuestos
 
 ### Ejercicio 2.0
 Escribe un programa que solicite dos números al usuario. El primero debe ser menor que el segundo. El bucle debe mostrar los números que hay en el intervalo entre esos dos números.
@@ -1908,7 +1909,7 @@ print(pantalla["Luigi"]["vida"])  # 7
 
 Pero ¿Cómo sé que tipo de estructura debo diseñar? Depende de cómo la vayas a usar. A veces necesitarás recorrer todos, otras veces necesitarás acceder a un elemento concreto,... según lo que requiera tu programa tendrás que diseñar una estructura concreta.
 
-## Soluciones a Ejercicios 
+## Ejercicios propuestos
 
 ### Ejercicio 3.0
 Escribe un programa que inicie una lista de 5 números (iniciados a 0), otro de 5 nombres iniciados a mano y otro de valores 5 booleanos (iniciados a false)
@@ -2449,7 +2450,7 @@ Cualquiera puede escribir funciones y agrupar el código en pequeñas partes. Pe
 - Una función no debería cambiar nada que haya fuera. Si no quieres tener sorpresas, una función no debería liarla dentro del programa.
 - Una función debería retornar algo, y ese algo siempre debería ser lo mismo para determinados parámetros.
 
-## Soluciones a Ejercicios 
+## Ejercicios propuestos
 
 ### Ejercicio 4.0
 Escribe un programa con tres funciones llamadas dias, tardes y noches. Cada una debe mostrar un saludo distinto, "Buenos días", "Buenas tardes" y "Buenas noches" respectivamente. Añade las llamadas de a las tres funciones.
@@ -3010,7 +3011,7 @@ Imagina que tuvieramos que hacer el programa de un juego de carreras como Mario 
 - Coche, con sus características de velocidad, resistencia, funciones de aceleración, etc.
 - Circuito, con su longitud, sus túneles, sus premios, etc.
 
-## Soluciones a Ejercicios 
+## Ejercicios propuestos
 
 ### Ejercicio 5.0
 Escribe un programa que defina una clase llamada Persona que contenga los métodos dormir, comer y saludar. Dentro de cada método debe sacar algún texto por consola. Crea una instancia de la clase y llama a los distintos métodos.
@@ -3860,7 +3861,7 @@ Introduce un número: 6
 7
 ```
 
-## Soluciones a Ejercicios 
+## Ejercicios propuestos
 
 ### Ejercicio 6.0
 En un ejercicio anterior, se proponía hacer un generador de contraseñas. Utiliza el mismo código pero créalo dentro de un fichero. Crea otro fichero donde debes importar ese código y utilizarlo.

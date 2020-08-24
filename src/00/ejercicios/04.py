@@ -1,4 +1,4 @@
 valor = input("Introduce un número: ")
-resultado = int(valor) - 5
+resultado = int(valor) + 10
 
-print("La resta es:", resultado)
+print("La suma es:", resultado)

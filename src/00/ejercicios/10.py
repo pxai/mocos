@@ -1,6 +1,8 @@
 valor = input("Introduce un número: ")
-modulo = int(valor) % 2
+valor += 1
 
-resultado = modulo == 0
+print("El incremento es", valor)
 
-print("¿Valor es par?", resultado)
+valor -= 1
+
+print("El decremento es", valor)

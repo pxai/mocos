@@ -1,4 +1,4 @@
 valor = input("Introduce un número: ")
-resultado = int(valor) * 7
+resultado = int(valor) - 5
 
-print("La multiplicación es:", resultado)
+print("La resta es:", resultado)
