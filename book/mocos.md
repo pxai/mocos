@@ -18,6 +18,35 @@ enfrentado a juegos en los que los enemigos parecen ser muy listos. En realidad,
 Nota2:
 Si quieres instalarte un entorno de programación convencional, ve al apéndice X.
 
+# El entorno
+En cualquier ordenador con conexión a internet, accede a:
+
+https://repl.it/
+
+[Site de replt.it](https://raw.githubusercontent.com/pxai/mocos/master/book/images/00.png)
+
+Desde ahí puedes pulsar el botón `Start coding`:
+
+[Start Coding en replt.it](https://raw.githubusercontent.com/pxai/mocos/master/book/images/01.png)
+
+Y seleccionar el lenguaje **Python**:
+
+[Selección de Python en replt.it](https://raw.githubusercontent.com/pxai/mocos/master/book/images/02.png)
+
+Una vez hecho, se cargará el entorno de programación:
+
+[Entorno de desarrollo de replt.it](https://raw.githubusercontent.com/pxai/mocos/master/book/images/03.png)
+
+- A la izquierda, tienes el editor donde puedes escribir el programa
+- A la derecha, la consola, donde verás el resultado cuando ejecutes el programa
+- En la parte superior, el botón **Run** con el que podrás ejecutar el programa tantas veces como quieras.
+
+Te recomendamos que te des de alta en el sitio repl.it. De esa manera podrás tener guardados y localizados todos los programas que vayas haciendo.
+
+Alternativas online:
+- https://paiza.io/es
+- https://www.programiz.com/python-programming/online-compiler/
+
 # Hola mundo
 El primer programa que suelen escribir los programadores es uno que simplemente saque un mensaje por pantalla. Y ese mensaje suele ser un saludo al mundo: "¡Hola mundo!"
 Se hace así:
@@ -1873,6 +1902,32 @@ Resultado:
 La media es:  5.0600000000000005
 ```
 
+## Extraer partes de la lista
+Usando el índice numérico, se pueden sacar partes de una lista, creando una sublista de la misma. Para eso basta con indicar un rango de índices:
+
+```python
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+numeros[0:4]  # [1, 2, 3, 4]
+numeros[5:8]  # [6, 7, 8]
+```
+También se pueden sacar los primeros elementos:
+```python
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+numeros[:6] # [1, 2, 3, 4, 5, 6]
+```
+
+O los últimos valores
+```python
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+numeros[-4:] # [6, 7, 8, 9]
+```
+O simplemente el último de todos:
+```python
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+numeros[-1] # [9]
+```
+
+
 ## Añadir y eliminar elementos
 Si queremos añadir un elemento a una lista, basta con utilizar la función `append`:
 
@@ -2135,8 +2190,154 @@ print(pantalla["Luigi"]["vida"])  # 7
 
 Pero ¿Cómo sé que tipo de estructura debo diseñar? Depende de cómo la vayas a usar. A veces necesitarás recorrer todos, otras veces necesitarás acceder a un elemento concreto,... según lo que requiera tu programa tendrás que diseñar una estructura concreta.
 
-## Ejercicios propuestos
+# Textos
+El tipo de dato texto, también llamado cadena o *string*, es fundamental en los programas. Por eso dispone de muchas utilidades para facilitarnos el manejo de este tipo de datos. 
+A continuación, veremos algunas funciones útiles para los textos, pero antes, conviene revelar algo sobre el texto:
 
+## Los textos son listas
+Efectivamente, para el ordenador, un texto es como una lista. Una lista o cadena de letras, y la podemos tratar como tal:
+
+```python
+texto = "Hola soy Ada"
+texto[1] # "o"
+```
+Incluso podemos recorrer el texto como si fuera una lista:
+
+```python
+texto = "Ada"
+
+for caracter in texto:
+    print(caracter)
+```
+La salida sería:
+```
+A
+d
+a
+```
+
+También podemos saber la longitud de un texto con la función `len()`:
+
+```python
+texto = "Neko maulla"
+len(texto)  # 11
+```
+Pero si duda, lo más interesante es que podemos extrar la parte que queramos del texto indicando el inicio y el final:
+
+```python
+texto = "Python mola"
+texto[0:6]  # "Python"
+texto[7:12]  # "mola"
+```
+También se pueden sacar los primeros caracteres
+```python
+texto = "Python mola"
+texto[:6] # "Python"
+```
+
+O los últimos caracteres
+```python
+texto = "Python mola"
+texto[-4:] # "mola"
+```
+O simplemente el último de todos:
+```python
+texto = "Python mola"
+texto[-1] # "a"
+```
+
+## Mayúsculas/Minúsculas
+Tenemos una serie de funciones para convertir texto a mayúsculas o minúsculas:
+
+```python
+texto = "Profesora Ada"
+texto.upper() # PROFESORA ADA
+texto.lower() # Profesora Ada
+```
+
+También tenemso una función llamada `title()`, la cual cambia cada palabra dentro de un texto, poniendo la primera letra en mayúsculas.
+
+```python
+texto = "esto es una frase"
+texto.title() # Esto Es Una Frase
+```
+
+## split: de texto a array
+split es una interesante función que parte un texto en cachos y lo convierte en una lista:
+
+```python
+texto = "ven conmigo si quieres vivir"
+palabras = texto.split() # ["ven", "conmigo", "si", "quieres", "vivir"]
+```
+Por defecto el corte del split se hace en los espacios del texto. Pero se puede indicar cualquier otro separador, por ejemplo `;`:
+
+```python
+texto = "Ada;Neko;Bug"
+nombres = texto.split(";") # ["Ada", "Neko", "Bug" ]
+```
+
+## Búsquedas
+En ocasiones nos interesará buscar una palabra dentro de un texto. Para eso podemos usar la función `find`. En caso de encontrar la palabra, muestra la posición en la que se empieza esa palabra. Si no lo encuentra, devuelve `-1`.
+
+```python
+palabras = "La mejor profesora es Ada, sin duda"
+encontrado = palabras.find("mejor")  # 3
+encontrado = palabras.find("Ada")  # 22
+noEncontrado = palabras.find("xxx")  # -1
+```
+
+Si queremos saber si un texto empieza de alguna manera, se puede usar `startswith()`
+
+```python
+palabras = "Python es un buen lenguaje"
+empieza = palabras.startswith("Py") # True
+empieza = palabras.startswith("es") # False
+```
+
+Mientras que si queremos saber si un texto acaba de una manera, se puede usar `endswith()`:
+```python
+palabras = "Python es un buen lenguaje"
+acaba = palabras.endswith("aje") # True
+acaba = palabras.startswith("ajes") # False
+```
+
+## Eliminar sobrantes
+Los textos pueden empezar o terminar con espacios en blanco u otros caratecteres que quizá nos interese eliminar, como los saltos de línea. Para quitar esas partes sobrantes de un texto, se pueden usar las siguientes funciones.
+
+Con `lstrip()` se eliminan los espacios al inicio del texto:
+
+```python
+texto = "  Tengo espacios      "
+limpio = texto.lstrip() # "Tengo espacios      "
+```
+
+Con `lstrip()` se eliminan los espacios al inicio del texto:
+
+```python
+texto = "  Tengo espacios      "
+limpio = texto.rstrip()  # "  Tengo espacios"
+```
+
+Y con `strip()` quitamos los espacios de ambos lados:
+```python
+texto = "  Tengo espacios      "
+limpio = texto.strip()  # "Tengo espacios"
+```
+
+Por defecto se quitan espacios, pero podemos indicar cualquier texto que querramos quitar:
+
+```python
+texto = "--Texto con guión"
+limpio = texto.lstrip("-") # "Texto con guión"
+```
+También los saltos de línea cuando leemos texto desde un fichero o.
+
+```python
+texto = "Esto tiene un salto de línea\n"
+limpio = texto.rstrip("\n") 
+```
+
+## Ejercicios propuestos
 
 ### Ejercicio 3.0
 Escribe un programa que inicie una lista de 5 números (iniciados a 0), otro de 5 nombres iniciados a mano y otro de valores 5 booleanos (iniciados a false)
