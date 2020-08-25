@@ -32,6 +32,18 @@ Si pruebas esto deberías ver por la pantalla algo así:
 
 `print` es una función del lenguaje Python que nos permite mostrar mensajes por pantalla y la utillizaremos a menudo para mostrar mensajes, resultados, etc.
 
+### ¡Te toca! Ejercicio 0.0
+Escribe un programa que muestre por pantalla tu nombre.
+
+```python
+print("Hola soy Ada")
+```
+Resultado:
+
+```console
+Hola soy Ada
+```
+
 ## Comentarios
 
 En un programa, se pueden poner comentarios. Se trata de texto que no se ejecuta y que el ordenador ignora completamente. ¿para qué se utiliza? Generalmente los comentarios se utilizan para explicar determinadas partes del programa.
@@ -103,6 +115,24 @@ Hola, me llamo Bug
 Soy Bug tengo 10 años
 ```
 
+
+### ¡Ahora tú! Ejercicio 0.1
+Crea dos variables `nombre` y `edad` y muestra su valor por pantalla.
+
+```python
+nombre = "Ada"
+edad = 14
+print("Tu nombre es", nombre, ", tienes", edad, "años")
+
+# Alternativa:
+# print("Tu nombre es %s, tienes %d años" % (nombre, edad))
+```
+Resultado:
+
+```console
+Tu nombre es Ada y tienes 14 años.
+```
+
 ## String de formato
 OJO, esta opción solo está disponible desde Python 3.6
 Un mensaje que precedido de la letra `f` y las variables entre llaves:
@@ -142,6 +172,7 @@ Que por pantalla sería:
 ```console
 Hola, me llamo Neko y tengo 5 años
 ```
+
 # Tipos de datos
 ¡Datos! Es la materia prima con la que trabajan los programas. Son el elemento que transforman. Un programa recibe datos, los transforma y los devuelve como un resultado.
 Los datos pueden ser de distinto tipo, según lo que nuestro programa tenga que hacer. Pueden ser números, puedes ser palabras o textos, pueden incluso ser nulos o vacíos.
@@ -273,6 +304,36 @@ dato = None
 ```
 En realidad no se suele utilizar para crear variables. None representa un valor en situaciones especiales. Por ejemplo, si se trata de sacar información de un sitio en el que no hay nada como un fichero, o un dato que el usuario no nos da.
 
+### Ejercicio 0.2
+Escribe un programa que defina una variable de cada tipo visto aquí, y los muestre por la consola.
+
+```python
+nombre = "Ada"
+edad = 42
+peso = 101.54
+vivo = True
+riquezas = None
+amigas = ["Ada", "Ruby", "Miranda"]
+
+print(nombre)
+print(edad)
+print(peso)
+print(vivo)
+print(riquezas)
+print(amigas)
+```
+
+Resultado:
+
+```console
+Ada
+42
+101.54
+true
+null
+["Ada", "Ruby", "Miranda"]
+```
+
 # Leyendo datos
 Para que un programa pueda hacer algo, muchas veces necesita que el usuario introduzca un dato. Por ejemplo, si queremos que un programa nos diga cuantas letras tiene nuestro nombre, o cuanto falta para nuestro cumpleaños, lo primero que tendrá que hacer el programa es pedir un dato.
 
@@ -298,9 +359,27 @@ Dime tu nombre: Rosa
 Hola Rosa
 ```
 
+### Ejercicio 0.3
+Escribe un programa que solicite un nombre al usuario y lo guarde en una variable. A continuación debe mostrar un saludo por consola.
+
+
+```python
+nombre = input("Introduce tu nombre: ")
+print("Hola, qué tal estás ", nombre)
+
+# Alternativa:
+# print("Hola, qué tal estás %s" % nombre)
+```
+
+Resultado:
+
+```console
+Introduce tu nombre: Juan
+Hola, qué tal estás Juan
+```
+
 ## Cuidado con los datos
 Cada vez que uses la funcion `input` para que el usuario escriba algo, sea lo que sea **se guardará como texto**. Aunque se escriba un número:
-
 
 ```python
 valor = input("Dame un número: ")
@@ -335,7 +414,6 @@ print(doble)
 
 O incluso aplicarlo a `input`: 
 
-
 ```python
 valor = int(input("Dame un número: "))
 doble = valor + valor
@@ -347,6 +425,49 @@ Ahora sí:
 Dame un número: 4
 8
 ```
+
+### Ejercicio 0.4
+Escribe un programa que solicite un número al usuario y le sume 10. A continuación debe mostrar el resultado por la consola. Recuerda que conviene hacer un `int` del valor introducido para convertirlo a número entero.
+
+```python
+valor = input("Introduce un número: ")
+resultado = int(valor) + 10
+
+print("La suma es:", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: 32
+La suma es: 42
+```
+
+## Otras conversiones
+Aunque en el lenguaje no tengamos que declarar los tipos de variables, los tipos (texto, número, etc...) sí se tienen en cuenta a la hora de ejecutarse el programa.
+
+Por ejemplo si tenemos una variable que contiene un número, y la queremos concatenar en un texto, obtendríamos un error:
+
+```python
+valor = 66
+texto = "Mi edad es " + valor
+```
+El error sería:
+```console
+TypeError: cannot concatenate 'str' and 'int' objects
+```
+Para evitarlo, tenemos que forzar el tipo a texto con `str()`:
+
+```python
+valor = 66
+texto = "Mi edad es " + str(valor)
+```
+Por tanto, hay ocasiones en los que tendremos que convertir un valor en determinado tipo. Las funciones para convertir son las siguientes:
+- str(): convierte un valor a texto. `str(5)` devolvería `"5"`.
+- int(): convierte un valor a número entero. `int("5")` devolvería `5`.
+- float(): convierte un valor a número con decimales. `float("5.5")` devolvería `5.5`
+- bool(): convierte un valor a un booleano. `bool("False")` devolvería `False`.
+
+¡OJO! si tratas de convertir un valor que no es compatible, el programa fallará y terminará de golpe.
 
 # Operadores
 Los programas necesitan hacer cálculos con números, procesar datos, tomar decisiones según los valores. Para ello necesitamos los operadores.
@@ -381,6 +502,22 @@ ada = 14
 bug = 10
 neko = 2
 media = (ada + bug + neko) / 3
+```
+
+### Ejercicio 0.5
+Escribe un programa que solicite un número al usuario y le reste 5. A continuación debe mostrar el resultado por la consola.
+
+```python
+valor = input("Introduce un número: ")
+resultado = int(valor) - 5
+
+print("La resta es:", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: 30
+La resta es: 25
 ```
 
 ### Módulo y exponencial
@@ -425,6 +562,28 @@ Lo mismo se puede hacer con todos los operadores:
 |a = a % 1||a %= 1|
 |a = a ** 1|| a **= 1|
 
+### Ejercicio 0.6
+Escribe un programa que solicite un número al usuario y lo incremente. A continuación debe mostrar el resultado por la consola. Luego debe decrementar el valor y mostrar el resultado por consola. ¡Utiliza operadores abreviados!
+
+```python
+valor = input("Introduce un número: ")
+valor += 1
+
+print("El incremento es", valor)
+
+valor -= 1
+
+print("El decremento es", valor)
+```
+
+Resultado:
+
+```console
+Introduce un número: 6
+El incremento es 7
+El decremento es 6
+```
+
 ## Operadores de comparación
 Se trata de operadores que nos permiten comparar un valor con otro. Generalmente se usa con números y el resultado de estas operaciones es `True`o `False`.
 
@@ -462,6 +621,25 @@ resultado = "Ada" < "Bug"
 
 El resultado sería `True`.
 
+### Ejercicio 0.7
+Escribe un programa que solicite dos números al usuario. Después debe comparar su desigualdad y debe mostrar el resultado por la consola.
+
+```python
+valor1 = input("Introduce un número: ")
+valor2 = input("Introduce otro número: ")
+
+resultado = valor1 != valor2
+
+print("¿Son distintos?", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: 42
+Introduce otro número: 42
+¿Son distintos? False
+```
+
 ## Operadores booleanos
 Los operadores booleanos nos permiten hacer operaciones con valores booleanos `True`o `False`. 
 
@@ -483,6 +661,23 @@ Para resumir todas las posibles opciones, esta sería lo que se denomina tabla d
 |`True` | `and` |`False` |`False` |
 |`True` | `and` |`True` |`True` |
 
+### Ejercicio 0.8
+Escribe un programa que solicite un número al usuario. Después debe comparar si el primero es mayor que 0 y además es par.
+
+```python
+valor = input("Introduce un número: ")
+valor = int(valor)
+resultado = (valor >= 0) and (valor % 2 == 0)
+
+print("¿Es par y positivo?", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: 14
+¿Es par y positivo? True
+```
+
 ### or
 Este operador solo devuelve `True` si cualquiera de los dos operandos también son `True`:
 
@@ -501,339 +696,7 @@ Para resumir todas las posibles opciones, esta sería lo que se denomina tabla d
 |`True` | `or` |`False` |`True` |
 |`True` | `or` |`True` |`True` |
 
-### not
-Este operador solo devuelve `True` si los dos operandos también son `True`:
-
-```python
-valor = True
-resultado = not valor;
-```
-
-El resultado sería `False`.
-Para resumir todas las posibles opciones, esta sería lo que se denomina tabla de la verdad del operador `not`.
-
-| | a| resultado |
-|--|--|--|
-| `not` |`False` |`False` |
-| `not` |`True` |`False` |
-
-### Combinando operadores
-Podemos combinar los operadores tanto como necesitemos:
-
-```python
-jubilado = 65
-if edad > 17 and edad < (jubilado + 1):
-	print("Ya puedes trabajar")
-```
-
-Generalmente, los operadores condicionales se utilizan dentro de las condiciones de los bloques condicionales, bucles, etc.
-
-## Ejercicios propuestos
-
-### Ejercicio 0.0
-Escribe un programa que muestre por consola el texto “Hola Mundo!”.
-
-```python
-print("Hola Mundo!")
-```
-Resultado:
-
-```console
-Hola Mundo!
-```
-
-### Ejercicio 0.1
-Crea dos variables `nombre` y `edad` y muestra su valor por pantalla.
-
-```python
-nombre = "Ada"
-edad = 14
-print("Tu nombre es", nombre, ", tienes", edad, "años")
-
-# Alternativa:
-# print("Tu nombre es %s, tienes %d años" % (nombre, edad))
-```
-Resultado:
-
-```console
-Tu nombre es Ada y tienes 14 años.
-```
-
-### Ejercicio 0.2
-Escribe un programa que solicite un nombre al usuario y lo guarde en una variable. A continuación debe mostrar un saludo por consola.
-
-
-```python
-nombre = input("Introduce tu nombre: ")
-print("Hola, qué tal estás ", nombre)
-
-# Alternativa:
-# print("Hola, qué tal estás %s" % nombre)
-```
-
-Resultado:
-
-```console
-Introduce tu nombre: Juan
-Hola, qué tal estás Juan
-```
-
-### Ejercicio 0.3
-Escribe un programa que defina una variable de cada tipo visto aquí, y los muestre por la consola.
-
-```python
-nombre = "Ada"
-edad = 42
-peso = 101.54
-vivo = True
-riquezas = None
-amigas = ["Ada", "Ruby", "Miranda"]
-
-print(nombre)
-print(edad)
-print(peso)
-print(vivo)
-print(riquezas)
-print(amigas)
-```
-
-Resultado:
-
-```console
-Ada
-42
-101.54
-true
-null
-["Ada", "Ruby", "Miranda"]
-```
-
-### Ejercicio 0.4
-Escribe un programa que solicite un número al usuario y le sume 10. A continuación debe mostrar el resultado por la consola. Recuerda que conviene hacer un `int` del valor introducido para convertirlo a número entero.
-
-```python
-valor = input("Introduce un número: ")
-resultado = int(valor) + 10
-
-print("La suma es:", resultado)
-```
-Resultado:
-
-```console
-Introduce un número: 32
-La suma es: 42
-```
-
-### Ejercicio 0.5
-Escribe un programa que solicite un número al usuario y le reste 5. A continuación debe mostrar el resultado por la consola.
-
-```python
-valor = input("Introduce un número: ")
-resultado = int(valor) - 5
-
-print("La resta es:", resultado)
-```
-Resultado:
-
-```console
-Introduce un número: 30
-La resta es: 25
-```
-
-### Ejercicio 0.6
-Escribe un programa que solicite un número al usuario y le multiplique 7. A continuación debe mostrar el resultado por la consola.
-
-```python
-valor = input("Introduce un número: ")
-resultado = int(valor) * 7
-
-print("La multiplicación es:", resultado)
-```
-
-Resultado:
-
-```console
-Introduce un número: 3
-La multiplicación es: 21
-```
-
-### Ejercicio 0.7
-Escribe un programa que solicite un número al usuario y lo divida por 2. A continuación debe mostrar el resultado por la consola.
-
-```python
-valor = input("Introduce un número: ")
-resultado = int(valor) / 2
-
-print("La división es:", resultado)
-```
-Resultado:
-
-```console
-Introduce un número: 60
-La división es: 30
-```
-
-### Ejercicio 0.8
-Escribe un programa que solicite un número al usuario y haga módulo 3. A continuación debe mostrar el resultado por la consola.
-
-```python
-valor = input("Introduce un número: ")
-resultado = int(valor) % 3
-
-print("El módulo es:", resultado)
-```
-
-Resultado:
-
-```console
-Introduce un número: 7
-El módulo es: 1
-```
-
 ### Ejercicio 0.9
-Escribe un programa que solicite un número al usuario y le aplique un exponencial de 2. A continuación debe mostrar el resultado por la consola.
-
-```python
-valor = input("Introduce un número: ")
-resultado = int(valor) ** 2
-
-print("El exponencial es:", resultado)
-
-```
-Resultado:
-
-```console
-Introduce un número: 4
-El exponencial es: 16
-```
-
-### Ejercicio 0.10
-Escribe un programa que solicite un número al usuario y lo incremente. A continuación debe mostrar el resultado por la consola. Luego debe decrementar el valor y mostrar el resultado por consola.
-
-```python
-valor = input("Introduce un número: ")
-valor += 1
-
-print("El incremento es", valor)
-
-valor -= 1
-
-print("El decremento es", valor)
-```
-
-Resultado:
-
-```console
-Introduce un número: 6
-El incremento es 7
-El decremento es 6
-```
-
-### Ejercicio 0.11
-Escribe un programa que solicite un número al usuario y le reste 5. A continuación debe cambiarle el signo y mostrar el resultado por la consola.
-
-```python
-valor = input("Introduce un número: ")
-resta = int(valor) - 5
-resultado = -resta
-
-print("La resta final es:", resultado)
-```
-Resultado:
-
-```console
-Introduce un número: 4
-La resta final es: 1
-```
-### Ejercicio 0.11
-Escribe un programa que solicite un número al usuario. Después debe comprobar si la operación % 2 es igual a 0 y mostrar el resultado. Si se divide un número por 2 y la resta es 0, significa que ese número es par.
-
-```python
-valor = input("Introduce un número: ")
-modulo = int(valor) % 2
-
-resultado = modulo == 0
-
-print("¿Valor es par?", resultado)
-```
-Resultado
-
-```console
-Introduce un número: 8
-¿Valor es par? True
-```
-
-### Ejercicio 0.11
-Escribe un programa que solicite dos números al usuario. Después debe comparar su desigualdad y debe mostrar el resultado por la consola.
-
-```python
-valor1 = input("Introduce un número: ")
-valor2 = input("Introduce otro número: ")
-
-resultado = valor1 != valor2
-
-print("¿Son distintos?", resultado)
-```
-Resultado:
-
-```console
-Introduce un número: 42
-Introduce otro número: 42
-¿Son distintos? False
-```
-
-### Ejercicio 0.12
-Escribe un programa que solicite un número al usuario. Después debes comprobar si ese número es mayor o igual que 0, es decir, positivo.
-
-```python
-valor = input("Introduce un número: ")
-
-resultado = int(valor) >= 0
-
-print("¿Es positivo?", resultado)
-```
-Resultado:
-
-```console
-Introduce un número: 6
-¿Es positivo? True
-```
-
-### Ejercicio 0.13
-Escribe un programa que solicite un número al usuario. Después debe comparar si el primero es menor que 0 y mostrar el resultado por la consola. Estaríamos detectando si el número es negativo.
-
-```python
-valor = input("Introduce un número: ")
-
-resultado = int(valor) < 0
-
-print("¿Es negativo?", resultado)
-```
-Resultad:
-
-```console
-Introduce un número: -3
-¿Es negativo? True
-```
-
-### Ejercicio 0.14
-Escribe un programa que solicite un número al usuario. Después debe comparar si el primero es mayor que 0 y además es par.
-
-```python
-valor = input("Introduce un número: ")
-valor = int(valor)
-resultado = (valor >= 0) and (valor % 2 == 0)
-
-print("¿Es par y positivo?", resultado)
-```
-Resultado:
-
-```console
-Introduce un número: 14
-¿Es par y positivo? True
-```
-
-### Ejercicio 0.15
 Escribe un programa que solicite dos números al usuario y compruebe si alguno de los dos es positivo. A continuación debe mostrar el resultado por la consola.
 
 ```python
@@ -852,8 +715,24 @@ Introduce otro número: 6
 ¿Es alguno de los dos positivo? True
 ```
 
-### Ejercicio 0.16
-Escribe un programa que solicite un número al usuario y compruebe que nos es ni positivo ni par.
+### not
+Este operador solo devuelve `True` si los dos operandos también son `True`:
+
+```python
+valor = True
+resultado = not valor;
+```
+
+El resultado sería `False`.
+Para resumir todas las posibles opciones, esta sería lo que se denomina tabla de la verdad del operador `not`.
+
+| | a| resultado |
+|--|--|--|
+| `not` |`False` |`False` |
+| `not` |`True` |`False` |
+
+### Ejercicio 0.10
+Escribe un programa que solicite un número al usuario y compruebe que no es ni positivo ni par.
 
 ```python
 valor = input("Introduce un número: ")
@@ -870,21 +749,154 @@ Introduce un número: -4
 ¿No es par y positivo? True
 ```
 
-### Ejercicio 0.17
-Define una lista de nombres y muéstralas por pantalla
+### Combinando operadores
+Podemos combinar los operadores tanto como necesitemos:
 
 ```python
-nombres = ["Ada", "Bug", "Neko"]
+jubilado = 65
+if edad > 17 and edad < (jubilado + 1):
+	print("Ya puedes trabajar")
+```
 
-print(nombres) # ["Ada", "Bug", "Neko"]
+Generalmente, los operadores condicionales se utilizan dentro de las condiciones de los bloques condicionales, bucles, etc.
+
+## Ejercicios propuestos
+
+### Ejercicio 0.0
+Escribe un programa que solicite un número al usuario y le multiplique 7. A continuación debe mostrar el resultado por la consola.
+
+```python
+valor = input("Introduce un número: ")
+resultado = int(valor) * 7
+
+print("La multiplicación es:", resultado)
+```
+
+Resultado:
+
+```console
+Introduce un número: 3
+La multiplicación es: 21
+```
+
+### Ejercicio 0.1
+Escribe un programa que solicite un número al usuario y lo divida por 2. A continuación debe mostrar el resultado por la consola.
+
+```python
+valor = input("Introduce un número: ")
+resultado = int(valor) / 2
+
+print("La división es:", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: 60
+La división es: 30
+```
+
+### Ejercicio 0.2
+Escribe un programa que solicite un número al usuario y haga módulo 3. A continuación debe mostrar el resultado por la consola.
+
+```python
+valor = input("Introduce un número: ")
+resultado = int(valor) % 3
+
+print("El módulo es:", resultado)
+```
+
+Resultado:
+
+```console
+Introduce un número: 7
+El módulo es: 1
+```
+
+### Ejercicio 0.3
+Escribe un programa que solicite un número al usuario y le aplique un exponencial de 2. A continuación debe mostrar el resultado por la consola.
+
+```python
+valor = input("Introduce un número: ")
+resultado = int(valor) ** 2
+
+print("El exponencial es:", resultado)
 
 ```
 Resultado:
 
 ```console
-["Ada", "Bug", "Neko"]
+Introduce un número: 4
+El exponencial es: 16
 ```
-# Condiciones
+
+### Ejercicio 0.4
+Escribe un programa que solicite un número al usuario y le reste 5. A continuación debe cambiarle el signo y mostrar el resultado por la consola.
+
+```python
+valor = input("Introduce un número: ")
+resta = int(valor) - 5
+resultado = -resta
+
+print("La resta final es:", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: 4
+La resta final es: 1
+```
+
+### Ejercicio 0.5
+Escribe un programa que solicite un número al usuario. Después debe comprobar si la operación % 2 es igual a 0 y mostrar el resultado. Si se divide un número por 2 y la resta es 0, significa que ese número es par.
+
+```python
+valor = input("Introduce un número: ")
+modulo = int(valor) % 2
+
+resultado = modulo == 0
+
+print("¿Valor es par?", resultado)
+```
+Resultado
+
+```console
+Introduce un número: 8
+¿Valor es par? True
+```
+
+### Ejercicio 0.6
+Escribe un programa que solicite un número al usuario. Después debes comprobar si ese número es mayor o igual que 0, es decir, positivo.
+
+```python
+valor = input("Introduce un número: ")
+
+resultado = int(valor) >= 0
+
+print("¿Es positivo?", resultado)
+```
+Resultado:
+
+```console
+Introduce un número: 6
+¿Es positivo? True
+```
+
+### Ejercicio 0.7
+Escribe un programa que solicite un número al usuario. Después debe comparar si el primero es menor que 0 y mostrar el resultado por la consola. Estaríamos detectando si el número es negativo.
+
+```python
+valor = input("Introduce un número: ")
+
+resultado = int(valor) < 0
+
+print("¿Es negativo?", resultado)
+```
+Resultad:
+
+```console
+Introduce un número: -3
+¿Es negativo? True
+```# Condiciones
 En algún momento, los programas necesitan hacer una cosa u otra dependiendo de una condición. Por ejemplo, si un usuario introduce un dato incorrecto, el programa se acaba.
 Si un dato tiene determinado valor, se procesa de una forma y si no, de otra. ¿Cómo se consigue ese comportamiento? Mediante condiciones.
 
@@ -935,6 +947,23 @@ Fin del programa
 Nota:
 También debes observar algo muy importante: las instrucciones dentro del `if` van detrás de unos espacios o una tabulación. Esa es una peculiaridad del lenguaje de programación Python: en cualquier bloque como una condicón, un bucle, una función, su contenido debe ir tabulado. Esa es una forma que facilita la lectura y permite reconocer fácilmente la estructura de un programa para otros programadores. Incluso para ti mismo si lo has creado.
 
+### Ejercicio 1.0
+Escribe un programa que solicite un número al usuario y compruebe si es negativo. So es negativo, debe mostrar un mensaje por consola.
+
+```python
+valor = input("Escribie un número: ")
+
+if int(valor) < 0:
+    print("Es negativo")
+
+```
+Resultado:
+
+```console
+Escribie un número: -5
+Es negativo
+```
+
 ## if else
 Con el if podemos crear un bloque que solo se ejecute si se cumple una condición. Pero ¿Qué pasa si queremos que el programa haga una cosa u otra según una condición?
 Para poder meter "la otra" opción, utilizamos una estructura if-else:
@@ -970,6 +999,25 @@ Dime tu nombre:
 ¡No has metido nada!
 ```
 
+### Ejercicio 1.1
+Escribe un programa que solicite un texto al usuario. Si el texto es "saluda" debe mostrar un saludo, en caso contrario debe mostrar un mensaje que diga “no entiendo”.
+
+```python
+texto = input("Introduce un texto: ")
+
+if texto == "saludo":
+    print("Hola!")
+else:
+    print("No entiendo.")
+
+```
+Resultado:
+
+```console
+Introduce un texto: no sé
+No entiendo.
+```
+
 ## if elif else
 Existe otra variante cuando necesitamos comprobar varias condiciones. Para eso existe la estructura if-elif-else:
 
@@ -1001,46 +1049,6 @@ else:
 
 Podemos tener tantos `elif` como hagan falta.
 
-## Ejercicios 
-
-## Ejercicios propuestos
-
-### Ejercicio 1.0
-Escribe un programa que solicite un número al usuario y compruebe si es negativo. So es negativo, debe mostrar un mensaje por consola.
-
-```python
-valor = input("Escribie un número: ")
-
-if int(valor) < 0:
-    print("Es negativo")
-
-```
-Resultado:
-
-```console
-Escribie un número: -5
-Es negativo
-```
-
-### Ejercicio 1.1
-scribe un programa que solicite un texto al usuario. Si el texto es “saluda” debe mostrar un saludo, en caso contrario debe mostrar un mensaje que diga “no entiendo”.
-
-```python
-texto = input("Introduce un texto: ")
-
-if texto == "saludo":
-    print("Hola!")
-else:
-    print("No entiendo.")
-
-```
-Resultado:
-
-```console
-Introduce un texto: no sé
-No entiendo.
-```
-
 ### Ejercicio 1.2
 Escribe un programa que solicite un texto al usuario. Si el texto es “mañana”, debe mostrar el mensaje “Buenos días”, si el texto es “tarde” debe mostrar el mensaje “Buenas tardes”, y si no debe mostrar el mensaje “Buenas noches”
 
@@ -1062,6 +1070,76 @@ Resultado:
 ```console
 Introduce un texto: tarde
 Buenas tardes.
+```
+
+### Ejercicio 1.3
+Crea un programa que solicite al usuario dos valores enteros, los compare y muestre por pantalla si uno es mayor que el otro o si son iguales.
+
+```python
+numero1 = input("Introduce un número: ")
+numero2 = input("Introduce otro número: ")
+
+if numero1 > numero2:
+  print(numero1, " es mayor que ", numero2)
+elif numero1 < numero2:
+  print(numero1, " es menor que ", numero2)
+else:
+  print(numero1, " es igual que ", numero2)
+```
+Resultado:
+
+```console
+Introduce un número: 5
+Introduce otro número: 10
+5 es menor que 10
+```
+
+## Ejercicios propuestos
+
+### Ejercicio 1.0
+Crea un programa que solicite al usuario dos valores enteros y muestre por pantalla si el primero es múltiplo del segundo. Para saber si un número es múltiplo del otro, debes hacer la operación módulo (`%`) entre ellos.
+
+```python
+numero1 = input("Introduce un número: ")
+numero2 = input("Introduce otro número: ")
+
+resto = int(numero1) % int(numero2)
+
+if resto == 0:
+  print(numero1, " es múltiplo de ", numero2)
+else:
+  print(numero1, " NO es múltiplo de ", numero2)
+```
+Resultado:
+
+```console
+Introduce un número: 40
+Introduce otro número: 4
+40 es mútiplo de 4
+```
+
+### Ejercicio 1.1
+Crea un programa que solicite al usuario un número entero y haga lo siguiente: primero debe mostrar por pantalla si el número es negativo o positivo. Luego, si el número es positivo lo debe convertir a negativo y si es negativo lo debe convertir a positivo.
+
+```python
+numero = input("Introduce un número: ")
+numero = int(numero)
+
+if numero >= 0:
+    print(numero, " es positivo")
+else:
+    print(numero, " es negativo")
+
+numero = -numero
+
+print("Conversión: ", numero)
+```
+Resultado:
+
+```console
+Introduce un número: -6
+-6 es negativo
+Conversión: 6
 ```
 
 ### Ejercicio 1.3
@@ -1104,79 +1182,7 @@ Introduce un mes del año: Junio
 30 días
 ```
 
-
-### Ejercicio 1.4
-Crea un programa que solicite al usuario dos valores enteros, los compare y muestre por pantalla si uno es mayor que el otro o si son iguales.
-
-```python
-numero1 = input("Introduce un número: ")
-numero2 = input("Introduce otro número: ")
-
-if numero1 > numero2:
-  print(numero1, " es mayor que ", numero2)
-elif numero1 < numero2:
-  print(numero1, " es menor que ", numero2)
-else:
-  print(numero1, " es igual que ", numero2)
-```
-Resultado:
-
-```console
-Introduce un número: 5
-Introduce otro número: 10
-5 es menor que 10
-```
-
-
-### Ejercicio 1.5
-Crea un programa que solicite al usuario dos valores enteros y muestre por pantalla si el primero es múltiplo del segundo. Para saber si un número es múltiplo del otro, debes hacer la operación módulo (`%`) entre ellos.
-
-```python
-numero1 = input("Introduce un número: ")
-numero2 = input("Introduce otro número: ")
-
-resto = int(numero1) % int(numero2)
-
-if resto == 0:
-  print(numero1, " es múltiplo de ", numero2)
-else:
-  print(numero1, " NO es múltiplo de ", numero2)
-```
-Resultado:
-
-```console
-Introduce un número: 40
-Introduce otro número: 4
-40 es mútiplo de 4
-```
-
-
-### Ejercicio 1.6
-Crea un programa que solicite al usuario un número entero y haga lo siguiente: primero debe mostrar por pantalla si el número es negativo o positivo. Luego, si el número es positivo lo debe convertir a negativo y si es negativo lo debe convertir a positivo.
-
-```python
-numero = input("Introduce un número: ")
-numero = int(numero)
-
-if numero >= 0:
-    print(numero, " es positivo")
-else:
-    print(numero, " es negativo")
-
-numero = -numero
-
-print("Conversión: ", numero)
-```
-Resultado:
-
-```console
-Introduce un número: -6
--6 es negativo
-Conversión: 6
-```
-
-
-### Ejercicio 1.7
+### Ejercicio 1.3
 Crea un programa que solicite al usuario un número entero y muestre por pantalla si ese número es par y positivo. En caso contrario debe indicar si es negativo, impar o ambos.
 
 ```python
@@ -1199,7 +1205,7 @@ Introduce un número: -9
 -9 es impar y negativo
 ```
 
-### Ejercicio 1.9
+### Ejercicio 1.4
 
 Crea un programa que solicite al usuario su peso en kilos y su altura en centímetros y calcule el IMC (peso / altura2); debe mostrar el resultado y luego hacer el diagnóstico:
 Si el IMC es menor que 16 se muestra el mensaje: “Necesitas comer”.
@@ -1236,13 +1242,13 @@ Tu imc: 23.66143861546782
 Estás bien
 ```
 
-### Ejercicio 1.10
+### Ejercicio 1.5
 Crea un programa que solicite al usuario un dorsal de jugador y haga lo siguiente: comprobar que ese número está entre 0 y 99. Si no lo está, entonces el programa debe terminar con un mensaje de error. Si el número está entre 0 y 99 el programa debe mostrar un texto con la posición que corresponde a cada dorsal:
-- Si el usuario ha tecleado 1 el texto será “Portero”
-- Si el usuario ha tecleado algo entre 1 y 5 el texto será “Defensa”
-- Si el usuario ha tecleado algo entre 6 y 8, u 11 el texto será “Centrocampista”
-- Si el usuario ha tecleado 9 el texto será “Delantero”.
-- Para cualquier otra opción el texto será “Cualquiera”.
+- Si el usuario ha tecleado 1 el texto será "Portero"
+- Si el usuario ha tecleado algo entre 1 y 5 el texto será "Defensa"
+- Si el usuario ha tecleado algo entre 6 y 8, u 11 el texto será "Centrocampista"
+- Si el usuario ha tecleado 9 el texto será "Delantero".
+- Para cualquier otra opción el texto será "Cualquiera".
 
 ```python
 dorsal = input("Introduce dorsal: ")
@@ -1293,6 +1299,26 @@ while contador > 0:
 
 Nota: ¡Ojo! ¿Te has fijado en que dentro del bucle estamos restando un valor a `contador`? Si no tenemos cuidado y nos olvidamos de hacer eso, el valor de contador nunca cambiaría y crearíamos un bucle infinito. ¡El programa nunca terminaría y se quedaría atascado para siempre!
 
+### Ejercicio 2.0
+Crea un programa que defina una variable `contador` iniciada a 0. Luego escribe un bucle while que mientras `contador` sea menor que 5 muestre el mensaje `Estoy dentro del bucle` y que incremente `contador` en 1.
+
+```python
+contador = 0
+while contador < 5:
+	print("Estoy dentro del bucle")
+	contador = contador + 1
+```
+
+Resultado:
+
+```console
+Estoy dentro del bucle
+Estoy dentro del bucle
+Estoy dentro del bucle
+Estoy dentro del bucle
+Estoy dentro del bucle
+```
+
 Veamos otro ejemplo. El siguiente programa solicita un dato al usuario en un bucle. El programa no saldrá del bucle mientras el usuario no meta un dato distinto de vacío `""`:
 
 ```python
@@ -1301,6 +1327,32 @@ while nombre == "":
 	nombre = input("¿Cómo te llamas?")
 
 print("Hola", nombre)
+```
+
+### Ejercicio 2.1
+Escribe un programa que solicite dos números al usuario. El primero debe ser menor que el segundo. El bucle debe mostrar los números que hay en el intervalo entre esos dos números.
+
+```python
+min = input("Introduce un mínimo: ")
+min = int(min)
+
+max = input("Introduce un máximo: ")
+max = int(max)
+
+while min < max:
+    print(min)
+    min = min + 1
+```
+Resultado:
+
+```console
+Introduce un mínimo: 3
+Introduce un máximo: 8
+3
+4
+5
+6
+7
 ```
 
 ## Bucle For
@@ -1339,6 +1391,50 @@ Hola 0
 Hola 1
 Hola 2
 Hola 3
+```
+
+### Ejercicio 2.2
+Escribe un programa que solicite un número al usuario y muestre su tabla de multiplicar del 0 al 10.
+
+```python
+valor = input("Introduce un número: ")
+valor = int(valor)
+
+for i in range(11):
+    print(valor,"x",i,"=",(valor*i))
+    # Alternativas:
+    # print("%d x %d = %d" % (valor, i, valor * i))
+```
+Resultado:
+
+```console
+Introduce un número: 3
+0 x 3 = 0
+1 x 3 = 3
+2 x 3 = 6
+... 
+```
+
+### Ejercicio 2.3
+Escribe un programa que pida un número al usuario. Si es igual o menor a 0 debe indicar que meta algo mayor, si no debe mostrar el mensaje "Python mola!" por pantalla tantas veces como indique el número:
+
+```python
+numero = input("Introduce un número: ")
+numero = int(numero)
+
+if numero <= 0:
+    print("Debes introducir un número mayor que 0")
+else:
+    for i in range(0, numero):
+        print("Python mola!")
+```
+Resultado:
+
+```console
+Introduce un número: 3
+Python mola!
+Python mola!
+Python mola!
 ```
 
 ### Cambiar el rango
@@ -1398,6 +1494,25 @@ El resultado sería:
 1
 ```
 
+### Ejercicio 2.4
+Escribe un programa que pida un número al usuario. Luego debe mostrar todos los números pares desde 0 hasta el número que haya metido el usuario. Utiliza un bucle `for` y salta de dos en dos.
+
+```python
+valor = input("Introduce un número: ")
+valor = int(valor)
+
+for i in range(0, valor, 2):
+    print(i)
+```
+Resultado:
+
+```console
+Introduce un número: 5
+0
+2
+4
+```
+
 ### Bucles sobre listas
 Los bucles `for` son especialmente útiles cuando queremos recorrer todos los elementos de una lista, para mostrarlos, procesarlos o lo que sea. La forma es muy sencilla:
 
@@ -1435,6 +1550,26 @@ for nombre in nombres:
 		break
 ```
 
+### Ejercicio 2.5
+Escribe un programa que defina una lista con 3 números. Luego crea un bucle for que recorra la lista y repita la palabra `Python` tantas veces como indique el número.
+
+```python
+repetir = [3, 6, 2]
+
+for veces in repetir:
+    for i in range(veces):
+        print("Python") 
+```
+Resultado:
+
+```console
+Python
+Python
+Python
+Python
+... 
+```
+
 ## ¿Cuándo usar while o for?
 Aunque con los dos podrías hacer lo mismo, realmente cada uno tiene un uso más lógico.
 
@@ -1446,32 +1581,6 @@ El bucle while se puede utilizar cuando las condiciones no son muy concretas. Po
 ## Ejercicios propuestos
 
 ### Ejercicio 2.0
-Escribe un programa que solicite dos números al usuario. El primero debe ser menor que el segundo. El bucle debe mostrar los números que hay en el intervalo entre esos dos números.
-
-```python
-min = input("Introduce un mínimo: ")
-min = int(min)
-
-max = input("Introduce un máximo: ")
-max = int(max)
-
-while min < max:
-    print(min)
-    min = min + 1
-```
-Resultado:
-
-```console
-Introduce un mínimo: 3
-Introduce un máximo: 8
-3
-4
-5
-6
-7
-```
-
-### Ejercicio 2.1
 Escribe un programa con un bucle while que solicite un nombre al usuario por ejemplo "Ada" y muestre un saludo a ese nombre "Hola Ada". Si se introduce el texto "salir" el bucle debe terminar.
 
 ```python
@@ -1494,29 +1603,9 @@ Hola Neko
 Introduce un nombre: salir
 Final.
 ```
-### Ejercicio 2.2
-Escribe un programa que solicite un número al usuario y muestre su tabla de multiplicar del 0 al 10.
 
-```python
-valor = input("Introduce un número: ")
-valor = int(valor)
-
-for i in range(11):
-    print(valor,"x",i,"=",(valor*i))
-    # Alternativas:
-    # print("%d x %d = %d" % (valor, i, valor * i))
-```
-Resultado:
-
-```console
-Introduce un número: 3
-0 x 3 = 0
-1 x 3 = 3
-2 x 3 = 6
-... 
-```
-### Ejercicio 2.3
-Escribe un programa que contenga un bucle dwhile que solicite al usuario un número y que no termine mientras el número sea diferente de 0. Una vez introducido el número debe mostrarse un saludo tantas veces como indique el número. Si el número es menor que 0 debe terminarse el bucle con un break;
+### Ejercicio 2.1
+Escribe un programa que contenga un bucle while que solicite al usuario un número y que no termine mientras el número sea diferente de 0. Una vez introducido el número debe mostrarse un saludo tantas veces como indique el número. Si el número es menor que 0 debe terminarse el bucle con un break;
 
 ```python
 valor = ""
@@ -1539,28 +1628,8 @@ Hola
 Hola
 Introduce un numero: -1
 ```
-### Ejercicio 2.4
-Crea un programa que solicite al usuario un valor entero, comprueba si es mayor que 0: si el valor introducido no es mayor que 0 debes mostrar un mensaje de advertencia al usuario. Si es mayor que 0, el programa debe mostrar por pantalla un saludo tantas veces como el valor del número. 
 
-```python
-numero = input("Introduce un número: ")
-numero = int(numero)
-
-if numero <= 0:
-    print("Debes introducir un número mayor que 0")
-else:
-    while numero > 0:
-        print("Hola!")
-        numero = numero - 1
-```
-Resultado:
-
-```console
-Introduce un número: 2
-Hola
-Hola
-```
-### Ejercicio 2.5
+### Ejercicio 2.2
 Crea un programa que solicite al usuario un valor entero, comprueba si es mayor que 0 y además par y si es así muestre por pantalla una línea con el carácter `*` (asterisco) tantas veces como el valor del número. Usa `print("*")`.
 Por ejemplo si introduce 8 mostrará
 
@@ -1587,7 +1656,7 @@ Resultado:
 Introduce un número: 6
 ******
 ```
-### Ejercicio 2.6
+### Ejercicio 2.3
 Crea un proyecto parecido al anterior, que solo debe admitir pares positivos, pero la línea que debes mostrar debe tener este aspecto:
 
 2:`*-*`
@@ -1619,7 +1688,7 @@ Resultado:
 Introduce un número: 8
 *-*-*-*-*
 ```
-### Ejercicio 2.7
+### Ejercicio 2.4
 Crea un programa que solicite al usuario un número entero y usando ese valor debe "dibujar" en la consola un cuadrado formado por `*`.
 Por ejemplo si introduce 4 se mostrará:
 
@@ -1653,7 +1722,7 @@ Introduce un número: 2
 **
 **
 ```
-### Ejercicio 2.8
+### Ejercicio 2.5
 Crea un programa que solicite al usuario un número entero y calcule su factorial. Por ejemplo el factorial de 5 sería 5 x 4 x 3 x 2 x 1 = 120
 
 ```python
@@ -1676,7 +1745,7 @@ Resultado:
 Introduce un número: 4
 Resultado: 24
 ```
-### Ejercicio 2.9
+### Ejercicio 2.6
 
 Crea un programa que solicite al usuario un número entero y comprueba si ese número es primo o no, es decir si solamente es divisible por sí mismo o por 1.
 
@@ -1709,7 +1778,7 @@ Resultado:
 Introduce un número: 5
 5 es primo.
 ```
-### Ejercicio 2.10
+### Ejercicio 2.7
 Crea un programa que muestre todas las tablas de multiplicar desde el número 0 al 10.
 
 ```python
@@ -1768,6 +1837,43 @@ La lista se puede representar así:
 |--|--|--|
 |"Inglés"|"Español"|"Francés"|
 
+
+### Ejercicio 3.0
+Define una lista de nombres y muéstralas por pantalla
+
+```python
+nombres = ["Ada", "Bug", "Neko"]
+
+print(nombres) # ["Ada", "Bug", "Neko"]
+
+```
+Resultado:
+
+```console
+["Ada", "Bug", "Neko"]
+```
+
+### Ejercicio 3.1
+Crea un programa que defina una  de 5 números con decimales inicializados. Luego crea un bucle que calcule la media de todos los números.
+
+```python
+numeros = [3.4, 2.7, 4.3, 6.6, 8.3]
+suma = 0.0
+
+for numero in numeros:
+    suma = suma + numero
+
+media = suma / len(numeros)
+
+print("La media es: ", media)
+```
+Resultado:
+
+```console
+La media es:  5.0600000000000005
+```
+
+## Añadir y eliminar elementos
 Si queremos añadir un elemento a una lista, basta con utilizar la función `append`:
 
 ```python
@@ -1812,6 +1918,30 @@ De todas formas, si no se necesita el índice dentro del bucle, es mejor recorre
 En otros lenguajes, a las listas se les llama listas.
 Ya los deberías conocer, pero te lo volvemos a recordar.
 
+### Ejercicio 3.2
+Define una lista de nombres, muéstrala por pantalla. Añade un elemento y muestra la lista por pantalla. Luego elimina un elemento de la lista y muestra la lista por pantalla.
+
+```python
+nombres = ["Ada", "Bug", "Neko"]
+
+print(nombres)
+
+nombres.append("Miranda")
+
+print(nombres)
+
+del nombres[1]
+
+print(nombres) 
+```
+Resultado:
+
+```console
+["Ada", "Bug", "Neko"]
+["Ada", "Bug", "Neko", "Miranda"]
+["Ada", "Neko", "Miranda"]
+```
+
 ## Diccionarios
 Los diccionarios son conjuntos de datos donde cada elemento tiene una clave y un valor.
 Dichos de otra manera, son como una lista, pero en lugar de tener un índice numérico como 0,1, 2,... tienen el valor que tú quieras.
@@ -1827,6 +1957,25 @@ El diccionario se puede representar así:
 |"Ada"|"Bug"|"Neko"|
 |--|--|--|
 |14|10|2|
+
+### Ejercicio 3.3
+Define un diccionario llamado `telefonos` donde guardarás los teléfonos de un par de amigos. La clave será el nombre del amigo y el valor el número de teléfono.
+
+```python
+telefonos = {"Ada": 666555333, "Bug": 111000111 }
+
+print(telefonos) 
+
+for nombre in telefonos.keys():
+    print(nombre, telefonos[nombre])
+```
+Resultado:
+
+```console
+{'Bug': 111000111, 'Ada': 666555333}
+Bug 111000111
+Ada 666555333
+```
 
 Para añadir nuevos elementos, se puede asignar un nuevo valor:
 
@@ -1845,6 +1994,31 @@ print(edades) # {'Neko': 2, 'Ada': 14, 'Miranda': 23}
 
 for nombre in edades.keys():
     print(nombre, edades[nombre])
+```
+
+### Ejercicio 3.4
+Utiliza el diccionario `telefonos` del ejercicio anterior. Solicita al usuario datos para meter una nueva entrada en el diccionario: tendrás que pedir un nombre y un teléfono y luego añadirlo al diccionario. 
+Al finalizar, muestra todos los elementos del diccionario.
+```python
+telefonos = {"Ada": 666555333, "Bug": 111000111 }
+
+nombre = input("Introduce un nombre: ")
+telefono = input("Introduce un número: ")
+
+telefonos[nombre] = int(telefono)
+
+for nombre in telefonos.keys():
+    print(nombre, telefonos[nombre])
+
+```
+Resultado:
+
+```console
+Introduce un nombre: Neko
+Introduce un número: 333222000
+Ada 666555333
+Neko 333222000
+Bug 111000111
 ```
 
 Podemos eliminar valores del diccionario con la función `del`:
@@ -1871,6 +2045,26 @@ Bug 10
 Neko 2
 ```
 
+### Ejercicio 3.5
+Utiliza el diccionario `telefonos` del ejercicio anterior. Solicita al usuario un nombre, y luego elimina ese elemento del diccionario. 
+Al finalizar, muestra todos los elementos del diccionario.
+```python
+telefonos = {"Ada": 666555333, "Bug": 111000111 }
+
+nombre = input("Introduce un nombre: ")
+
+del telefonos[nombre]
+
+for nombre in telefonos.keys():
+    print(nombre, telefonos[nombre])
+```
+Resultado:
+
+```console
+Introduce un nombre: Bug
+Ada 666555333
+```
+
 Nota:
 En otros lenguajes, a los diccionarios se les llama `hash` o `hashtables`
 
@@ -1894,6 +2088,38 @@ amigos = [
 print(amigos[1]) # {"nombre": "Bug", "edad": 10}
 print(amigos[2]["nombre"]) # Ada
 ```
+### Ejercicio 3.6
+Escribe un programa que defina una lista de diccionarios llamada cliente que contenga las claves: nombre, email y edad. El programa debe recorrer la lista y mostrar el nombre y edad de cada cliente.
+
+```python
+clientes = [
+    {
+        "nombre": "Juan",
+        "email": "jj@terra.com",
+        "edad": 39
+    },
+    {
+        "nombre": "Pedro",
+        "email": "pp@ozu.es",
+        "edad": 42
+    },
+    {
+        "nombre": "Ana",
+        "email": "ana@ole.com",
+        "edad": 37
+    }
+]
+
+for cliente in clientes:
+    print(f"{cliente['nombre']} {cliente['edad']}")
+```
+Resultado:
+
+```console
+Juan 39
+Pedro 42
+Ana 37
+```
 
 ¿Y si quieres una estructura de datos que contenga el estado de un juego, con sus personajes y sus objetos? Podría hacer un diccionario anidado, donde la clave es el nombre del personaje:
 
@@ -1910,6 +2136,7 @@ print(pantalla["Luigi"]["vida"])  # 7
 Pero ¿Cómo sé que tipo de estructura debo diseñar? Depende de cómo la vayas a usar. A veces necesitarás recorrer todos, otras veces necesitarás acceder a un elemento concreto,... según lo que requiera tu programa tendrás que diseñar una estructura concreta.
 
 ## Ejercicios propuestos
+
 
 ### Ejercicio 3.0
 Escribe un programa que inicie una lista de 5 números (iniciados a 0), otro de 5 nombres iniciados a mano y otro de valores 5 booleanos (iniciados a false)
@@ -1930,7 +2157,8 @@ Resultado:
 [0, 0, 0, 0, 0]
 [True, True, True, True, True]
 ```
-### Ejercicio 3.0
+
+### Ejercicio 3.1
 Escribe un programa que defina una lista de 10 números. Luego debe crear un bucle que en las **posiciones** pares meta un 0.
 
 ```python
@@ -1947,7 +2175,8 @@ Resultado:
 ```console
 [0, 2, 0, 4, 0, 6, 0, 8, 0, 10]
 ```
-### Ejercicio 3.0
+
+### Ejercicio 3.2
 Escribe un programa para gestionar una lista, que muestre al usuario un menú con 4 opciones: (1) meter elemento, (2) eliminar, (3) mostrar y (4) salir. El menú debe mostrarse mientras el usuario no meta la opción 4. Si elige la opción 1, se hace push de un valor cualquiera, si elige 2 se hace pop, si elige 3 se muestra el contenido dla lista.
 
 ```python
@@ -1984,7 +2213,8 @@ Elige opción
 Elige opción: 3
 []
 ```
-### Ejercicio 3.0
+
+### Ejercicio 3.3
 Escribe un programa que solicite palabras al usuario y las vaya concatenando para construir una frase, hasta que el usuario escribe un punto (.). Entonces el programa deberá mostrar la frase creada. Si el usuario no escribe nada, no se debe concatenar nada.
 
 ```python
@@ -2008,7 +2238,8 @@ Escribe una palabra: tal
 Escribe una palabra: .
 Hola qué tal
 ```
-### Ejercicio 3.0
+
+### Ejercicio 3.4
 Escribe un programa que solicite al usuario su nombre, su lugar de nacimiento y su año de nacimiento. Luego debe mostrar una frase con toda esa información utilizando la interpolación o plantillas de cadenas. 
 
 ```python
@@ -2028,7 +2259,8 @@ Escribe tu lugar de nacimiento: Teverga
 Escribe tu año de nacimiento: 2006
 Te llamas Ada naciste en Teverga en 2006
 ```
-### Ejercicio 3.0
+
+### Ejercicio 3.5
 Escribe un programa que solicite al usuario una frase. Luego debe solicitar una palabra de esa frase, y como resultado, el programa devolverá la misma frase con esa palabra en mayúsculas
 
 ```python
@@ -2053,39 +2285,8 @@ Escribe una frase: Qué buena es la profa Ada
 Escribe una palabra de esa frase: buena
 Qué BUENA es la profa Ada
 ```
-### Ejercicio 3.0
-Escribe un programa que defina una lista de objetos cliente como el que se muestra en el primer ejemplo de objetos. El programa debe recorrer la lista y mostrar el nombre y edad de cada cliente.
 
-```python
-clientes = [
-    {
-        "nombre": "Juan",
-        "email": "jj@terra.com",
-        "edad": 39
-    },
-    {
-        "nombre": "Pedro",
-        "email": "pp@ozu.es",
-        "edad": 42
-    },
-    {
-        "nombre": "Ana",
-        "email": "ana@ole.com",
-        "edad": 37
-    }
-]
-
-for cliente in clientes:
-    print(f"{cliente['nombre']} {cliente['edad']}")
-```
-Resultado:
-
-```console
-Juan 39
-Pedro 42
-Ana 37
-```
-### Ejercicio 3.0
+### Ejercicio 3.6
 Crea un programa que defina una lista de 5 nombres y luego utilice un bucle para mostrar los nombres de uno en uno.
 
 ```python
@@ -2108,26 +2309,8 @@ Sam
 Pip
 Bilbo
 ```
-### Ejercicio 3.0
-Crea un programa que defina una  de 5 números con decimales inicializados. Luego crea un bucle que calcule la media de todos los números.
 
-```python
-numeros = [3.4, 2.7, 4.3, 6.6, 8.3]
-suma = 0.0
-
-for numero in numeros:
-    suma = suma + numero
-
-media = suma / len(numeros)
-
-print("La media es: ", media)
-```
-Resultado:
-
-```console
-La media es:  5.0600000000000005
-```
-### Ejercicio 3.0
+### Ejercicio 3.7
 Crea un programa que defina una  de 10 números enteros. Luego crea otro bucle que calcule que incremente en uno cada uno de los elementos y los muestre.
 
 ```python
@@ -2147,7 +2330,7 @@ Resultado:
 ```console
 [4, 6, -3, 3, 2, 5, 1, 7, 10, 9, 4]
 ```
-### Ejercicio 3.0
+### Ejercicio 3.8
 Crea un programa que defina una lista de 10 números enteros Luego crea un bucle que determine si en la lista hay algún elemento repetido. Con que encuentre uno repetido es suficiente.
 
 ```python
@@ -2174,7 +2357,7 @@ Resultado:
 ```console
 Hay un número repetido
 ```
-### Ejercicio 3.0
+### Ejercicio 3.9
 Crea un programa que defina una array de 10 números enteros inicializados. Luego crea otro bucle que contabilice el total de números positivos, negativos y los que sean 0.
 
 ```python
@@ -2203,8 +2386,9 @@ Positivos:  8
 Negativos:  2
 Ceros:  1
 ```
-### Ejercicio 3.0
-Crea un programa con una clase llamada RandomArray que defina un array de dos dimensiones de 5x10 elementos. Crea un bucle que inicialice los valores del array usando números aleatorios.
+
+### Ejercicio 3.10
+Crea un programa que defina un array de dos dimensiones de 5x10 elementos. Crea un bucle que inicialice los valores del array usando números aleatorios.
 Para crear números aleatorios importa la librería `random` y utiliza la función `random.randint()`, tal y como se muestra aquí:
 ```python
 import random
@@ -2232,7 +2416,7 @@ for i in range(len(matriz)):
             print("Encontrado 15 en ", i, )
 ```
 
-### Ejercicio 3.0
+### Ejercicio 3.11
 Crea un proyecto que defina un array de 10 números enteros inicializados. En un bucle muestra por pantalla todos los elementos. Luego crea otro bucle que baraje los elementos usando el método random del ejercicio anterior en los índices. Luego muestra el resultado.
 
 ```python
@@ -2275,6 +2459,31 @@ Lo cual mostrará:
 Hola
 ```
 
+### Ejercicio 4.0
+Escribe un programa con tres funciones llamadas dias, tardes y noches. Cada una debe mostrar un saludo distinto, "Buenos días", "Buenas tardes" y "Buenas noches" respectivamente. Añade las llamadas de a las tres funciones.
+
+```python
+def dias ():
+    print("Buenos días")
+
+def tardes ():
+    print("Buenos tardes")
+
+def noches ():
+    print("Buenos noches")
+
+dias()
+tardes()
+noches()
+```
+Resultado:
+
+```console
+Buenos días
+Buenos tardes
+Buenos noches
+```
+
 ## Parámetros
 Las funciones pueden recibir parámetros. Estos se convierten en variables dentro de la función y nos permiten que la función haga cosas diferentes según lo que les pasemos.
 
@@ -2298,9 +2507,24 @@ Hola Neko
 Hola Ada
 ```
 
+### Ejercicio 4.1
+Escribe un programa con una función llamada `cuadrado` que tenga un parámetro `a`. La función debe multiplicar `a` * `a` y mostrar el resultado por pantalla.
+
+```python
+def cuadrado (a):
+    print(a * a)
+
+
+cuadrado(3)
+```
+Resultado:
+
+```console
+9
+```
+
 ### Parámetro con valor por defecto
 Los parámetros de una función pueden tener un valor por defecto. Es decir, se les puede asignar un valor concreto y si no se pasa ese parámetro en la llamada, el parámetro tomará ese valor por defecto.
-
 
 ```python
 def saluda(persona, veces = 3):
@@ -2330,7 +2554,49 @@ Hola Bug
 Hola Bug
 ```
 
+### Parámetros infinitos
+Las funciones en Python permiten que les pases un número indeterminado de parámetros. Suena un poco raro, pero resulta útil.
+Imagina que quieres crear una función que sume los **todos** parámetros que les pases. 
 
+```python
+def sumar(*valores):
+    resultado = 0
+
+    for valor in valores:
+        resultado = resultado + valor
+    
+    return resultado
+```
+
+Si te fijas, hemos definido el parámetro valores con un `*` por delante. Con eso le estamos indicando que no se trata de un único parémtro, sino una lista que puede tener cualquier longitud.
+
+Por tanto, a esa función la podemos llamar así:
+```python
+sumar(3, 4, 5) # 12
+sumar(2, 45)   # 47
+```
+
+### Ejercicio 4.2
+Escribe un programa con una función llamada unir que reciba parámetros indefinidos o dinámicos. La función unir debe tomar los parámetros y retornar un texto con todos ellos formando una frase.
+
+```python
+def unir(*palabras):
+    frase = ""
+
+    for palabra in palabras:
+        frase = frase + " " + palabra
+    
+    return frase
+
+
+print(unir("Hola", "qué", "tal"))
+```
+Resultado:
+
+```console
+ Hola qué tal
+```
+  
 ## Retorno
 Las funciones pueden hacer todas las operaciones que sean necesarias, pero son más útiles cuando devuelven un resultado.
 
@@ -2360,6 +2626,22 @@ Debes tener en cuenta un par de cosas con el `return`:
 1- Una vez se hace `return`, el programa sale de la función.
 2- Puedes tener más de un `return` en la función, pero solo se ejecutará uno de ellos. 
 
+### Ejercicio 4.3
+Escribe un programa con una función llamada `dividir` que reciba los parámetros `a` y `b`. La función debe retornar la división entre los dos números.
+
+```python
+def dividir (a, b):
+    return a / b
+
+
+print(dividir(32, 4))
+```
+Resultado:
+
+```console
+ 8
+```
+
 Otro ejemplo, una función que multiplique un valor varias veces. Si el número de veces es menor que 1 devolverá un 0:
 
 ```python
@@ -2382,6 +2664,91 @@ def multiplica(numero, veces):
 	total = 1
 	for i in range(veces):
 		total = total * numero
+```
+
+## Llamadas anidadas
+No tengas miedo a anidar las llamadas de funciones. Es algo muy natural en programación.
+Imagina que tenemos esta función que se encarga de solicitar un número al usuario y devuelve el ńumero introducido:
+
+```python
+def leeNumero():
+    numero = input("Escribe número: ")
+    return int(numero)
+```
+Supongamos que también tenemos otra función para restar números:
+
+```python
+def restar (a, b)
+    return a - b
+```
+
+Si queremos hacer un programa que solicite dos números al usuario y los reste podríamos hacerlo así.
+
+```python
+print(restar(leeNumero(), leeNumero()))
+```
+En lugar de poner un número o una variable como parámetro, podemos poner una llamada a una función. 
+
+Esas funciones `leeNumero()`, devolverán algún valor. En cuanto se llame al primer `leeNumero()` será como tener:
+
+```python
+print(restar(5, leeNumero()))
+```
+Y luego tras llamar al segundo `leeNumero()` :
+
+```python
+print(restar(5, 2)
+```
+
+Luego se llamará a restar y devolverá un valor:
+
+```python
+print(3)
+```
+
+Y finalmente se llamará a print y veremos el resultado:
+
+```console
+3
+```
+
+### Ejercicio 4.4
+Escribe dos funciones. Una que reciba un número y devuelva el mismo número en positivo. 
+
+`def positivo(valor)`
+
+Y otra función que reciba dos números y calcule la potencia entre ellos. 
+
+`def potencia(valor1, valor2)`
+
+Debes llamar a la segunda función pasando como parámetros:
+
+`potencia(positivo(-5), positivo(4))`
+
+Nota: no utilices funciones preexistentes.
+
+```python
+def positivo (valor):
+    if valor < 0:
+        return -valor
+
+    return valor
+
+
+def potencia (valor1, valor2):
+    return valor1 ** valor2
+
+print(positivo(-1))
+print(potencia(2, 3))
+print(potencia(positivo(2), positivo(4)))
+potencia(positivo(-5), positivo(4))
+```
+Resultado:
+
+```console
+1
+8
+16
 ```
 ## ¿Por qué usar funciones?
 
@@ -2442,7 +2809,7 @@ Si tenemos nuestras funciones bien definidas, nos ahorraremos muuuuucho trabajo.
 Quiza seas un poco joven para esto, pero las verdaderas pros como yo testeamos nuestros programas. ¿Qué significa eso? Que escribimos programas cuya única función es comprobar que nuestros programas hacen lo que deben.
 Si tu código tiene funciones, podrás escribir tests para comprobar que esas funciones hacen lo que deben.
 
-En realidad, cuando ya eres un experto, lo suyo es que escribas el test antes que la función en si misma!
+En realidad, cuando ya eres una experta, lo suyo es que escribas el test antes que la función en si misma!
 
 ## Cómo hacer buenas funciones
 Cualquiera puede escribir funciones y agrupar el código en pequeñas partes. Pero si quieres escribir funciones como un pro, tienes que procurar lo siguiente:
@@ -2452,30 +2819,6 @@ Cualquiera puede escribir funciones y agrupar el código en pequeñas partes. Pe
 
 ## Ejercicios propuestos
 
-### Ejercicio 4.0
-Escribe un programa con tres funciones llamadas dias, tardes y noches. Cada una debe mostrar un saludo distinto, "Buenos días", "Buenas tardes" y "Buenas noches" respectivamente. Añade las llamadas de a las tres funciones.
-
-```python
-def dias ():
-    print("Buenos días")
-
-def tardes ():
-    print("Buenos tardes")
-
-def noches ():
-    print("Buenos noches")
-
-dias()
-tardes()
-noches()
-```
-Resultado:
-
-```console
-Buenos días
-Buenos tardes
-Buenos noches
-```
 ### Ejercicio 4.0
 Escribe una función que reciba dos números, detecte cuál es más grande y muestre la diferencia entre ellos.
 
@@ -2499,7 +2842,8 @@ Resultado:
 La diferencia es: 5
 La diferencia es: 8
 ```
-### Ejercicio 4.0
+
+### Ejercicio 4.1
 Escribe un programa que reciba dos números y un signo de operación aritmética: +, -, *, /. La función debe retornar el resultado de esa operación entre los dos números.
 
 ```python
@@ -2526,50 +2870,8 @@ Resultado:
 0
 Operación desconocida
 ```
-### Ejercicio 4.0
-Escribe dos funciones. Una que reciba un número y devuelva el mismo número en positivo. 
 
-`def positivo(valor)`
-
-Y otra función que reciba dos números y calcule la potencia entre ellos. 
-
-`def potencia(valor1, valor2)`
-
-Debes llamar a la segunda función pasando como parámetros:
-
-`potencia(positivo(-5), positivo(4))`
-
-Nota: no utilices funciones preexistentes.
-
-```python
-def positivo (valor):
-    if valor < 0:
-        return -valor
-
-    return valor
-
-
-def potencia (valor1, valor2):
-    resultado = valor1
-    while valor2 - 1 > 0:
-        resultado *= valor1
-        valor2 = valor2 - 1
-
-    return resultado
-
-print(positivo(-1))
-print(potencia(2, 3))
-print(potencia(positivo(2), positivo(4)))
-potencia(positivo(-5), positivo(4))
-```
-Resultado:
-
-```console
-1
-8
-16
-```
-### Ejercicio 4.0
+### Ejercicio 4.2
 `def saludo(momentoDelDia)` 
 Esta función recibe como parámetro un momento del día: “mañana”, “tarde” o “noche” y debe devolver el correspondiente saludo: “Buenos días”, “Buenas tardes”, y “Buenas noches” respectivamente.
 
@@ -2597,7 +2899,8 @@ Resultado:
 Buenas tardes
 Buenas tardes
 ```
-### Ejercicio 4.0
+
+### Ejercicio 4.3
 `def iniciarConNumero (numeros, numero)` 
 
 Este método debe inicializar todos los elementos del array numeros con el número que pasamos como parámetro.
@@ -2620,7 +2923,8 @@ Resultado:
 [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
 ```
-### Ejercicio 4.0
+
+### Ejercicio 4.4
 `def aleatorio (max)`
 Este método debe devolver un número aleatorio entre 0 y el valor máximo que se pasa como parámetro.
 
@@ -2637,7 +2941,7 @@ Resultado:
 ```console
 3
 ```
-### Ejercicio 4.0
+### Ejercicio 4.5
 `def generarNombre (silabas)`
 
 Un método que dado un número de sílabas genere un nombre (alternar consonantes y vocales) aleatorio. Puedes utilizar la función del ejercicio anterior
@@ -2669,7 +2973,8 @@ Resultado:
 ```console
 xamozu
 ```
-### Ejercicio 4.0
+
+### Ejercicio 4.6
 `def generarPassword(length)`
 
 Una función que dada una longitud genere un string con caracteres aleatorios. Puedes usar un array de strings con caracteres e ir sacando caracteres aleatorios del array para generar un nombre. Para generar números aleatorios:
@@ -2700,7 +3005,8 @@ Resultado:
 ```console
 _!5_flg$
 ```
-### Ejercicio 4.0
+
+### Ejercicio 4.7
 Crea una función llamada factura(productos, cantidades, precios) que recibe tres arrays del mismo tamaño con los siguientes contenidos:
 1. productos: nombres de productos.
 2. cantidades: números enteros indicando cantidad.
@@ -2742,7 +3048,8 @@ Harina x 2 : 0.8
 -----------------------
 Total: 4.0
 ```
-### Ejercicio 4.0
+
+### Ejercicio 4.8
 Crea un programa con un método:
 
 `def generarAtributos (nivelCompensacion)`
@@ -2816,6 +3123,7 @@ Como se puede ver, para definir la clase utilizamos la palabra `class` seguida d
 
 Por otro lado, debes tener en cuenta de que **todas** las funciones de una clase deben tener el parámetros `self`, aunque no se use. Ese parámetro se refiere a la propia clase, y se utiliza para referirse a las propiedades y funciones de ella misma, como veremos ahora.
 
+## Clase vs instancia
 La clase no es más que la definición del gato. Pero para crear un gato en nuestro programa, debemos crear una instancia. Se hace así:
 
 ```python
@@ -2826,6 +3134,36 @@ Por pantalla veremos:
 
 ```console
 Miau
+```
+La instancia es un objeto concreto. La clase solamente es solamente la definición: un gato tiene un nombre y maulla. La instancia es un objeto concreto: Neko.
+
+### Ejercicio 5.0
+Escribe un programa que defina una clase llamada Persona que contenga los métodos dormir, comer y saludar. Dentro de cada método debe sacar algún texto por consola. Crea una instancia de la clase y llama a los distintos métodos.
+
+```python
+class Persona:
+    def dormir (self):
+        print("ZZZZZ...")
+
+    def comer (self):
+        print("Ñam, Ñam...")
+
+    def saludar (self):
+        print("Hola, qué tal!")
+
+
+persona = Persona()
+
+persona.dormir()
+persona.comer()
+persona.saludar()
+```
+Resultado:
+
+```console
+ZZZZZ...
+Ñam, Ñam...
+Hola, qué tal!
 ```
 
 ## Función constructora
@@ -2858,6 +3196,28 @@ Miau, soy Pixi
 Miau, soy Cheto
 ```
 
+### Ejercicio 5.1
+Escribe un programa que defina una clase llamada Hola. La clase debe tener una función constructora con una propiedad llamada `saludo`. Esa propiedad se iniciará con la palabra `"Hola"`.
+Además añadirás un método llamado `decirHola`, el cual mostrará por pantalla el contenido de la propiedad `saludo`.
+
+```python
+class Hola:
+    def __init__(self):
+        self.saludo = "Hola"
+
+    def decirHola (self):
+        print(self.saludo)
+
+
+hola = Hola()
+hola.decirHola()
+```
+Resultado:
+
+```console
+Hola
+```
+
 ## Herencia
 La herencia es un mecanismo que tienen las clases para la reutilización de código. Supongamos que queremos hacer una clase que represente a un cachorro de gato. Queremos que haga lo mismo que la clase Gato pero que además ronronee.
 La clase cachorro podría heredar de la clase Gato, de la siguiente manera:
@@ -2879,6 +3239,49 @@ Se vería como:
 ```console
 Purrrr
 Miau, soy Lucifur
+```
+### super()
+Cuando creas una subclase o una clase hija de otra, desde la clase que hereda puedes utilizar la función `super()` para llamar a funciones de la clase heredada.
+
+Por ejemplo, en el caso anterior, desde la subclase `Cachorro` podriamos añadir un constructor propio y también llamar al constructor de la superclase:
+
+```python
+class Cachorro(Gato):
+	def __init__(self, nombre):
+        super().__init__(nombre)
+        print("Gatete creado")
+
+    def ronronea(self):
+		print("Purrrr")
+```
+
+### Ejercicio 5.2
+Escribe un programa que defina la clase `Comida` con el atributo `nombre`. Crea una subclase llamada `Fruta` que extienda la clase `Comida` con un constructor que recibe `nombre` y `vitaminas`, y un método llamado info que devuelva toda su información. `vitaminas` es una lista de nombres. 
+Crea una instancia para probar la clase `Fruta`.
+
+```python
+class Comida:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+
+class Fruta(Comida):
+    def __init__(self, nombre, vitaminas):
+        super().__init__(nombre)
+        self.vitaminas = vitaminas
+
+    def info (self):
+        # return f"{self.nombre} {self.vitaminas}";
+        return self.nombre + " " + str(self.vitaminas)
+
+postre = Fruta("Kiwi", ["A", "C"])
+print(postre.info())
+
+```
+Resultado:
+
+```console
+Kiwi ['A', 'C']
 ```
 
 ## Encapsulación
@@ -2942,6 +3345,48 @@ miGato.nombre = "Pixel" # llama al método `def nombre (nombre):`
 miGato.maulla() # Miau, soy Pixel
 ```
 
+### Ejercicio 5.3
+Escribe un programa que defina la clase ``Vehiculo` con el atributo `matricula`, con métodos get/set y otro método llamado `arrancar`. Crea una subclase llamada Coche que extienda la clase Vehiculo con un constructor que recibe matricula, modelo y color, y un método llamado info que devuelva toda su información. Crea una instancia para probar la clase Coche.
+
+```python
+class Vehiculo:
+    def __init__(self, matricula):
+        self._matricula = matricula
+
+    @property
+    def matricula (self):
+        return self._matricula
+
+    @matricula.setter
+    def matricula (self, matricula):
+        self._matricula = matricula
+
+    def arrancar (self):
+        print("Arrancando ", self._matricula)
+
+
+class Coche(Vehiculo):
+    def __init__(self, matricula, modelo, color):
+        super().__init__(matricula)
+        self._modelo = modelo
+        self._color = color
+
+    def info (self):
+        return f"{self.matricula} {self._modelo} {self._color}";
+
+
+coche = Coche("0042ASI", "Opel Corsa", "Blanco")
+coche.arrancar()
+print(coche.info())
+
+```
+Resultado:
+
+```console
+Arrancando 0042ASI
+0042ASI Opel Corsa Blanco
+```
+
 ¿Qué ventaja puede tener la encapsulación?
 Básicamente que desde "fuera" no se pueda manipular la clase sin control. De ahí que sea como una caja negra, como una videoconsola. Si para jugar un juego tuvieras que abrirla y soldar las conexiones a mano probablemente te acabarías cargando la consola. Por eso los aparatos se diseñan como cajas negras, solo te permiten manipularlas desde fuera.
 
@@ -2980,6 +3425,52 @@ aula.pasarLista()
 ```
 Los diseños pueden ser tan complejos como sea necesario para representar lo que necesitemos.
 
+### Ejercicio 5.4
+Escribe un programa que defina la clase `Piloto` con el atributo `nombre` y los métodos get/set. Crea también una clase llamada `Aeroplano` con el atributo `modelo`, `piloto` y `copiloto`, con métodos get/set para el `modelo` y otro método llamado `volar`. Crea una instancia para probar ambas clases.
+
+```python
+class Piloto:
+    def __init__(self, nombre):
+        self._nombre = nombre
+
+    @property
+    def nombre (self):
+        return self._nombre
+
+    @nombre.setter
+    def nombre (self, nombre):
+        self._nombre = nombre
+
+class Aeroplano:
+    def __init__(self, modelo, piloto, copiloto):
+        self._modelo = modelo
+        self._piloto = piloto
+        self._copiloto = copiloto
+
+    @property
+    def modelo (self):
+        return self._modelo
+
+    @modelo.setter
+    def modelo (self, modelo):
+        self._modelo = modelo
+
+    def volar (self):
+        return f"Volando {self._modelo} {self._piloto.nombre} con {self._copiloto.nombre}"
+
+
+piloto1 = Piloto("Han Solo")
+piloto2 = Piloto("Murdock")
+avioneta = Aeroplano("AirBluff 727", piloto1, piloto2)
+
+print(avioneta.volar())
+
+```
+Resultado:
+
+```console
+Volando AirBluff 727 Han Solo con Murdock
+``` 
 ## Métodos estáticos
 Normalmente, para poder utilizar una clase siempre creamos una instancia de la misma, como haciamos en el ejemplo anterio:
 
@@ -3000,7 +3491,33 @@ class Formato:
 print(Formato.formato("gUmBaLl"))
 ```
 
-¿Por qué hacer una clase con un método así y no directamente una función? Hacerlo en una clase puede ser útil cuando se trata de una tarea que hay que dividir en pequeñas tareas. Se pueden meter esas tareas como funciones de la clase y encapsular todo mostrando solo la función estática.
+### Ejercicio 5.5
+
+Escribe un programa que defina una clase llamada `Numero` y un método estático llamado `aleatorio(max)`. Este método debe devolver un número dentro del intervalo 0 y max.
+
+```python
+import random
+
+class Numero:
+    @staticmethod
+    def aleatorio (max):
+      return random.randint(0, max)
+
+for i in range(5):
+    print(Numero.aleatorio(10))
+```
+Resultado:
+
+```console
+4
+3
+0
+9
+1
+```
+
+TODO
+¿Por qué hacer una clase con un método así y no directamente una función? Hacerlo en una clase puede ser útil cuando se trata queremos incluir uno o más métodos estáticos en un mismo sitio, y no queremos crear distintas instancias, sino utilizar funciones concretas.
 
 ## ¿Por qué usar clases?
 Las clases nos permiten aplicar una técnica llamada programación orientada a objetos. Es otra estrategia para resolver problemas complejos. 
@@ -3014,36 +3531,7 @@ Imagina que tuvieramos que hacer el programa de un juego de carreras como Mario 
 ## Ejercicios propuestos
 
 ### Ejercicio 5.0
-Escribe un programa que defina una clase llamada Persona que contenga los métodos dormir, comer y saludar. Dentro de cada método debe sacar algún texto por consola. Crea una instancia de la clase y llama a los distintos métodos.
-
-```python
-class Persona:
-    def dormir (self):
-        print("ZZZZZ...")
-
-    def comer (self):
-        print("Ñam, Ñam...")
-
-    def saludar (self):
-        print("Hola, qué tal!")
-
-
-persona = Persona()
-
-persona.dormir()
-persona.comer()
-persona.saludar()
-```
-Resultado:
-
-```console
-ZZZZZ...
-Ñam, Ñam...
-Hola, qué tal!
-```
-
-### Ejercicio 6.0
-Escribe un programa que defina una clase llamada Instrumento. El constructor debe tener los parámetros nombre y tipo, que se asignarán a los atributos _nombre y _tipo respectivamente. Además debes añadir un método llamado tocar que simplemente sacará un mensaje y otro llamado info que devolver un string con la información de los atributos. 
+Escribe un programa que defina una clase llamada `Instrumento`. El constructor debe tener los parámetros `nombre` y `tipo`, que se asignarán a los atributos `_nombre` y `_tipo` respectivamente. Además debes añadir un método llamado `tocar` que simplemente sacará un mensaje y otro llamado `info` que devolver un texto con la información de los atributos. 
 Crea una instancia de la clase y llama a sus métodos.
 
 ```python
@@ -3056,7 +3544,7 @@ class Instrumento:
         print("Tocando ", self._nombre)
 
     def info (self):
-        return "{self._nombre} {self._tipo}"
+        return f"{self._nombre} {self._tipo}"
 
 
 miGuitarra = Instrumento("Guitarra", "cuerda")
@@ -3070,8 +3558,9 @@ Resultado:
 Tocando Guitarra
 Guitarra cuerda
 ```
-### Ejercicio 6.0
-Escribe un programa que defina una clase llamada NombreFormateado, con un constructor que recibe un nombre y un apellido y un método llamado formatear que debe devolver el nombre y el apellido en este formato: “Nombre Apellido”, es decir con la primera letra en mayúscula, el resto en minúscula y separados por comas. Crea los métodos auxiliares que consideres oportunos.
+
+### Ejercicio 5.1
+Escribe un programa que defina una clase llamada `NombreFormateado`, con un constructor que recibe un `nombre` y un `apellido` y un método llamado `formatear` que debe devolver el `nombre` y el `apellido` en este formato: `"Nombre Apellido"`, es decir con la primera letra en mayúscula, el resto en minúscula y separados por comas. Crea los métodos auxiliares que consideres oportunos.
 
 ```python
 class NombreFormateado:
@@ -3082,14 +3571,11 @@ class NombreFormateado:
     def formatear (self):
         return self._corregir(self._nombre) + " " + self._corregir(self._apellido)
 
-
     def _corregir (self, cadena):
         return self._primero(cadena) + self._resto(cadena)
 
-
     def _primero (self, cadena):
         return cadena[0].upper()
-
 
     def _resto (self, cadena):
         return cadena[1:len(cadena)].lower()
@@ -3103,8 +3589,9 @@ Resultado:
 ```console
 Juan Pérez
 ```
-### Ejercicio 6.0
-Escribe un programa que defina una clase llamada Sumadora, la cual se instancia con dos números. Incluye métodos get y set para ambos, y debes controlar que si se les intenta asignar un valor negativo se asigne 0. Además tendrán el método sumar que devolverá la suma de ambos números.
+
+### Ejercicio 5.2
+Escribe un programa que defina una clase llamada `Sumador`, la cual se instancia con dos números. Incluye métodos get y set para ambos, y debes controlar que si se les intenta asignar un valor negativo se asigne 0. Además tendrán el método `sumar` que devolverá la suma de ambos números.
 
 ```python
 class Sumador:
@@ -3151,143 +3638,9 @@ Resultado:
 42
 666
 ```
-### Ejercicio 6.0
 
-Escribe un programa que defina una clase llamada Numero y un método estático llamado aleatorio(max). Este método debe devolver un número dentro del intervalo 0 y max.
-
-```python
-import random
-
-class Numero:
-    def aleatorio (max):
-      return random.randint(0, max)
-
-
-Numero.aleatorio = staticmethod(Numero.aleatorio)
-
-for i in range(5):
-  print(Numero.aleatorio(10))
-```
-Resultado:
-
-```console
-4
-3
-0
-9
-1
-```
-### Ejercicio 6.0
-Escribe un programa que defina la clase Vehiculo con el atributo matricula, con métodos get/set y otro método llamado arrancar. Crea una subclase llamada Coche que extienda la clase Vehiculo con un constructor que recibe matricula, modelo y color, y un método llamado info que devuelva toda su información. Crea una instancia para probar la clase Coche.
-
-```python
-class Vehiculo:
-    def __init__(self, matricula):
-        self._matricula = matricula
-
-    @property
-    def matricula (self):
-        return self._matricula
-
-    @matricula.setter
-    def matricula (self, matricula):
-        self._matricula = matricula
-
-    def arrancar (self):
-        print("Arrancando ", self._matricula)
-
-
-class Coche(Vehiculo):
-    def __init__(self, matricula, modelo, color):
-        super().__init__(matricula)
-        self._modelo = modelo
-        self._color = color
-
-    def info (self):
-        return f"{self.matricula} {self._modelo} {self._color}";
-
-
-coche = Coche("0042ASI", "Opel Corsa", "Blanco")
-coche.arrancar()
-print(coche.info())
-
-```
-Resultado:
-
-```console
-Arrancando 0042ASI
-0042ASI Opel Corsa Blanco
-```
-### Ejercicio 6.0
-Escribe un programa que defina la clase Piloto con el atributo nombre y los métodos get/set. Crea también una clase llamada Aeroplano con el atributo modelo, piloto y copiloto, con métodos get/set para el modelo y otro método llamado volar. Crea una instancia para probar ambas clases.
-
-```python
-class Piloto:
-    def __init__(self, nombre):
-        self._nombre = nombre
-
-    @property
-    def nombre (self):
-        return self._nombre
-
-    @nombre.setter
-    def nombre (self, nombre):
-        self._nombre = nombre
-
-
-
-class Aeroplano:
-    def __init__(self, modelo, piloto, copiloto):
-        self._modelo = modelo
-        self._piloto = piloto
-        self._copiloto = copiloto
-
-    @property
-    def modelo (self):
-        return self._modelo
-
-    @modelo.setter
-    def modelo (self, modelo):
-        self._modelo = modelo
-
-    def volar (self):
-        return f"Volando {self._modelo} {self._piloto.nombre} con {self._copiloto.nombre}"
-
-
-piloto1 = Piloto("Han Solo")
-piloto2 = Piloto("Murdock")
-avioneta = Aeroplano("AirBluff 727", piloto1, piloto2)
-
-print(avioneta.volar())
-
-```
-Resultado:
-
-```console
-Volando AirBluff 727 Han Solo con Murdock
-```
-### Ejercicio 6.0
-Crea un programa con una clase llamada Hola que simplemente tenga una propiedad saludo y un método decirHola() que muestre esa propiedad por la consola. Crea una instancia de la clase para probarla
-
-```python
-class Hola:
-    def __init__(self):
-        self.saludo = "Hola"
-
-    def decirHola (self):
-        print(self.saludo)
-
-
-hola = Hola()
-hola.decirHola()
-```
-Resultado:
-
-```console
-Hola
-```
-### Ejercicio 6.0
-Crea un programa con una clase llamada Moneda. La clase debe tener un constructor vacío y un único método llamado tirar cuyo resultado debe ser aleatoriamente un string : ("cara" or "cruz"). Crea una instancia de la clase para probarla. 
+### Ejercicio 5.3
+Crea un programa con una clase llamada `Moneda`. La clase debe tener un constructor vacío y un único método llamado `tirar` cuyo resultado debe ser aleatoriamente un string : ("cara" or "cruz"). Crea una instancia de la clase para probarla. 
 
 ```python
 import random
@@ -3317,12 +3670,12 @@ cruz
 cruz
 ...
 ```
-### Ejercicio 6.0
-Crea un programa con una clase llamada Dado para simular el comportamiento de un dado de N caras. Crea una instancia de la clase para probarla. 
-​- constructor `def __init__(self, lados, admiteCero=false)`: os atributos lados: atributo que guarda el número de caras y admiteCero = false: atributo que nos dice si el dado puede devolver el valor 0. Por defecto vale false.
-​- setter `def lados (self, lados)` : constructor con parámetro, establece el atributo sides
+### Ejercicio 5.4
+Crea un programa con una clase llamada `Dado` para simular el comportamiento de un dado de N caras. Crea una instancia de la clase para probarla. 
+​- constructor `def __init__(self, lados, admiteCero=False)`: con el atributo `lados`: atributo que guarda el número de caras y el atributo `admiteCero = False`: atributo que nos dice si el dado puede devolver el valor 0. Por defecto vale `False`.
+​- setter `def lados (self, lados)` : constructor con parámetro, establece el atributo `lados`.
 ​- setter  `def admiteCero (self, lados, admiteCero)`: constructor con parámetros, establece los dos atributos.
-​- `def tirar (self)`: método que simula el lanzamiento del dado y retorna un el resultado. Debe tener en cuenta al atributo admiteCero.
+​- `def tirar (self)`: funcióon que simula el lanzamiento del dado y retorna un el resultado. Debe tener en cuenta al atributo `admiteCero`.
 Crea instancias que genere un dado de 6 caras, un dado de 10 caras y un dado de 20 que permita ceros, y haz 100 lanzamientos de cada uno:
 
 ```python
@@ -3377,10 +3730,10 @@ Resultado:
 3
 ...
 ```
-### Ejercicio 6.0
+### Ejercicio 5.5
 Crea un programa que contenga dos clases:
-1-  Clase Jugador, que contiene los atributos nombre, puesto y dorsal. También tiene un constructor con todos esos parámetros y un método llamado informe que retorne todos los atributos.
-2 - Clase Equipo, que  contiene los atributos nombre, fundacion, presupuesto y una lista para guardar instancias de la clase Jugador. Debe tener un constructor con los atributos nombre, fundacion, presupuesto, sus get/set, un método informe y otros dos métodos: 
+1-  Clase `Jugador`, que contiene los atributos `nombre`, `puesto` y `dorsal`. También tiene un constructor con todos esos parámetros y un método llamado `informe` que retorne todos los atributos.
+2 - Clase `Equipo`, que contiene los atributos `nombre`, `fundacion`, `presupuesto` y una lista para guardar instancias de la clase Jugador. Debe tener un constructor con los atributos `nombre`, `fundacion`, `presupuesto`, sus get/set, un método informe y otros dos métodos: 
 - `def fichar(self, jugador)` para añadir jugadores a la lista.
 - `def mostrarJugadores(self)`, para devolver una cadena con todos los datos de los jugadores
 Además, añade el código necesario para crear dos jugadores y un equipo, al que añadirás los jugadores y los mostrarás.
@@ -3429,7 +3782,7 @@ Resultado:
 Maradona Delantero 10
 Beckenbauer Defensa 4
 ```
-### Ejercicio 6.0
+### Ejercicio 5.6
 Crea un programa que incluya una serie de clases.
 1 - Clase `Dispositivo`: tiene los atributos `nombre`, `marca` y `precio`. Un constructor usando los atributos, los set y get y un método toString mostrando los atributos.
 2 - Clase `Movil`: es una subclase de `Dispositivo`, hay que añadir el atributo `numero`. Crea el constructor y el método `def toString (self)` aprovechando los de la superclase. Añade el método `def llamar (self, numero)`, que saque por pantalla una cadena diciendo `"llamando numero"`.
@@ -3508,7 +3861,7 @@ Ordenador Dell 4553.4 Lentium 4
 Teléfono Chanmhung 434.4 665745345
 ```
 
-### Ejercicio 6.0
+### Ejercicio 5.7
 Vamos a crear el proyecto caperucita en el que la protagonista gestiona una Cesta de comida. La comida será de varios tipos. Estas son las clases que se deben hacer,
 1 - Clase `Comida`: tiene los atributos `nombre` y `peso`. Un constructor usando los atributos, los set y get y un método `toString` mostrando los atributos.
 2 - Clase `Fruta`: es una subclase de `Comida`, y hay que añadir el atributo `vitamina`. Crea el constructor y el método `toString` aprovechando los de la superclase.
@@ -3828,41 +4181,6 @@ valor2 = 10
 resultado = mates.sumar(valor1, valor2)
 print(resultado)  # 15
 ```
-
-Con las clases se puede hacer exactamente lo mismo. Supongamos que tenemos una clase llamada LectorPantalla en un fichero llamado lector_pantalla.py. Es una clase que nos permite leer datos desde la consola:
-
-```python
-class LectorPantalla:
-	def leerEntero (self, mensaje = "Introduce un número: "):
-		numero = input(mensaje)
-		return int(numero)
-
-	def leerTexto (self, mensaje = "Introduce texto: ")
-		texto = input(mensaje)
-		return texto
-```
-
-Ahora podemos reutilizar esa clase en otro fichero, junto con nuestro fichero mates.
-
-```python
-import lector_pantalla
-import mates
-
-lector = lector_pantalla.LectorPantalla()
-valor1 = lector.leerEntero()
-
-print(mates.incrementar(valor1))
-```
-
-Por pantalla se podría ver algo así:
-
-```console
-Introduce un número: 6
-7
-```
-
-## Ejercicios propuestos
-
 ### Ejercicio 6.0
 En un ejercicio anterior, se proponía hacer un generador de contraseñas. Utiliza el mismo código pero créalo dentro de un fichero. Crea otro fichero donde debes importar ese código y utilizarlo.
 
@@ -3900,11 +4218,43 @@ Resultado:
 g3ep-ahx
 ```
 
-### Ejercicio 6.0
+Con las clases se puede hacer exactamente lo mismo. Supongamos que tenemos una clase llamada LectorPantalla en un fichero llamado lector_pantalla.py. Es una clase que nos permite leer datos desde la consola:
+
+```python
+class LectorPantalla:
+	def leerEntero (self, mensaje = "Introduce un número: "):
+		numero = input(mensaje)
+		return int(numero)
+
+	def leerTexto (self, mensaje = "Introduce texto: ")
+		texto = input(mensaje)
+		return texto
+```
+
+Ahora podemos reutilizar esa clase en otro fichero, junto con nuestro fichero mates.
+
+```python
+import lector_pantalla
+import mates
+
+lector = lector_pantalla.LectorPantalla()
+valor1 = lector.leerEntero()
+
+print(mates.incrementar(valor1))
+```
+
+Por pantalla se podría ver algo así:
+
+```console
+Introduce un número: 6
+7
+```
+
+### Ejercicio 6.1
 Define una clase llamada `Menu` que tenga los siguientes métodos:
 1. `def init__(self)`: recibe como parámetro un array de opciones (strings).
-2. `def mostrar (self)`: muestra las opciones precedidas de un número llamando a console.log
-3. `def seleccionar(self, numero)`: devuelve true si el número seleccionado está en el menú, en caso contrario devuelve false.
+2. `def mostrar (self)`: muestra las opciones precedidas de un número llamando a print
+3. `def seleccionar(self, numero)`: devuelve `True` si el número seleccionado está en el menú, en caso contrario devuelve `False`.
 Debes exportar la clase, y utilizarla en otro fichero.
 
 Fichero `menu.py`:
@@ -3944,6 +4294,9 @@ Resultado:
 Opción 1 presente
 ```
 
+
+## Ejercicios propuestos
+
 ### Ejercicio 6.0
 Crea una clase llamada `Fichero` con los siguientes métodos:
 1. `def __init__(self, fichero)`: recibe como parámetro el fichero a abrir.
@@ -3971,13 +4324,13 @@ class Fichero:
 
 ```
 
-Fichero `3.py`:
+Fichero `6.0.py`:
 ```python
 from datetime import date
 
 import fichero
 
-miFichero = fichero.Fichero("3.txt")
+miFichero = fichero.Fichero("6.0.txt")
 
 print("Contenido anterior: ", miFichero.leer())
 
@@ -3995,7 +4348,7 @@ Contenido anterior:  Contenido cambiado!!! 2020-08-18
 Conten Contenido cambiado!!! 2020-08-23
 ```
 
-### Ejercicio 6.0
+### Ejercicio 6.1
 Crea una clase llamada `Listado` con los siguientes métodos:
 1. `def __init__(self, fichero)`: recibe como parámetro el nombre de un fichero json cuyo contenido debe cargar en un array llamado `_datos` que se definirá como atributo. El contenido debe ser un array de objetos con el formato `{"id": 1, "nombre": "Juan"}`
 2. `def existe(self, nombre)`: debe devolver `True`/`False` si el nombre que se pasa como parámetro existe en la lista.
@@ -4037,10 +4390,10 @@ class Listado:
 
 ```
 
-Fichero `4.py`:
+Fichero `6.1.py`:
 ```python
 import listado
-miListado = listado.Listado("4.json")
+miListado = listado.Listado("6.1.json")
 
 if miListado.existe("eugene"):
     print("Existe!")
@@ -4053,7 +4406,7 @@ if miListado.existe("eugene"):
     print(miListado.posicion('eugene'))
 ```
 
-Fichero `4.json`:
+Fichero `6.1.json`:
 ```javascript
 [
     {
@@ -4080,8 +4433,8 @@ Existe!
 1
 ```
 
-### Ejercicio 6.0
-Crea una clase llamada Tareas con los siguientes métodos:
+### Ejercicio 6.2
+Crea una clase llamada `Tareas` con los siguientes métodos:
 1- `def __init__(self)`: debe abrir el fichero llamado tareas.json y cargar en una lista los objetos que tendrán el siguiente formato: {id: 1, tarea: “Aprende algo”}. Esa lista será un atributo.
 2- `def crear(self, tarea)`: genera un nuevo objeto y lo guarda en la lista.
 3- `def eliminar(self, id)`: elimina una tarea de la lista que tenga ese id.
@@ -4128,7 +4481,7 @@ Fichero `tareas.json`:
     {"tarea": "Dormir más", "id": 10}
 ]```
 
-Fichero `5.py`:
+Fichero `6.2.py`:
 ```python
 import tareas
 misTareas = tareas.Tareas()
@@ -4172,7 +4525,7 @@ Resultado:
 ---
 ```
 
-### Ejercicio 6.0
+### Ejercicio 6.3
 Crea una clase llamada `Jugador` que contenga lo siguiente:
 1. `def __init__(self, nombre, dorsal)`: asigna los parámetros a los atributos `_nombre` y `_dorsal`.
 2. Métodos get/set para nombre y dorsal
@@ -4251,7 +4604,7 @@ Fichero `jugadores.json`:
 ]
 ```
 
-Fichero `6.py`:
+Fichero `6.3.py`:
 ```python
 import equipo
 miEquipo = equipo.Equipo()
@@ -4298,3 +4651,185 @@ Si quieres utilizar un editor para el código, dispones de muchos donde elegir p
 - [code](https://vscode.io)
 - [pydev](http://pydev.org)
 - [sublime](http://www.sublimetext.com)
+
+## Test unitarios
+Los test unitarios son programas que comprueban que las funciones están bien hechas. Básicamente son programas que ejecutan las funciones y comprueban que el resultado que tienen es el correcto.
+Existen diferentes librerías para hacer tests, aunque en Python existe `unittest`por defecto, por tanto no hace falta instalar nada.
+
+Supongamos que tenemos la siguiente clase que representa una calculadora
+```python
+class Calculadora:
+    def sumar (self, a, b):
+        return a + b
+    
+    def restar (self, a, b):
+        return a - b
+    
+    def multiplicar (self, a, b):
+        return a * b
+    
+    def dividir (self, a, b):
+        return a / b
+```
+
+Para hacer los test unitarios de esa clase, bastaría con crear esta otra clase, la cual hereda de una clase de testeo de la librería `unittest`. También tenemos que importar la propia clase calculadora ya que la tenemos que poner a prueba.
+
+Cada función de la clase hace una comprobación de cada función de calculadora. Se pueden hacer tantos tests como creas conveniente para probar que las funciones hacen lo que deben. Como puedes ver, cada test básicamente ejecuta una función y comprueba que el resultado es el esperado con assetEqual:
+
+```python
+    def test_sumar(self):
+        c = calculadora.Calculadora()
+        self.assertEqual(c.sumar(40, 2), 42)
+```
+
+Fichero `calculadora.test.py`:
+```python
+import unittest
+import calculadora
+
+class TestStringMethods(unittest.TestCase):
+    def test_sumar(self):
+        c = calculadora.Calculadora()
+        self.assertEqual(c.sumar(40, 2), 42)
+
+    def test_restar(self):
+        c = calculadora.Calculadora()
+        self.assertEqual(c.restar(40, 2), 38)
+
+    def test_multiplicar(self):
+        c = calculadora.Calculadora()
+        self.assertEqual(c.multiplicar(40, 2), 80)
+
+    def test_dividir(self):
+        c = calculadora.Calculadora()
+        self.assertEqual(c.dividir(40, 2), 20)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+Ahora basta con ejecutar el fichero de tests y veremos lo siguiente:
+```console
+python3 calculadora.test.py
+
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK
+```
+
+## Iniciando un proyecto Python localmente
+
+Una forma recomendada de iniciar un proyecto python sería utilizar el paquete virtualenv, el cual instalaremos con el gestor de paquetes `pip3`. virtualenv crea una carpeta de proyecto que puede funcionar independientemente de nuestro sistema. Eso hace que el proyecto sea más flexible y más fácil de portar a otros ordenadores.
+
+Los siguientes comandos deberás escribirlos en la consola del sistema.
+
+```console
+ pip3 install virtualenv
+Defaulting to user installation because normal site-packages is not writeable
+Collecting virtualenv
+  Downloading virtualenv-20.0.31-py2.py3-none-any.whl (4.9 MB)
+     |████████████████████████████████| 4.9 MB 447 kB/s 
+Collecting distlib<1,>=0.3.1
+... 
+```
+
+Con virtualenv ya podemos crear un nuevo proyecto:
+```console
+virtualenv proyecto
+```
+
+Lo cual creará una carpeta llamada `proyecto`.+
+A continuación debemos activar el entorno virtual del proyecto ejecutando:
+
+```console
+source proyecto/bin/activate
+```
+
+Ahora ya podemos añadir código fuente o instalar dependencias.
+Para ello conviene crear un fichero de texto llamado `requirements.txt` que debe tener el siguiente formato:
+
+```console
+# Para instalar una versión concreta  
+# nombre_paquete==version
+
+# Para instalar una versión igual o superior
+# nombre_paquete>=version
+
+# Para instalar la versión más reciente
+# nombre_paquete
+```
+Por ejemplo, si queremos instalar pygame y un paquete de testing podríamos poner:
+```console
+pygame==1.9.6
+unittest
+```
+Y luego podríamos instalar ese y otros paquetes que ahí indiquemos con el comando:
+
+```console
+source bin/activate
+pip3 install -r requirements.txt 
+```
+
+Otra opción es instalar los paquetes necesarios con pip3:
+```console
+pip3 install pygame
+```
+
+Comprobamos que está instalado:
+```console
+pip3 list
+Package    Version
+---------- -------
+pip        20.2.2
+pygame     1.9.6
+setuptools 49.6.0
+wheel      0.35.1
+```
+Y mediante `freeze` lo guardamos en el fichero `requirements.txt`:
+
+```console
+pip3 freeze > requirements.txt
+```
+
+Ahora ya podemos crear un fichero que utilice pygame:
+```python
+import pygame
+
+pygame.init()
+
+# Set up the drawing window
+screen = pygame.display.set_mode([500, 500])
+
+# Run until the user asks to quit
+running = True
+while running:
+
+    # Did the user click the window close button?
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # Fill the background with white
+    screen.fill((255, 255, 255))
+
+    # Draw a solid blue circle in the center
+    pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
+
+    # Flip the display
+    pygame.display.flip()
+
+# Done! Time to quit.
+pygame.quit()
+```
+
+Ejecutaríamos el juego así:
+```console
+python3 game.py
+```
+
+Y para terminar el entorno virtual de Python, bastaría con hacer:
+```
+deactivate
+```
