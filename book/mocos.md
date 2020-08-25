@@ -23,19 +23,19 @@ En cualquier ordenador con conexión a internet, accede a:
 
 https://repl.it/
 
-[Site de replt.it](https://raw.githubusercontent.com/pxai/mocos/master/book/images/00.png)
+<img src="https://raw.githubusercontent.com/pxai/mocos/master/book/images/00.png" alt="drawing" width="700"/>
 
 Desde ahí puedes pulsar el botón `Start coding`:
 
-[Start Coding en replt.it](https://raw.githubusercontent.com/pxai/mocos/master/book/images/01.png)
+<img src="https://raw.githubusercontent.com/pxai/mocos/master/book/images/01.png" alt="drawing" width="300"/>
 
 Y seleccionar el lenguaje **Python**:
 
-[Selección de Python en replt.it](https://raw.githubusercontent.com/pxai/mocos/master/book/images/02.png)
+<img src="https://raw.githubusercontent.com/pxai/mocos/master/book/images/02.png" alt="drawing" width="600"/>
 
 Una vez hecho, se cargará el entorno de programación:
 
-[Entorno de desarrollo de replt.it](https://raw.githubusercontent.com/pxai/mocos/master/book/images/03.png)
+<img src="https://raw.githubusercontent.com/pxai/mocos/master/book/images/03.png" alt="drawing" width="700"/>
 
 - A la izquierda, tienes el editor donde puedes escribir el programa
 - A la derecha, la consola, donde verás el resultado cuando ejecutes el programa
