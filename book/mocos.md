@@ -1,4 +1,4 @@
-# Mocos
+# Programación para mocos
 Los ordenadores, son rápidos y tienen una memoria enorme: son máquinas capaces de ejecutar millones de instrucciones por segundo y de gestionar cantidades inimaginables de datos. Pero eso no significa que sean listos. De hecho no saben hacer nada por sí solos. Para que un ordenador, o una tablet, un móvil,
 hagan algo concreto, deben ejecutar un programa. Y un programa es un conjunto de órdenes escritas por los programadores.
 
@@ -23,19 +23,19 @@ En cualquier ordenador con conexión a internet, accede a:
 
 https://repl.it/
 
-<img src="https://raw.githubusercontent.com/pxai/mocos/master/book/images/00.png" alt="drawing" width="700"/>
+![Site de replt.it](https://raw.githubusercontent.com/pxai/mocos/master/book/images/00.png)
 
 Desde ahí puedes pulsar el botón `Start coding`:
 
-<img src="https://raw.githubusercontent.com/pxai/mocos/master/book/images/01.png" alt="drawing" width="300"/>
+![Start Coding en replt.it](https://raw.githubusercontent.com/pxai/mocos/master/book/images/01.png)
 
 Y seleccionar el lenguaje **Python**:
 
-<img src="https://raw.githubusercontent.com/pxai/mocos/master/book/images/02.png" alt="drawing" width="600"/>
+![Selección de Python en replt.it](https://raw.githubusercontent.com/pxai/mocos/master/book/images/02.png)
 
 Una vez hecho, se cargará el entorno de programación:
 
-<img src="https://raw.githubusercontent.com/pxai/mocos/master/book/images/03.png" alt="drawing" width="700"/>
+![Entorno de desarrollo de replt.it](https://raw.githubusercontent.com/pxai/mocos/master/book/images/03.png)
 
 - A la izquierda, tienes el editor donde puedes escribir el programa
 - A la derecha, la consola, donde verás el resultado cuando ejecutes el programa
