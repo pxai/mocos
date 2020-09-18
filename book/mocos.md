@@ -1,19 +1,25 @@
+
+Este libro es una guía para aprender a programar. Para ello utiliza las herramientas más simples posibles, un lenguaje fácil y util como Python y la posibilidad de poder empezar a escribir programas desde el primer capítulo. Se empieza desde lo más fácil y se van introduciendo nuevas técnicas poco a poco.
+
+Pero debes tener algo muy claro. Si te limitas a leer, puede que te quedes con alguna idea pero **no aprenderás** a programar de verdad. Para convertirte en un pro tienes que tener el ordenador delante y practicar lo que te explicamos aquí. Tienes que intentar hacer los ejercicios propuestos, escribirlos, probarlos y mejorarlos a tu gusto. Porque **a programar se aprende programando**.
+
+Ponemos a tu disposición este libro, los ejercicios resueltos e incluso una página web donde lo único que tienes que hacer es entrar y ya podrás jugar con las prácticas que te proponemos.
+
 # Programación para mocos
-Los ordenadores, son rápidos y tienen una memoria enorme: son máquinas capaces de ejecutar millones de instrucciones por segundo y de gestionar cantidades inimaginables de datos. Pero eso no significa que sean listos. De hecho no saben hacer nada por sí solos. Para que un ordenador, o una tablet, un móvil,
+Los ordenadores, son rápidos y tienen una memoria enorme: son máquinas capaces de ejecutar millones de instrucciones por segundo y de gestionar cantidades inimaginables de datos. Pero eso no significa que sean listos. De hecho no saben hacer nada por sí solos. Para que un ordenador, o una *tablet*, un móvil,
 hagan algo concreto, deben ejecutar un programa. Y un programa es un conjunto de órdenes escritas por los programadores.
 
 Lo interesante de la programación es que podemos tomar el control de la máquina para que esta haga lo que nosotros queramos: desde una instrucción simple, hasta programás muy complejos como navegadores o juegos. La programación engancha porque puedes crear lo que quieras, sin más límite que tu imaginación y tus habilidades.
 
-Pero ¿en qué lenguaje nos podemos comunicar con los ordenadores? Existen infinidad de ellos. Internamente, el ordenador utiliza el lenguaje binario, es decir, una secuencia de unos y ceros
-que es capaz de interpretar para hacer algo. Sin embargo, para facilitar la tarea de programación, hay lenguajes más simples, que se parecen mucho al lenguaje de las personas.
+Pero ¿en qué lenguaje nos podemos comunicar con los ordenadores? Existen infinidad de ellos. Internamente, el ordenador utiliza el lenguaje binario, es decir, una secuencia de unos y ceros que es capaz de interpretar para hacer algo. Sin embargo, para facilitar la tarea de programación, hay lenguajes más simples, que se parecen mucho al lenguaje de las personas.
 
 Python es uno de esos lenguajes, y tiene muchas virtudes: es sencillo, muy fácil de aprender, permite hacer cualquier cosa, dispone de infinidad de librerías y encima se utiliza de manera profesional. En este libro aprenderás a programar utilizando Python. De forma progresiva, irás conociendo nuevas herramientas que te ofrece el lenguaje para aprender a crear programas más complejos.
 
-¿Qué necesitas para empezar ya mismo? Un navegador. Desde el primer capítulo nos dedicaremos a programar. La mejor forma de apreder a programar es... ¡programando! No hay que tener ningún miedo, y además, es lo más divertido. Así que basta de cháchara. ¡Pasa al siguiente capítulo para escribir tu primer programa!
+¿Qué necesitas para empezar ya mismo? Un navegador. Desde el primer capítulo nos dedicaremos a programar. La mejor forma de aprender a programar es... ¡programando! No hay que tener ningún miedo, y además, es lo más divertido. Así que basta de cháchara. ¡Pasa al siguiente capítulo para escribir tu primer programa!
 
 Nota:
-Quizá hayas oido que los ordenadores pueden tener inteligencia artificial o puede que te hayas
-enfrentado a juegos en los que los enemigos parecen ser muy listos. En realidad, lo que hace el ordenador es ejecutar programas.
+Quizá hayas oído que los ordenadores pueden tener inteligencia artificial o puede que te hayas
+enfrentado a juegos en los que los enemigos parecen ser muy listos. En realidad, lo que hace el ordenador es ejecutar programas que imitan comportamientos inteligentes.
 
 Nota2:
 Si quieres instalarte un entorno de programación convencional, ve al apéndice X.
@@ -59,7 +65,20 @@ Si pruebas esto deberías ver por la pantalla algo así:
 ¡Hola mundo!
 ```
 
-`print` es una función del lenguaje Python que nos permite mostrar mensajes por pantalla y la utillizaremos a menudo para mostrar mensajes, resultados, etc.
+`print` es una función del lenguaje Python que nos permite mostrar mensajes por pantalla y la utilizaremos a menudo para mostrar mensajes, resultados, etc.
+
+¡OJO! en los programas muy simples como los de este capítulo, intenta no poner espacios antes de las instrucciones del programa, o Python dará un error:
+```python
+  print("¡Hola mundo!")
+```
+Resultaría en error:
+
+```console
+    print("¡Hola mundo!")
+    ^
+IndentationError: unexpected indent
+```
+En Python solo se añaden espacios o tabulaciones para indicar que el código está dentro de otros bloques, como irás viendo poco a poco. De momento, para este capítulo, empieza tu código desde el principio de la línea.
 
 ### ¡Te toca! Ejercicio 0.0
 Escribe un programa que muestre por pantalla tu nombre.
@@ -71,6 +90,12 @@ Resultado:
 
 ```console
 Hola soy Ada
+```
+
+¡OJO! En el lenguaje Python es muy importante que no utilices tabulaciones o espacios al principio de la línea (salvo que utilices bloques que veremos en los siguientes capítulos). Esto, daría un error:
+
+```python
+   print("¡Hola mundo!")
 ```
 
 ## Comentarios
@@ -96,13 +121,13 @@ A veces, los comentarios se utilizan de manera temporal para "desactivar" una pa
 Nota: en general tienes que evitar los comentarios. Un buen programador tiene que intentar escribir programas tan fáciles de entender que no necesiten comentario alguno.
 
 # Variables
-Las variables sirven para guardar datos. Los programas de ordenador se dedican, básicamente, a manejar datos para solucionar un problema y ofrecer un resultado. En todo ese proceso es necesario guardar datos, y para eso se utilizan las variables. Las variables son como contenedores de datos. En cierto modo es como los vasos, platos, fuentes que se utilizan para cocinar: contienen algo, se trabajo con ello, se mezcla, se procesa y se consigue un resultado. Con un poco de suerte algo rico.
+Las variables sirven para guardar datos. Los programas de ordenador se dedican, básicamente, a manejar datos para solucionar un problema y ofrecer un resultado. En todo ese proceso es necesario guardar datos, y para eso se utilizan las variables. Las variables son como contenedores de datos. En cierto modo es como los vasos, platos, fuentes que se utilizan para cocinar: contienen algo, se trabajo con ello, se mezcla, se procesa y se consigue un resultado: con un poco de suerte algo rico.
 Para definir una variable en python basta con indicar su nombre y darla algún valor. Por ejemplo:
 ```Python
 nombre = "Ada"
 ```
 
-Acabamos de crear una variable que contiene el valor "Ada". "Ada" es un dato, de tipo texto. Ahora podemos mostrar el valor de esa variable por la pantalla:
+Acabamos de crear una variable que contiene el valor "Ada". "Ada" es un dato, y es de tipo texto. Ahora podemos mostrar el valor de esa variable por la pantalla:
 
 ```Python
 print(nombre)
@@ -144,7 +169,6 @@ Hola, me llamo Bug
 Soy Bug tengo 10 años
 ```
 
-
 ### ¡Ahora tú! Ejercicio 0.1
 Crea dos variables `nombre` y `edad` y muestra su valor por pantalla.
 
@@ -163,8 +187,7 @@ Tu nombre es Ada y tienes 14 años.
 ```
 
 ## String de formato
-OJO, esta opción solo está disponible desde Python 3.6
-Un mensaje que precedido de la letra `f` y las variables entre llaves:
+Otra forma de mostrar varias variables es con un mensaje que precedido de la letra `f` y las variables entre llaves:
 ```Python
 nombre = "Bug"
 edad = 10
@@ -177,9 +200,10 @@ Que por pantalla sería
 Hola, me llamo Bug
 Soy Bug tengo 10 años
 ```
+OJO, esta opción solo está disponible desde Python 3.6
 
 ## Sustitución de porcentaje
-Se crea un mensaje donde los elementos %s son sustituidos por variables.
+Otra alternativa para mostrar variables por pantalla. Se crea un mensaje donde los elementos %s son sustituidos por variables.
 ```Python
 print("Hola, me llamo %s" % nombre)
 ```
@@ -203,13 +227,13 @@ Hola, me llamo Neko y tengo 5 años
 ```
 
 # Tipos de datos
-¡Datos! Es la materia prima con la que trabajan los programas. Son el elemento que transforman. Un programa recibe datos, los transforma y los devuelve como un resultado.
+¡Datos! Es la materia prima con la que trabajan los programas. Son el elemento que nuestros programas transforman. Un programa recibe datos, los transforma y los devuelve como un resultado.
 Los datos pueden ser de distinto tipo, según lo que nuestro programa tenga que hacer. Pueden ser números, puedes ser palabras o textos, pueden incluso ser nulos o vacíos.
 Para guardar los datos, generalmente usamos variables.
-Si comparamos la programación con la cocina, el azúcar, la harina y los huevos serían datos, los recipientes serían variables: la tarta sería otro dato, el resultado y la receta sería el programa.
-¿Cómo sabe Python que tipo de dato maneja? No hace falta indicarselo como en otros lenguajes. Por eso es un lenguaje más simple y flexible. Aunque tampoco podremos hacer lo que nos de la gana con los datos.
+Si comparamos la programación con la cocina, entonces el azúcar, la harina y los huevos serían datos, los recipientes serían variables: la tarta sería otro dato, el resultado y la receta sería el programa.
+¿Cómo sabe Python que tipo de dato maneja? No hace falta indicárselo como en otros lenguajes. Por eso es un lenguaje más simple y flexible. Aunque tampoco podremos hacer lo que nos de la gana con los datos.
 
-A continuación, vamos a ver los tipos básicos de datos
+A continuación, vamos a ver los tipos básicos de datos.
 
 ## Números
 Se trata de todos los tipos de números:
@@ -246,7 +270,7 @@ frase = ""
 palabras = 'Voy a trabajar'
 novia = 'Solo quiero que seamos "amigos"'
 ```
-En el caso del texto, podemos meter una serie de caracteres especiales que nos permiten efectos interesantes. Esos caracteres se escriben con una contrabarra o backslash por delante: `\`
+En el caso del texto, podemos meter una serie de caracteres especiales que nos permiten efectos interesantes. Esos caracteres se escriben con una contra-barra o *backslash* por delante: `\`
 
 - Salto de linea
 Esto añade un salto de línea al texto si este se muestra por pantalla:
@@ -281,7 +305,7 @@ Nombre	Apellido	Edad
 ```
 Otros caracteres especiales:
 
-- \\ Para mostrar la contrabarra en un texto.
+- \\ Para mostrar la contra-barra en un texto.
 - \" Para mostrar una comilla doble en un texto.
 - \' Para mostrar una comilla simple en un texto.
 - \a Para hacer sonar un pitido.
@@ -331,7 +355,7 @@ Existe una palabra que nos permite representar la nada en Python, y esa es: `Non
 valorInicial = None
 dato = None
 ```
-En realidad no se suele utilizar para crear variables. None representa un valor en situaciones especiales. Por ejemplo, si se trata de sacar información de un sitio en el que no hay nada como un fichero, o un dato que el usuario no nos da.
+En realidad no se suele utilizar para crear variables. `None` representa un valor en situaciones especiales. Por ejemplo, si se trata de sacar información de un sitio en el que no hay nada como un fichero, o un dato que el usuario no nos da.
 
 ### Ejercicio 0.2
 Escribe un programa que defina una variable de cada tipo visto aquí, y los muestre por la consola.
@@ -364,7 +388,7 @@ null
 ```
 
 # Leyendo datos
-Para que un programa pueda hacer algo, muchas veces necesita que el usuario introduzca un dato. Por ejemplo, si queremos que un programa nos diga cuantas letras tiene nuestro nombre, o cuanto falta para nuestro cumpleaños, lo primero que tendrá que hacer el programa es pedir un dato.
+Para que un programa pueda hacer algo, muchas veces necesita que el usuario introduzca un dato. Por ejemplo, si queremos que un programa nos diga cuántas letras tiene nuestro nombre, o cuánto falta para nuestro cumpleaños, lo primero que tendrá que hacer el programa es pedir un dato.
 
 Los programas básicos como los que estamos viendo de momento, utilizan la consola para ejecutarse. Son esas pantallas negras donde se ponen órdenes escritas ;)
 
@@ -408,7 +432,7 @@ Hola, qué tal estás Juan
 ```
 
 ## Cuidado con los datos
-Cada vez que uses la funcion `input` para que el usuario escriba algo, sea lo que sea **se guardará como texto**. Aunque se escriba un número:
+Cada vez que uses la función `input` para que el usuario escriba algo, sea lo que sea **se guardará como texto**. Aunque se escriba un número:
 
 ```python
 valor = input("Dame un número: ")
@@ -422,7 +446,7 @@ Si el usuario introduce un número como `4` este sería el resultado:
 Dame un número: 4
 44
 ```
-En lugar de sumar `4 + 4` y mostrar `8`, lo que ha hecho es unir `4` y `4`, porque en realidad, cuando se ha leido a través de `input` ese `4` es texto: `"4"`
+En lugar de sumar `4 + 4` y mostrar `8`, lo que ha hecho es unir `4` y `4`, porque en realidad, cuando se ha leído a través de `input` ese `4` es texto: `"4"`
 
 Para evitarlo, tenemos que usar otra función para convertir ese dato en número entero: `int()`
 
@@ -524,7 +548,7 @@ horas = 24
 totalSegundos = segundos * minutos * horas
 ```
 
-Puedes hacer operaciones tan complejas como hagan falta. Para que estas sean más fáciles de leer se pueden utillizar paréntesis como se hace en mates:
+Puedes hacer operaciones tan complejas como hagan falta. Para que estas sean más fáciles de leer se pueden utilizar paréntesis como se hace en mates:
 
 ```python
 ada = 14
@@ -567,6 +591,21 @@ resultado = valor ** 3 # equivale a: 2 * 2 * 2
 
 El resultado sería `8`.
 
+### Cambio de signo
+Como bien sabes, hay números menores que cero llamados negativos, que se representan con un `-` por delante:
+```python
+-5, -248, -1.87, ...
+```
+Si queremos cambiar el signo de un número podemos poner un `-` por delante:
+
+```python
+temperatura = -11
+cuenta = 200
+
+temperatura = -temperatura 	# 11
+cuenta = -cuenta 	# -200
+```
+
 ### Operadores abreviados
 En muchas ocasiones, tendrás que operar sobre una variable y guardar el resultado en la propia variable:
 
@@ -574,7 +613,7 @@ En muchas ocasiones, tendrás que operar sobre una variable y guardar el resulta
 contador = 0
 contador = contador + 2
 ```
-En ese tipo de situaciones, puedes usar un operador abreviado, el cual hace la operación y asigna al mismo tiempo. Esto sería equivalente al anterior código:
+En ese tipo de situaciones, puedes usar un operador **abreviado**, el cual hace la operación y asigna al mismo tiempo. Esto sería equivalente al anterior código:
 
 ```python
 contador = 0
@@ -683,12 +722,12 @@ resultado = (valor == 5) and True;
 El resultado sería `True`.
 Para resumir todas las posibles opciones, esta sería lo que se denomina tabla de la verdad del operador `and`.
 
-|a | | b| resultado |
+| a | | b | resultado |
 |--|--|--|--|
-|`False` | `and` |`False` |`False` |
-|`False` | `and` |`True` |`False` |
-|`True` | `and` |`False` |`False` |
-|`True` | `and` |`True` |`True` |
+| `False` | `and` | `False` |`False` |
+| `False` | `and` | `True` |`False` |
+| `True` | `and` | `False` |`False` |
+| `True` | `and` | `True` |`True` |
 
 ### Ejercicio 0.8
 Escribe un programa que solicite un número al usuario. Después debe comparar si el primero es mayor que 0 y además es par.
@@ -708,7 +747,7 @@ Introduce un número: 14
 ```
 
 ### or
-Este operador solo devuelve `True` si cualquiera de los dos operandos también son `True`:
+Este operador devuelve `True` si **cualquiera** de los dos operandos también son `True`:
 
 ```python
 valor = 5
@@ -716,7 +755,7 @@ resultado = (valor == 5) or True;
 ```
 
 El resultado sería `True`.
-Para resumir todas las posibles opciones, esta sería lo que se denomina tabla de la verdad del operador `or`.
+Para resumir todas las posibles opciones, esta sería la tabla de la verdad del operador `or`.
 
 |a | | b| resultado |
 |--|--|--|--|
@@ -745,7 +784,7 @@ Introduce otro número: 6
 ```
 
 ### not
-Este operador solo devuelve `True` si los dos operandos también son `True`:
+Este operador devuelve el valor contrario al operando. Si se aplica a `True` devuelve `False` y si se aplica a `False` devuelve `True`:
 
 ```python
 valor = True
@@ -753,7 +792,7 @@ resultado = not valor;
 ```
 
 El resultado sería `False`.
-Para resumir todas las posibles opciones, esta sería lo que se denomina tabla de la verdad del operador `not`.
+Para resumir todas las posibles opciones, esta sería la tabla de la verdad del operador `not`.
 
 | | a| resultado |
 |--|--|--|
@@ -926,8 +965,7 @@ Resultad:
 Introduce un número: -3
 ¿Es negativo? True
 ```# Condiciones
-En algún momento, los programas necesitan hacer una cosa u otra dependiendo de una condición. Por ejemplo, si un usuario introduce un dato incorrecto, el programa se acaba.
-Si un dato tiene determinado valor, se procesa de una forma y si no, de otra. ¿Cómo se consigue ese comportamiento? Mediante condiciones.
+En algún momento, los programas necesitan hacer una cosa u otra dependiendo de una condición. Por ejemplo, si un usuario introduce un dato incorrecto, el programa se acaba. Si un dato tiene determinado valor, se procesa de una forma y si no, de otra. ¿Cómo se consigue ese comportamiento? Mediante condiciones.
 
 Las condiciones son estructuras de programación que nos permiten que un código se ejecute solo cuando se cumplan unas condiciones.
 
@@ -935,15 +973,15 @@ Las condiciones son estructuras de programación que nos permiten que un código
 La estructura más simple para hacer una condición es el `if`, el cual tiene este aspecto:
 
 ```python
-if *condicion*:
+if *condición*:
 	*instrucciones*
 	*instrucciones*
 	*...*
 ```
 
-Como puedes observar, `if` comienza con una condición. La condición puede ser cualquier expresión que devuelva un booleano, es decir, será True o False, verdadero o falso.
-Si es True, las instrucciones dentro del `if` se ejecutarán, y si no se saltarán.
-Por ejemplo
+Como puedes observar, `if` comienza con una condición. La condición puede ser cualquier expresión que devuelva un booleano, es decir, será `True` o `False`, verdadero o falso.
+Si es `True`, las instrucciones dentro del `if` se ejecutarán, y si no se saltarán.
+Por ejemplo:
 
 ```python
 valor = -2
@@ -974,13 +1012,13 @@ Fin del programa
 ```
 
 Nota:
-También debes observar algo muy importante: las instrucciones dentro del `if` van detrás de unos espacios o una tabulación. Esa es una peculiaridad del lenguaje de programación Python: en cualquier bloque como una condicón, un bucle, una función, su contenido debe ir tabulado. Esa es una forma que facilita la lectura y permite reconocer fácilmente la estructura de un programa para otros programadores. Incluso para ti mismo si lo has creado.
+También debes observar algo muy importante: las instrucciones dentro del `if` van detrás de unos espacios o una tabulación. Esa es una peculiaridad del lenguaje de programación Python: en cualquier bloque como una condición, un bucle, una función, su contenido debe ir tabulado. Esa es una forma que facilita la lectura y permite reconocer fácilmente la estructura de un programa para otros programadores. Incluso para ti mismo si es tu propio programa.
 
 ### Ejercicio 1.0
 Escribe un programa que solicite un número al usuario y compruebe si es negativo. So es negativo, debe mostrar un mensaje por consola.
 
 ```python
-valor = input("Escribie un número: ")
+valor = input("Escribe un número: ")
 
 if int(valor) < 0:
     print("Es negativo")
@@ -989,16 +1027,16 @@ if int(valor) < 0:
 Resultado:
 
 ```console
-Escribie un número: -5
+Escribe un número: -5
 Es negativo
 ```
 
 ## if else
-Con el if podemos crear un bloque que solo se ejecute si se cumple una condición. Pero ¿Qué pasa si queremos que el programa haga una cosa u otra según una condición?
+Con el if podemos crear un bloque que solo se ejecute si se cumple una condición. Pero ¿Qué pasa si queremos que el programa haga una cosa *u otra* según una condición?
 Para poder meter "la otra" opción, utilizamos una estructura if-else:
 
 ```python
-if *condicion*:
+if *condición*:
 	*instrucciones*
 else:
 	*instrucciones*
@@ -1021,7 +1059,7 @@ Dime tu nombre: Ada
 Hola Ada
 ```
 
-Pero si el usuario simplemente pulsa enter sin escribir nada:
+Pero si el usuario simplemente pulsa `enter` sin escribir nada:
 
 ```console
 Dime tu nombre:
@@ -1029,7 +1067,7 @@ Dime tu nombre:
 ```
 
 ### Ejercicio 1.1
-Escribe un programa que solicite un texto al usuario. Si el texto es "saluda" debe mostrar un saludo, en caso contrario debe mostrar un mensaje que diga “no entiendo”.
+Escribe un programa que solicite un texto al usuario. Si el texto es "saluda" debe mostrar un saludo, en caso contrario debe mostrar un mensaje que diga "no entiendo".
 
 ```python
 texto = input("Introduce un texto: ")
@@ -1051,17 +1089,17 @@ No entiendo.
 Existe otra variante cuando necesitamos comprobar varias condiciones. Para eso existe la estructura if-elif-else:
 
 ```python
-if *condicion1*:
+if *condición1*:
 	*instrucciones*
-elif: *condicion2*:
+elif: *condición2*:
 	*instrucciones*
-elif *condicion3*
+elif *condición3*
 	*instrucciones*
 else:
 	*instrucciones*
 ```
 
-Supongamos que queremos un programa que sea capaz de saludar en distintos idiomas. Podriamos crear un programa como el siguiente:
+Supongamos que queremos un programa que sea capaz de saludar en distintos idiomas. Podríamos crear un programa como el siguiente:
 
 ```python
 idioma = input("¿Qué idioma hablas?")
@@ -1079,7 +1117,7 @@ else:
 Podemos tener tantos `elif` como hagan falta.
 
 ### Ejercicio 1.2
-Escribe un programa que solicite un texto al usuario. Si el texto es “mañana”, debe mostrar el mensaje “Buenos días”, si el texto es “tarde” debe mostrar el mensaje “Buenas tardes”, y si no debe mostrar el mensaje “Buenas noches”
+Escribe un programa que solicite un texto al usuario. Si el texto es "mañana", debe mostrar el mensaje "Buenos días", si el texto es "tarde" debe mostrar el mensaje "Buenas tardes", y si no debe mostrar el mensaje "Buenas noches"
 
 ```python
 texto = input("Introduce un texto: ")
@@ -1126,7 +1164,7 @@ Introduce otro número: 10
 ## Ejercicios propuestos
 
 ### Ejercicio 1.0
-Crea un programa que solicite al usuario dos valores enteros y muestre por pantalla si el primero es múltiplo del segundo. Para saber si un número es múltiplo del otro, debes hacer la operación módulo (`%`) entre ellos.
+Crea un programa que solicite al usuario dos valores enteros y muestre por pantalla si el primero es múltiplo del segundo. Para saber si un número es múltiplo del otro, debes hacer la operación módulo (`%`) entre ellos: si es 0, será múltiplo.
 
 ```python
 numero1 = input("Introduce un número: ")
@@ -1144,7 +1182,7 @@ Resultado:
 ```console
 Introduce un número: 40
 Introduce otro número: 4
-40 es mútiplo de 4
+40 es múltiplo de 4
 ```
 
 ### Ejercicio 1.1
@@ -1172,7 +1210,7 @@ Conversión: 6
 ```
 
 ### Ejercicio 1.3
-Escribe un programa que solicite un número un mes del año y muestre el número de días que tiene. En caso de introducir un mes desconocido, mostrar un mensaje de advertencia.
+Escribe un programa que solicite un número un mes del año y muestre el número de días que tiene. En caso de introducir un mes desconocido, mostrar un mensaje de `Mes desconocido`.
 
 ```python
 mes = input("Introduce un mes del año: ")
@@ -1236,11 +1274,11 @@ Introduce un número: -9
 
 ### Ejercicio 1.4
 
-Crea un programa que solicite al usuario su peso en kilos y su altura en centímetros y calcule el IMC (peso / altura2); debe mostrar el resultado y luego hacer el diagnóstico:
-Si el IMC es menor que 16 se muestra el mensaje: “Necesitas comer”.
-Si el IMC está entre (>=)16 y 25(<) se muestra el mensaje: “Estás bien”.
-Si el IMC está entre 25 y 30(<) se muestra el mensaje: “Tienes sobrepeso”.
-Si el IMC es superior a 30 se muestra el mensaje: “Tienes un problema de obesidad”.
+Crea un programa que solicite al usuario su peso en kilos y su altura en centímetros y calcule el IMC (peso / altura2); debe mostrar el resultado y luego mostrar un mensaje:
+Si el IMC es menor que 16 se muestra el mensaje: "Necesitas comer".
+Si el IMC está entre (>=)16 y 25(<) se muestra el mensaje: "Estás bien".
+Si el IMC está entre 25 y 30(<) se muestra el mensaje: "Tienes sobrepeso".
+Si el IMC es superior a 30 se muestra el mensaje: "Tienes un problema de obesidad".
 
 ```python
 peso = input("Introduce tu peso: ")
@@ -1306,24 +1344,32 @@ Centrocampista
 # Bucles
 Como decíamos al principio, los ordenadores son muy muy tontos. Solo hacen lo que se les diga. Pero por contra, tienen enormes capacidades y una paciencia infinita. No les importará lo más mínimo hacer lo que sea tantas veces como sea necesario.
 
-Una de las tareas más típicas para un ordenador es repetir una instrucción. Esto es algo que se puede conseguir mediante estructuras de bucle. Un bucle es una acción que se repite. Generalmente un bucle tiene una condición para ejecutarse. Si esas condiciones se cumplen, entonces se ejecutarán las órdenes que contenga ese bucle.
+Una de las tareas más típicas para un ordenador es repetir una instrucción. Esto es algo que se puede conseguir mediante estructuras de bucle. Un bucle es una acción que se repite. Generalmente un bucle tiene una condición para ejecutarse: si esas condiciones se cumplen, entonces se ejecutarán las órdenes que contenga ese bucle.
 Puedes ver un bucle como una montaña rusa en la que das varias vueltas. 
 A continuación veremos distintos tipos de bucle.
 
 ## Bucle while
-Un bucle while se ejecuta mientras una condición se cumpla. Su estructura es muy simple:
+Un bucle `while` se ejecuta mientras una condición se cumpla. Su estructura es muy simple:
 
 ```python
-while *condicion*:
+while *condición*:
 	*instrucciones*
 ```
 Por ejemplo, vamos a ejecutar un bucle mientras el valor de una variable sea mayor que 0.
 
 ```python
-contador = 10
+contador = 4
 while contador > 0:
 	print("Estoy dentro del bucle")
 	contador = contador - 1
+```
+El resulto en pantalla sería:
+
+```console
+Estoy dentro del bucle
+Estoy dentro del bucle
+Estoy dentro del bucle
+Estoy dentro del bucle
 ```
 
 Nota: ¡Ojo! ¿Te has fijado en que dentro del bucle estamos restando un valor a `contador`? Si no tenemos cuidado y nos olvidamos de hacer eso, el valor de contador nunca cambiaría y crearíamos un bucle infinito. ¡El programa nunca terminaría y se quedaría atascado para siempre!
@@ -1392,7 +1438,7 @@ for *variable* in *rango*:
 	*instrucciones*
 ```
 
-Por ejemplo, el siguiente bucle mostrará el mensaje `hola` 5 veces:
+Por ejemplo, el siguiente bucle mostrará el mensaje `hola` 4 veces:
 
 ```python:
 for i in range(4):
@@ -1421,6 +1467,7 @@ Hola 1
 Hola 2
 Hola 3
 ```
+Eso nos puede ser útil en muchos programas.
 
 ### Ejercicio 2.2
 Escribe un programa que solicite un número al usuario y muestre su tabla de multiplicar del 0 al 10.
@@ -1445,7 +1492,7 @@ Introduce un número: 3
 ```
 
 ### Ejercicio 2.3
-Escribe un programa que pida un número al usuario. Si es igual o menor a 0 debe indicar que meta algo mayor, si no debe mostrar el mensaje "Python mola!" por pantalla tantas veces como indique el número:
+Escribe un programa que pida un número al usuario. Si es igual o menor a 0 debe indicar que meta algo mayor, y si no, debe mostrar el mensaje "Python mola!" por pantalla tantas veces como indique el número:
 
 ```python
 numero = input("Introduce un número: ")
@@ -1489,7 +1536,7 @@ Hola 8
 
 También se puede indicar un tercer parámetro para indicar cómo se salta de un valor a otro. Por ejemplo de 2 en 2:
 ```python
-range(1, 11, 2) # 1, 3,
+range(1, 11, 2) # 1, 3, 5, 7, 9
 ```
 
 En el siguiente ejemplo, el bucle se haría con números pares.
@@ -1505,7 +1552,7 @@ Hola 4
 ```
 
 ### Hacia atrás
-También se podría recorrer el bucle hacia atrás, utilizando un salto negativo
+También se podría recorrer el bucle hacia atrás, utilizando un salto negativo:
 
 ```python:
 print("Iniciando cuenta atrás: ")
@@ -1550,7 +1597,7 @@ objetos = ["estrella", "seta", "flor"]
 for objeto in objetos:
 	print(objetos)
 ```
-En cada vuelta del bucle la varialbe `objeto` tomara un valor de la lista `objetos`, así que el resultado sería el siguiente:
+En cada vuelta del bucle la variable `objeto` tomara un valor de la lista `objetos`, así que el resultado sería el siguiente:
 
 ```console
 estrella
@@ -1602,15 +1649,15 @@ Python
 ## ¿Cuándo usar while o for?
 Aunque con los dos podrías hacer lo mismo, realmente cada uno tiene un uso más lógico.
 
-El bucle for se utiliza claramente cuando se quiere ejecutar algo un número concreto de veces, ni más ni menos. O bien, como veremos más adelante, cuando se quieren recorrer estructuras de datos como listas de principio a fin.
+El bucle `for` se utiliza claramente cuando se quiere ejecutar algo un número concreto de veces, ni más ni menos. O bien, como veremos más adelante, cuando se quieren recorrer estructuras de datos como listas de principio a fin.
 
-El bucle while se puede utilizar cuando las condiciones no son muy concretas. Por ejemplo, si queremos que el usuario introduzca un dato, lo podemos hacer en un bucle. El bucle no terminará hasta que el usuario no introduzca un dato bueno (esa sería la condición).
+El bucle `while` se puede utilizar cuando las condiciones no son muy concretas. Por ejemplo, si queremos que el usuario introduzca un dato, lo podemos hacer en un bucle. El bucle no terminará hasta que el usuario no introduzca un dato bueno (esa sería la condición).
 
 
 ## Ejercicios propuestos
 
 ### Ejercicio 2.0
-Escribe un programa con un bucle while que solicite un nombre al usuario por ejemplo "Ada" y muestre un saludo a ese nombre "Hola Ada". Si se introduce el texto "salir" el bucle debe terminar.
+Escribe un programa con un bucle `while` que solicite un nombre al usuario por ejemplo "Ada" y muestre un saludo a ese nombre "Hola Ada". Si se introduce el texto "salir" el bucle debe terminar.
 
 ```python
 nombre = ""
@@ -1634,7 +1681,7 @@ Final.
 ```
 
 ### Ejercicio 2.1
-Escribe un programa que contenga un bucle while que solicite al usuario un número y que no termine mientras el número sea diferente de 0. Una vez introducido el número debe mostrarse un saludo tantas veces como indique el número. Si el número es menor que 0 debe terminarse el bucle con un break;
+Escribe un programa que contenga un bucle `while` que solicite al usuario un número y que no termine mientras el número sea diferente de 0. Una vez introducido el número debe mostrarse un saludo tantas veces como indique el número. Si el número es menor que 0 debe terminarse el bucle con un `break`;
 
 ```python
 valor = ""
@@ -1660,9 +1707,12 @@ Introduce un numero: -1
 
 ### Ejercicio 2.2
 Crea un programa que solicite al usuario un valor entero, comprueba si es mayor que 0 y además par y si es así muestre por pantalla una línea con el carácter `*` (asterisco) tantas veces como el valor del número. Usa `print("*")`.
-Por ejemplo si introduce 8 mostrará
+Por ejemplo si introduce 8 mostrará:
 
+```console
 ********
+```
+
 Si el valor introducido no cumple los requisitos debes mostrar un mensaje de advertencia al usuario y terminar el programa.
 
 ```python
@@ -1820,36 +1870,13 @@ for i in range(11):
     for j in range(11):
       print(" %d x %d = %d" % (i, j, i*j))
 ```
-
-### Ejercicio 2.11
-
-
-```python
-
-```
-Resultado:
-
-```console
-
-```
-### Ejercicio 2.12
-
-
-```python
-
-```
-Resultado:
-
-```console
-
-```
 # Estructuras de datos
 Hasta ahora hemos estado jugando con datos simples, variables que contienen un número, un texto, etc. Pero existen otros tipos que nos permiten crear datos más complejos. No es que sean difíciles, simplemente pueden contener algo más que un simple número.
 
-Los programas de ordenador pueden hacer cosas muy complicadas, pero en esencia, todo lo que hacen es procesar datos. A continuación vamos a ver algunos tipos de datos.
+Los programas de ordenador pueden hacer cosas muy complicadas, pero en esencia, todo lo que hacen es procesar datos. Y muchas veces, esos datos viene en secuencias largas. A continuación vamos a ver algunos de esos tipos de datos.
 
 ## Listas
-Las listas son un conjunto de datos indexados numéricamente. Esa es la definición formal, pero su propio nombre ya te dice lo que son: ¡una lista! En el capítulo sobre tipos de datos ya presentamos las listas y vimos cómo se crean:
+Las listas son un conjunto de datos indexados numéricamente. Esa es la definición muy formal, pero su propio nombre ya te dice lo que son: ¡una lista! En el capítulo sobre tipos de datos ya presentamos las listas y vimos cómo se crean:
 
 ```python
 idiomas = ["Inglés", "Español", "Francés"]
@@ -1868,7 +1895,7 @@ La lista se puede representar así:
 
 
 ### Ejercicio 3.0
-Define una lista de nombres y muéstralas por pantalla
+Define una lista de nombres y muéstralas por pantalla:
 
 ```python
 nombres = ["Ada", "Bug", "Neko"]
@@ -1883,7 +1910,7 @@ Resultado:
 ```
 
 ### Ejercicio 3.1
-Crea un programa que defina una  de 5 números con decimales inicializados. Luego crea un bucle que calcule la media de todos los números.
+Crea un programa que defina una  de 5 números con decimales. Luego crea un bucle que calcule la media de todos los números.
 
 ```python
 numeros = [3.4, 2.7, 4.3, 6.6, 8.3]
@@ -1903,7 +1930,7 @@ La media es:  5.0600000000000005
 ```
 
 ## Extraer partes de la lista
-Usando el índice numérico, se pueden sacar partes de una lista, creando una sublista de la misma. Para eso basta con indicar un rango de índices:
+Usando el índice numérico, se pueden sacar partes de una lista, creando una sub-lista de la misma. Por ejemplo "quiero los tres primeros valores de la lista" o "quiero desde el 4º al 6º" o "quiero los dos últimos". Para eso basta con indicar un rango de índices:
 
 ```python
 numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -1927,7 +1954,6 @@ numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 numeros[-1] # [9]
 ```
 
-
 ## Añadir y eliminar elementos
 Si queremos añadir un elemento a una lista, basta con utilizar la función `append`:
 
@@ -1937,7 +1963,7 @@ idiomas.append("Italiano")
 print(idiomas) # ["Inglés", "Español", "Francés", "Italiano"]
 ```
 
-Y si queremos eliminar un elemento dla lista, se puede usar la orden del:
+Y si queremos eliminar un elemento dla lista, se puede usar la orden `del`:
 
 ```python
 idiomas = ["Inglés", "Español", "Francés"]
@@ -1945,12 +1971,11 @@ del idiomas[1]
 print(idiomas) # ["Inglés", "Francés"]
 ```
 
-¡Pero OJO!
-En Python **NO** se puede cambiar el valor de un elemento dla lista:
+Y también se puede cambiar el valor de un elemento de la lista:
 
 ```python
 idiomas = ["Inglés", "Español", "Francés"]
-idiomas[2] = "Italiano" # ¡ERROR!
+idiomas[2] = "Italiano"
 ```
 
 Y recuerda, para recorrer la lista, podemos usar un bucle `for`:
@@ -1970,7 +1995,7 @@ for i in range(len(idiomas)):
 ```
 De todas formas, si no se necesita el índice dentro del bucle, es mejor recorrer la lista sin índice tal y como se hace en el ejemplo anterior.
 
-En otros lenguajes, a las listas se les llama listas.
+En otros lenguajes, a las listas se les llama "arrays".
 Ya los deberías conocer, pero te lo volvemos a recordar.
 
 ### Ejercicio 3.2
@@ -2121,7 +2146,7 @@ Ada 666555333
 ```
 
 Nota:
-En otros lenguajes, a los diccionarios se les llama `hash` o `hashtables`
+En otros lenguajes, a los diccionarios se les llama `hash` o `hashtables`.
 
 ## Estructuras de datos combinadas
 ¡Las estructuras básicas como listas y diccionarios pueden contener valores que también sean listas y diccionarios!
@@ -2222,7 +2247,7 @@ También podemos saber la longitud de un texto con la función `len()`:
 texto = "Neko maulla"
 len(texto)  # 11
 ```
-Pero si duda, lo más interesante es que podemos extrar la parte que queramos del texto indicando el inicio y el final:
+Pero si duda, lo más interesante es que podemos extraer la parte que queramos del texto indicando el inicio y el final:
 
 ```python
 texto = "Python mola"
@@ -2255,14 +2280,14 @@ texto.upper() # PROFESORA ADA
 texto.lower() # Profesora Ada
 ```
 
-También tenemso una función llamada `title()`, la cual cambia cada palabra dentro de un texto, poniendo la primera letra en mayúsculas.
+También tenemos una función llamada `title()`, la cual cambia cada palabra dentro de un texto, poniendo la primera letra en mayúsculas.
 
 ```python
 texto = "esto es una frase"
 texto.title() # Esto Es Una Frase
 ```
 
-## split: de texto a array
+## split: de texto a lista
 split es una interesante función que parte un texto en cachos y lo convierte en una lista:
 
 ```python
@@ -2302,7 +2327,7 @@ acaba = palabras.startswith("ajes") # False
 ```
 
 ## Eliminar sobrantes
-Los textos pueden empezar o terminar con espacios en blanco u otros caratecteres que quizá nos interese eliminar, como los saltos de línea. Para quitar esas partes sobrantes de un texto, se pueden usar las siguientes funciones.
+Los textos pueden empezar o terminar con espacios en blanco u otros caracteres que quizá nos interese eliminar, como los saltos de línea. Para quitar esas partes sobrantes de un texto, se pueden usar las siguientes funciones.
 
 Con `lstrip()` se eliminan los espacios al inicio del texto:
 
@@ -2311,7 +2336,7 @@ texto = "  Tengo espacios      "
 limpio = texto.lstrip() # "Tengo espacios      "
 ```
 
-Con `lstrip()` se eliminan los espacios al inicio del texto:
+Con `rstrip()` se eliminan los espacios al inicio del texto:
 
 ```python
 texto = "  Tengo espacios      "
@@ -2324,13 +2349,13 @@ texto = "  Tengo espacios      "
 limpio = texto.strip()  # "Tengo espacios"
 ```
 
-Por defecto se quitan espacios, pero podemos indicar cualquier texto que querramos quitar:
+Por defecto se quitan espacios, pero podemos indicar cualquier texto que queramos quitar:
 
 ```python
 texto = "--Texto con guión"
 limpio = texto.lstrip("-") # "Texto con guión"
 ```
-También los saltos de línea cuando leemos texto desde un fichero o.
+También los saltos de línea cuando leemos texto desde un fichero o desde la consola:
 
 ```python
 texto = "Esto tiene un salto de línea\n"
@@ -2462,7 +2487,7 @@ Te llamas Ada naciste en Teverga en 2006
 ```
 
 ### Ejercicio 3.5
-Escribe un programa que solicite al usuario una frase. Luego debe solicitar una palabra de esa frase, y como resultado, el programa devolverá la misma frase con esa palabra en mayúsculas
+Escribe un programa que solicite al usuario una frase. Luego debe solicitar una palabra de esa frase, y como resultado, el programa devolverá la misma frase con esa palabra en mayúsculas:
 
 ```python
 frase = input("Escribe una frase: ")
@@ -2512,7 +2537,7 @@ Bilbo
 ```
 
 ### Ejercicio 3.7
-Crea un programa que defina una  de 10 números enteros. Luego crea otro bucle que calcule que incremente en uno cada uno de los elementos y los muestre.
+Crea un programa que defina una lista de 10 números enteros. Luego crea otro bucle que calcule que incremente en uno cada uno de los elementos y los muestre.
 
 ```python
 numeros = [3, 5, -4, 2, 1, 4, 0, 6, 9, 8, 3]
@@ -2559,7 +2584,7 @@ Resultado:
 Hay un número repetido
 ```
 ### Ejercicio 3.9
-Crea un programa que defina una array de 10 números enteros inicializados. Luego crea otro bucle que contabilice el total de números positivos, negativos y los que sean 0.
+Crea un programa que defina una lista iniciado con 10 números enteros. Luego crea otro bucle que contabilice el total de números positivos, negativos y los que sean 0.
 
 ```python
 numeros = [3, 5, -4, 2, 1, 4, 0, 6, -9, 8, 3]
@@ -2589,7 +2614,7 @@ Ceros:  1
 ```
 
 ### Ejercicio 3.10
-Crea un programa que defina un array de dos dimensiones de 5x10 elementos. Crea un bucle que inicialice los valores del array usando números aleatorios.
+Crea un programa que defina una lista de dos dimensiones de 5x10 elementos. Crea un bucle que inicie los valores de la lista usando números aleatorios.
 Para crear números aleatorios importa la librería `random` y utiliza la función `random.randint()`, tal y como se muestra aquí:
 ```python
 import random
@@ -2618,7 +2643,7 @@ for i in range(len(matriz)):
 ```
 
 ### Ejercicio 3.11
-Crea un proyecto que defina un array de 10 números enteros inicializados. En un bucle muestra por pantalla todos los elementos. Luego crea otro bucle que baraje los elementos usando el método random del ejercicio anterior en los índices. Luego muestra el resultado.
+Crea un proyecto que defina una lista iniciado con 10 números enteros. En un bucle muestra por pantalla todos los elementos. Luego crea otro bucle que baraje los elementos usando el método `random` del ejercicio anterior en los índices. Luego muestra el resultado.
 
 ```python
 import random
@@ -2648,7 +2673,9 @@ def saludo ():
 	print "Hola"
 ```
 Como se puede ver, una función se define utilizando la palabra `def` seguida del nombre de la función, en este caso `saludo` y la lista de parámetros `()`, la cual está vacía en este caso.
-En el cuerpo de la función, podemos poner las instrucciones que queramos
+En el cuerpo de la función, podemos poner las instrucciones que queramos.
+
+Y siguiendo con el estilo de Python, observa que el código que va dentro de la función va precedido de una tabulación o espacios.
 
 Una vez definida esa función, cada vez que la utilicemos se ejecutará el código que hay en ella:
 
@@ -2661,7 +2688,7 @@ Hola
 ```
 
 ### Ejercicio 4.0
-Escribe un programa con tres funciones llamadas dias, tardes y noches. Cada una debe mostrar un saludo distinto, "Buenos días", "Buenas tardes" y "Buenas noches" respectivamente. Añade las llamadas de a las tres funciones.
+Escribe un programa con tres funciones llamadas días, tardes y noches. Cada una debe mostrar un saludo distinto, "Buenos días", "Buenas tardes" y "Buenas noches" respectivamente. Añade las llamadas de a las tres funciones.
 
 ```python
 def dias ():
@@ -2743,7 +2770,8 @@ Hola Neko
 Hola Neko
 ```
 
-En cambio
+En cambio, si no pasamos el segundo parámetro, `veces`tomará el valor por defecto `3`:
+
 ```python
 saluda("Bug")
 ```
@@ -2757,7 +2785,7 @@ Hola Bug
 
 ### Parámetros infinitos
 Las funciones en Python permiten que les pases un número indeterminado de parámetros. Suena un poco raro, pero resulta útil.
-Imagina que quieres crear una función que sume los **todos** parámetros que les pases. 
+Imagina que quieres crear una función que sume los **todos** parámetros que le pases. 
 
 ```python
 def sumar(*valores):
@@ -2769,7 +2797,7 @@ def sumar(*valores):
     return resultado
 ```
 
-Si te fijas, hemos definido el parámetro valores con un `*` por delante. Con eso le estamos indicando que no se trata de un único parémtro, sino una lista que puede tener cualquier longitud.
+Si te fijas, hemos definido el parámetro `valores` con un `*` por delante. Con eso le estamos indicando que no se trata de un único parámetro, sino una lista que puede tener cualquier longitud.
 
 Por tanto, a esa función la podemos llamar así:
 ```python
@@ -2840,7 +2868,7 @@ print(dividir(32, 4))
 Resultado:
 
 ```console
- 8
+8
 ```
 
 Otro ejemplo, una función que multiplique un valor varias veces. Si el número de veces es menor que 1 devolverá un 0:
@@ -2858,6 +2886,7 @@ multiplica(2, 3) # 8
 ```
 
 Nota: la función anterior queda más clara así.
+
 ```python
 def multiplica(numero, veces):
 	if (veces < 1): return 0 
@@ -2961,7 +2990,7 @@ Eso está bien cuando los programas son simples y tienen que hacer pocas cosas, 
 
 ### Motivo 0: divide y vencerás
 Los programas tratan de resolver problemas ofreciendo una solución. En ocasiones los problemas pueden ser muy complejos de afrontar. Las funciones te permiten abordad esos problemas por partes. Cada función te puede dar la solución para una parte del problema. Por lo tanto, puedes dividir el problema en muchos pequeños problemas y solucionar cada problema con una función.
-Escribir el código en funciones es el primer paso que te permite¡irá diseñar programas más complejos.
+Escribir el código en funciones es el primer paso que te permitirá diseñar programas más complejos.
 
 ### Motivo 1: no repetir el código
 Si tu programa tiene que hacer alguna cosa varias veces, tendrías que repetir el código tantas veces como fuera necesario. Imagina que tienes que recibir varios datos del usuario, y que cada vez que lo haces tienes que comprobar que el dato no está vacío:
@@ -2978,6 +3007,7 @@ while dato == "":
 Si solicitas al usuario 3 datos, ¡tendrías que repetir ese código 3 veces! En cambio si creas una función con ese mismo código, solo lo tendrás que escribir una vez y luego podrás usarlo tantas veces como necesites.
 
 Nota: NO repetir el código es una de las reglas más importantes que debe seguir todo buen programador.
+Incluso puedes aplicar la regla del 3. A la tercera vez que tengas que repetir algo, tienes que automatizarlo.
 
 ### Motivo 2: reutilizar código
 Además de no repetir el código, una función nos permite que un mismo código sirva para distintos tipos de datos. ¡Para eso se utilizan los parámetros!
@@ -3004,17 +3034,17 @@ Aupa
 
 ## Motivo 3: facilitar el mantenimiento
 Si el código solo está en un sitio, es más fácil corregirlo, cambiarlo, mejorarlo y mantenerlo en general. Crear un programa desde cero es muy bonito, pero el verdadero trabajo es mantener el código a lo largo del tiempo.
-Si tenemos nuestras funciones bien definidas, nos ahorraremos muuuuucho trabajo.
+Si tenemos nuestras funciones bien definidas, nos ahorraremos *muuuuucho* trabajo.
 
 ### Motivo 4: permite hacer tests
-Quiza seas un poco joven para esto, pero las verdaderas pros como yo testeamos nuestros programas. ¿Qué significa eso? Que escribimos programas cuya única función es comprobar que nuestros programas hacen lo que deben.
+Quizá seas un poco joven para esto, pero las verdaderas pros como yo testeamos nuestros programas. ¿Qué significa eso? Que escribimos programas cuya única función es comprobar que nuestros programas hacen lo que deben.
 Si tu código tiene funciones, podrás escribir tests para comprobar que esas funciones hacen lo que deben.
 
-En realidad, cuando ya eres una experta, lo suyo es que escribas el test antes que la función en si misma!
+En realidad, cuando ya eres una experta, lo suyo es que escribas el test ¡antes que la función en si misma!
 
 ## Cómo hacer buenas funciones
 Cualquiera puede escribir funciones y agrupar el código en pequeñas partes. Pero si quieres escribir funciones como un pro, tienes que procurar lo siguiente:
-- Una función debe hacer solo una cosa. Es mejor tener muchas pequeñas funciones que pocas funciones haciendo muchas cosas. Si tu función no cabe en la pantalla o pasa de 24 líneas, quizá debas dividirla en pequeás partes.
+- Una función debe hacer solo una cosa. Es mejor tener muchas pequeñas funciones que pocas funciones haciendo muchas cosas. Si tu función no cabe en la pantalla o pasa de 24 líneas, quizá debas dividirla en pequeñas partes.
 - Una función no debería cambiar nada que haya fuera. Si no quieres tener sorpresas, una función no debería liarla dentro del programa.
 - Una función debería retornar algo, y ese algo siempre debería ser lo mismo para determinados parámetros.
 
@@ -3074,7 +3104,7 @@ Operación desconocida
 
 ### Ejercicio 4.2
 `def saludo(momentoDelDia)` 
-Esta función recibe como parámetro un momento del día: “mañana”, “tarde” o “noche” y debe devolver el correspondiente saludo: “Buenos días”, “Buenas tardes”, y “Buenas noches” respectivamente.
+Esta función recibe como parámetro un momento del día: "mañana", "tarde" o "noche" y debe devolver el correspondiente saludo: "Buenos días", "Buenas tardes", y "Buenas noches" respectivamente.
 
 ```python
 def saludo (momento):
@@ -3104,7 +3134,7 @@ Buenas tardes
 ### Ejercicio 4.3
 `def iniciarConNumero (numeros, numero)` 
 
-Este método debe inicializar todos los elementos del array numeros con el número que pasamos como parámetro.
+Esta función debe iniciar todos los elementos del array números con el número que pasamos como parámetro.
 
 ```python
 def iniciarConNumero (longitud, numero):
@@ -3127,7 +3157,7 @@ Resultado:
 
 ### Ejercicio 4.4
 `def aleatorio (max)`
-Este método debe devolver un número aleatorio entre 0 y el valor máximo que se pasa como parámetro.
+Esta función debe devolver un número aleatorio entre 0 y el valor máximo que se pasa como parámetro.
 
 ```python
 import random
@@ -3145,7 +3175,7 @@ Resultado:
 ### Ejercicio 4.5
 `def generarNombre (silabas)`
 
-Un método que dado un número de sílabas genere un nombre (alternar consonantes y vocales) aleatorio. Puedes utilizar la función del ejercicio anterior
+Una función que dado un número de sílabas genere un nombre (alternar consonantes y vocales) aleatorio. Puedes utilizar la función del ejercicio anterior.
 
 ```python
 import random
@@ -3178,7 +3208,7 @@ xamozu
 ### Ejercicio 4.6
 `def generarPassword(length)`
 
-Una función que dada una longitud genere un string con caracteres aleatorios. Puedes usar un array de strings con caracteres e ir sacando caracteres aleatorios del array para generar un nombre. Para generar números aleatorios:
+Una función que dada una longitud genere un string con caracteres aleatorios. Puedes usar un array de *strings* con caracteres e ir sacando caracteres aleatorios del array para generar un nombre. Para generar números aleatorios:
 
 ```python
 import random
@@ -3208,10 +3238,10 @@ _!5_flg$
 ```
 
 ### Ejercicio 4.7
-Crea una función llamada factura(productos, cantidades, precios) que recibe tres arrays del mismo tamaño con los siguientes contenidos:
-1. productos: nombres de productos.
-2. cantidades: números enteros indicando cantidad.
-3. precios: números con decimales indicando el precio de cada producto
+Crea una función llamada `factura(productos, cantidades, precios)` que recibe tres arrays del mismo tamaño con los siguientes contenidos:
+1. `productos`: nombres de productos.
+2. `cantidades`: números enteros indicando cantidad.
+3. `precios`: números con decimales indicando el precio de cada producto.
 
 La función debe recorrer cada producto y calcular el precio total según su cantidad y precio. Se debe mostrar ese precio total de cada producto y al final del programa, se debe mostrar el precio total.
 
@@ -3251,12 +3281,13 @@ Total: 4.0
 ```
 
 ### Ejercicio 4.8
-Crea un programa con un método:
+Este va a ser más complicado. Crea un programa con una función para generar personajes de juegos.
 
 `def generarAtributos (nivelCompensacion)`
 
-Este método debe definir tres variables: fuerza, velocidad e inteligencia. El programa lo que debe hacer es repartir 20 puntos entre las tres variables. O dicho de otra forma, entre las tres variables deben sumar 20. El parámetro nivelCompensacion debe servir para indicar si se reparten puntos muy diferenciados o igualados, cuanto más alto el valor más descompensado, es decir, la diferencia entre atributos es mayor; cómo hacerlo es cosa del programador.
- Al final el programa debe mostrar un resumen de los puntos asignados. 
+Esta función debe definir tres variables: fuerza, velocidad e inteligencia. El programa lo que debe hacer es repartir 20 puntos entre las tres variables. O dicho de otra forma, entre las tres variables deben sumar 20. El parámetro `nivelCompensacion` debe servir para indicar si se reparten puntos muy diferenciados o igualados, cuanto más alto el valor más descompensado, es decir, la diferencia entre atributos es mayor; cómo hacerlo es cosa del programador.
+
+Al final el programa debe mostrar un resumen de los puntos asignados. 
 
 ```python
 import random
@@ -3309,9 +3340,19 @@ Velocidad:  10
 ```
 # Clases
 
+Las clases nos permiten aplicar una técnica llamada programación orientada a objetos. Es otra estrategia para resolver problemas complejos. 
+Con las funciones, dividimos un problema en pequeños problemas. En cambio, con la programación orientada a objetos, lo que tratamos de hacer es dividir el problema en clases. ¿Pero cómo?  representando todo aquello que forma parte del problema utilizando clases.
+
+Imagina que tuviéramos que hacer el programa de un juego de carreras como Mario Kart. Utilizando la programación orientada a objetos podríamos representar los elementos del juego con clases como:
+- Personaje, con su nombre y otras propiedades.
+- Coche, con sus características de velocidad, resistencia, funciones de aceleración, etc.
+- Circuito, con su longitud, sus túneles, sus premios, etc.
+
+## Cómo crear clases
+
 Una clase es una estructura de programación que nos permite representar una entidad con sus propiedades y métodos. Es decir, una clase:
-- Tiene propiedades (variables propias)
-- Hace cosas (funciones)
+- Tiene propiedades: variables propias.
+- Hace cosas: funciones.
 
 Por ejemplo, la siguiente clase representa a un gato muy simple, con una función para maullar:
 
@@ -3368,7 +3409,7 @@ Hola, qué tal!
 ```
 
 ## Función constructora
-Ese gato hace más bien poco. Vamos a darle una propiedad `nombre`. Además, vamos a crear una función especial que debe llamarse `__init__`.
+Ese gato que hemos definido antes hace más bien poco. Vamos a darle una propiedad `nombre`. Además, vamos a crear una función especial que debe llamarse `__init__`.
 
 `__init__` es lo que se conoce como **función constructora**. Esta función se llama cuando se crea un objeto de la clase, y por tanto es el lugar ideal para iniciar las propiedades de la clase:
 
@@ -3420,7 +3461,7 @@ Hola
 ```
 
 ## Herencia
-La herencia es un mecanismo que tienen las clases para la reutilización de código. Supongamos que queremos hacer una clase que represente a un cachorro de gato. Queremos que haga lo mismo que la clase Gato pero que además ronronee.
+La herencia es un mecanismo que tienen las clases para reutilizar código. Supongamos que queremos hacer una clase que represente a un cachorro de gato. Queremos que haga lo mismo que la clase Gato pero que además ronronee.
 La clase cachorro podría heredar de la clase Gato, de la siguiente manera:
 
 ```python
@@ -3444,7 +3485,7 @@ Miau, soy Lucifur
 ### super()
 Cuando creas una subclase o una clase hija de otra, desde la clase que hereda puedes utilizar la función `super()` para llamar a funciones de la clase heredada.
 
-Por ejemplo, en el caso anterior, desde la subclase `Cachorro` podriamos añadir un constructor propio y también llamar al constructor de la superclase:
+Por ejemplo, en el caso anterior, desde la subclase `Cachorro` podríamos añadir un constructor propio y también llamar al constructor de la super-clase `Gato`:
 
 ```python
 class Cachorro(Gato):
@@ -3457,7 +3498,7 @@ class Cachorro(Gato):
 ```
 
 ### Ejercicio 5.2
-Escribe un programa que defina la clase `Comida` con el atributo `nombre`. Crea una subclase llamada `Fruta` que extienda la clase `Comida` con un constructor que recibe `nombre` y `vitaminas`, y un método llamado info que devuelva toda su información. `vitaminas` es una lista de nombres. 
+Escribe un programa que defina la clase `Comida` con el atributo `nombre`. Crea una subclase llamada `Fruta` que extienda la clase `Comida` con un constructor que recibe `nombre` y `vitaminas`, y un método llamado `info` que devuelva toda su información. `vitaminas` es una lista de nombres. 
 Crea una instancia para probar la clase `Fruta`.
 
 ```python
@@ -3501,8 +3542,10 @@ print(miGato.nombre)  # Pixi
 miGato.nombre = "Pixel"
 miGato.maulla() # Miau, soy Pixel
 ```
+
 Acceder a una propiedad de forma tan directa no está mal, pero las buenas programadoras como yo tratamos de encapsular la clase. ¿Qué significa eso? Que no se permite que se pueda acceder o cambiar directamente las propiedades o métodos de la misma. Solo aquello que sea necesario para quienes usen la clase.
 Dicho de otra forma, los programadores deben tratar de crear clases que parezcan "cajas negras". En el caso de las propiedades como el nombre, en Python se puede añadir los siguientes métodos:
+
 Un método para devolver el valor de la propiedad nombre, también conocido como "getter":
 ```python
 	@property 
@@ -3547,7 +3590,7 @@ miGato.maulla() # Miau, soy Pixel
 ```
 
 ### Ejercicio 5.3
-Escribe un programa que defina la clase ``Vehiculo` con el atributo `matricula`, con métodos get/set y otro método llamado `arrancar`. Crea una subclase llamada Coche que extienda la clase Vehiculo con un constructor que recibe matricula, modelo y color, y un método llamado info que devuelva toda su información. Crea una instancia para probar la clase Coche.
+Escribe un programa que defina la clase `Vehiculo` con el atributo `matricula`, con métodos get/set y otro método llamado `arrancar`. Crea una subclase llamada `Coche` que extienda la clase `Vehículo` con un constructor que recibe `matricula`, `modelo` y `color`, y una función llamada `info` que devuelva toda su información. Crea una instancia para probar la clase `Coche`.
 
 ```python
 class Vehiculo:
@@ -3591,7 +3634,7 @@ Arrancando 0042ASI
 ¿Qué ventaja puede tener la encapsulación?
 Básicamente que desde "fuera" no se pueda manipular la clase sin control. De ahí que sea como una caja negra, como una videoconsola. Si para jugar un juego tuvieras que abrirla y soldar las conexiones a mano probablemente te acabarías cargando la consola. Por eso los aparatos se diseñan como cajas negras, solo te permiten manipularlas desde fuera.
 
-En el caso de la clase Gato, no permitimos que el nombre se pueda cambiar directamente. A través del método "setter" podemos controlar que el nombre que se quiera asignar sea correcto.
+En el caso de la clase Gato, no permitimos que el nombre se pueda cambiar directamente. A través de la función "setter" podemos controlar que el nombre que se quiera asignar sea correcto.
 
 ## Clases que contiene otras clases
 Con la programación orientada a objetos, tratamos de representar cosas del mundo real a través de clases. Y esas clases pueden estar relacionadas unas con otras.
@@ -3627,7 +3670,7 @@ aula.pasarLista()
 Los diseños pueden ser tan complejos como sea necesario para representar lo que necesitemos.
 
 ### Ejercicio 5.4
-Escribe un programa que defina la clase `Piloto` con el atributo `nombre` y los métodos get/set. Crea también una clase llamada `Aeroplano` con el atributo `modelo`, `piloto` y `copiloto`, con métodos get/set para el `modelo` y otro método llamado `volar`. Crea una instancia para probar ambas clases.
+Escribe un programa que defina la clase `Piloto` con el atributo `nombre` y las funciones get/set. Crea también una clase llamada `Aeroplano` con el atributo `modelo`, `piloto` y `copiloto`, con funciones get/set para el `modelo` y otro método llamado `volar`. Crea una instancia para probar ambas clases.
 
 ```python
 class Piloto:
@@ -3673,15 +3716,15 @@ Resultado:
 Volando AirBluff 727 Han Solo con Murdock
 ``` 
 ## Métodos estáticos
-Normalmente, para poder utilizar una clase siempre creamos una instancia de la misma, como haciamos en el ejemplo anterio:
+Normalmente, para poder utilizar una clase siempre creamos una instancia de la misma, como hacíamos en el ejemplo anterior:
 
 ```python
 alumno1 = Alumno("Gumball")
 ```
 
-En determinadas ocasiones, puede que nos interese crear una clase de la que no querramos hacer copias y que solo sirva para hacer una tarea concreta, como si fuera una función.
+En determinadas ocasiones, puede que nos interese crear una clase de la que no queramos hacer copias y que solo sirva para hacer una tarea concreta, como si fuera una función.
 
-Por ejemplo, podemos hacer una clase que dado un nombre, le de un formato correcto, con la primera letra mayúscula y el resto de letras en minúsculas:
+Por ejemplo, podemos hacer una clase que dado un nombre, le dé un formato correcto, con la primera letra mayúscula y el resto de letras en minúsculas:
 
 ```python
 class Formato:
@@ -3692,9 +3735,15 @@ class Formato:
 print(Formato.formato("gUmBaLl"))
 ```
 
+Resultado:
+
+```
+Gumball
+```
+
 ### Ejercicio 5.5
 
-Escribe un programa que defina una clase llamada `Numero` y un método estático llamado `aleatorio(max)`. Este método debe devolver un número dentro del intervalo 0 y max.
+Escribe un programa que defina una clase llamada `Numero` y una función estática llamado `aleatorio(max)`. Esta función debe devolver un número dentro del intervalo 0 y max.
 
 ```python
 import random
@@ -3718,22 +3767,13 @@ Resultado:
 ```
 
 TODO
-¿Por qué hacer una clase con un método así y no directamente una función? Hacerlo en una clase puede ser útil cuando se trata queremos incluir uno o más métodos estáticos en un mismo sitio, y no queremos crear distintas instancias, sino utilizar funciones concretas.
-
-## ¿Por qué usar clases?
-Las clases nos permiten aplicar una técnica llamada programación orientada a objetos. Es otra estrategia para resolver problemas complejos. 
-Con las funciones, dividimos un problema en pequeños problemas. En cambio, con la programación orientada a objetos, lo que tratamos de hacer es dividir el problema en clases. ¿Pero cómo?  representando todo aquello que forma parte del problema utilizando clases.
-
-Imagina que tuvieramos que hacer el programa de un juego de carreras como Mario Kart. Utilizando la programación orientada a objetos podriamos representar los elementos del juego con clases como:
-- Personaje, con su nombre y otras propiedades.
-- Coche, con sus características de velocidad, resistencia, funciones de aceleración, etc.
-- Circuito, con su longitud, sus túneles, sus premios, etc.
+¿Por qué hacer una clase con una función así y no directamente una función? Hacerlo en una clase puede ser útil cuando se trata queremos incluir una o más funciones estáticos en un mismo sitio, y no queremos crear distintas instancias, sino utilizar funciones concretas.
 
 ## Ejercicios propuestos
 
 ### Ejercicio 5.0
-Escribe un programa que defina una clase llamada `Instrumento`. El constructor debe tener los parámetros `nombre` y `tipo`, que se asignarán a los atributos `_nombre` y `_tipo` respectivamente. Además debes añadir un método llamado `tocar` que simplemente sacará un mensaje y otro llamado `info` que devolver un texto con la información de los atributos. 
-Crea una instancia de la clase y llama a sus métodos.
+Escribe un programa que defina una clase llamada `Instrumento`. El constructor debe tener los parámetros `nombre` y `tipo`, que se asignarán a los atributos `_nombre` y `_tipo` respectivamente. Además debes añadir una función llamada `tocar` que simplemente sacará un mensaje y otra llamada `info` que devolver un texto con la información de los atributos. 
+Crea una instancia de la clase y llama a sus funciones.
 
 ```python
 class Instrumento:
@@ -3761,7 +3801,7 @@ Guitarra cuerda
 ```
 
 ### Ejercicio 5.1
-Escribe un programa que defina una clase llamada `NombreFormateado`, con un constructor que recibe un `nombre` y un `apellido` y un método llamado `formatear` que debe devolver el `nombre` y el `apellido` en este formato: `"Nombre Apellido"`, es decir con la primera letra en mayúscula, el resto en minúscula y separados por comas. Crea los métodos auxiliares que consideres oportunos.
+Escribe un programa que defina una clase llamada `NombreFormateado`, con un constructor que recibe un `nombre` y un `apellido` y una función llamada `formatear` que debe devolver el `nombre` y el `apellido` en este formato: `"Nombre Apellido"`, es decir con la primera letra en mayúscula, el resto en minúscula y separados por comas. Crea las funciones auxiliares que consideres oportunas.
 
 ```python
 class NombreFormateado:
@@ -3792,7 +3832,7 @@ Juan Pérez
 ```
 
 ### Ejercicio 5.2
-Escribe un programa que defina una clase llamada `Sumador`, la cual se instancia con dos números. Incluye métodos get y set para ambos, y debes controlar que si se les intenta asignar un valor negativo se asigne 0. Además tendrán el método `sumar` que devolverá la suma de ambos números.
+Escribe un programa que defina una clase llamada `Sumador`, la cual se instancia con dos números. Incluye funciones get y set para ambos, y debes controlar que si se les intenta asignar un valor negativo se asigne 0. Además tendrán la función `sumar` que devolverá la suma de ambos números.
 
 ```python
 class Sumador:
@@ -3841,7 +3881,7 @@ Resultado:
 ```
 
 ### Ejercicio 5.3
-Crea un programa con una clase llamada `Moneda`. La clase debe tener un constructor vacío y un único método llamado `tirar` cuyo resultado debe ser aleatoriamente un string : ("cara" or "cruz"). Crea una instancia de la clase para probarla. 
+Crea un programa con una clase llamada `Moneda`. La clase debe tener un constructor vacío y una única función llamado `tirar` cuyo resultado debe ser un *string* elegido al azar entre "cara" o "cruz". Crea una instancia de la clase para probarla. 
 
 ```python
 import random
@@ -3874,9 +3914,9 @@ cruz
 ### Ejercicio 5.4
 Crea un programa con una clase llamada `Dado` para simular el comportamiento de un dado de N caras. Crea una instancia de la clase para probarla. 
 ​- constructor `def __init__(self, lados, admiteCero=False)`: con el atributo `lados`: atributo que guarda el número de caras y el atributo `admiteCero = False`: atributo que nos dice si el dado puede devolver el valor 0. Por defecto vale `False`.
-​- setter `def lados (self, lados)` : constructor con parámetro, establece el atributo `lados`.
-​- setter  `def admiteCero (self, lados, admiteCero)`: constructor con parámetros, establece los dos atributos.
-​- `def tirar (self)`: funcióon que simula el lanzamiento del dado y retorna un el resultado. Debe tener en cuenta al atributo `admiteCero`.
+​- setter `def lados (self, lados)` : función setter con parámetro, establece el atributo `lados`.
+​- setter  `def admiteCero (self, lados, admiteCero)`: función con parámetros, establece los dos atributos.
+​- `def tirar (self)`: función que simula el lanzamiento del dado y retorna un el resultado. Debe tener en cuenta al atributo `admiteCero`.
 Crea instancias que genere un dado de 6 caras, un dado de 10 caras y un dado de 20 que permita ceros, y haz 100 lanzamientos de cada uno:
 
 ```python
@@ -3933,8 +3973,8 @@ Resultado:
 ```
 ### Ejercicio 5.5
 Crea un programa que contenga dos clases:
-1-  Clase `Jugador`, que contiene los atributos `nombre`, `puesto` y `dorsal`. También tiene un constructor con todos esos parámetros y un método llamado `informe` que retorne todos los atributos.
-2 - Clase `Equipo`, que contiene los atributos `nombre`, `fundacion`, `presupuesto` y una lista para guardar instancias de la clase Jugador. Debe tener un constructor con los atributos `nombre`, `fundacion`, `presupuesto`, sus get/set, un método informe y otros dos métodos: 
+1-  Clase `Jugador`, que contiene los atributos `nombre`, `puesto` y `dorsal`. También tiene un constructor con todos esos parámetros y una función llamada `informe` que retorne todos los atributos.
+2 - Clase `Equipo`, que contiene los atributos `nombre`, `fundacion`, `presupuesto` y una lista para guardar instancias de la clase Jugador. Debe tener un constructor con los atributos `nombre`, `fundacion`, `presupuesto`, sus get/set, una función `informe` y otras dos funciones: 
 - `def fichar(self, jugador)` para añadir jugadores a la lista.
 - `def mostrarJugadores(self)`, para devolver una cadena con todos los datos de los jugadores
 Además, añade el código necesario para crear dos jugadores y un equipo, al que añadirás los jugadores y los mostrarás.
@@ -3985,9 +4025,9 @@ Beckenbauer Defensa 4
 ```
 ### Ejercicio 5.6
 Crea un programa que incluya una serie de clases.
-1 - Clase `Dispositivo`: tiene los atributos `nombre`, `marca` y `precio`. Un constructor usando los atributos, los set y get y un método toString mostrando los atributos.
-2 - Clase `Movil`: es una subclase de `Dispositivo`, hay que añadir el atributo `numero`. Crea el constructor y el método `def toString (self)` aprovechando los de la superclase. Añade el método `def llamar (self, numero)`, que saque por pantalla una cadena diciendo `"llamando numero"`.
-3 - Clase `Ordenador`: es una subclase de `Dispositivo`, hay que añadir el atributo `procesador`. Crea el constructor y el método `def toString (self)` aprovechando los de la superclase
+1 - Clase `Dispositivo`: tiene los atributos `nombre`, `marca` y `precio`. Un constructor usando los atributos, los set y get y una función `toString` mostrando los atributos.
+2 - Clase `Movil`: es una subclase de `Dispositivo`, hay que añadir el atributo `numero`. Crea el constructor y el método `def toString (self)` aprovechando los de la superclase. Añade la función `def llamar (self, numero)`, que saque por pantalla una cadena diciendo `"llamando numero"`.
+3 - Clase `Ordenador`: es una subclase de `Dispositivo`, hay que añadir el atributo `procesador`. Crea el constructor y la función `def toString (self)` aprovechando los de la superclase
 Además, añade el código necesario para crear un móvil y un ordenador y los muestras.
 
 ```python
@@ -4063,11 +4103,11 @@ Teléfono Chanmhung 434.4 665745345
 ```
 
 ### Ejercicio 5.7
-Vamos a crear el proyecto caperucita en el que la protagonista gestiona una Cesta de comida. La comida será de varios tipos. Estas son las clases que se deben hacer,
-1 - Clase `Comida`: tiene los atributos `nombre` y `peso`. Un constructor usando los atributos, los set y get y un método `toString` mostrando los atributos.
-2 - Clase `Fruta`: es una subclase de `Comida`, y hay que añadir el atributo `vitamina`. Crea el constructor y el método `toString` aprovechando los de la superclase.
-3 - Clase `Caramelo`: es una subclase de `Comid`a y hay que anadir el atributo `calorias`. Crea el constructor y el método `toString` aprovechando los de la superclase.
-4 - Clase `Cesta`, tiene un atributo llamado `alimentos` que es un array de elementos tipo Comida (`Fruta` o `Caramelo`). Se inicializa en el constructor. Tiene tres métodos: 
+Vamos a crear el proyecto Caperucita en el que la protagonista gestiona una Cesta de comida. La comida será de varios tipos. Estas son las clases que se deben hacer,
+1 - Clase `Comida`: tiene los atributos `nombre` y `peso`. Un constructor usando los atributos, los set y get y una función `toString` mostrando los atributos.
+2 - Clase `Fruta`: es una subclase de `Comida`, y hay que añadir el atributo `vitamina`. Crea el constructor y la función `toString` aprovechando los de la superclase.
+3 - Clase `Caramelo`: es una subclase de `Comida` y hay que añadir el atributo `calorias`. Crea el constructor y la funciñon `toString` aprovechando los de la superclase.
+4 - Clase `Cesta`, tiene un atributo llamado `alimentos` que es un array de elementos tipo Comida (`Fruta` o `Caramelo`). Se inicia en el constructor. Tiene tres funciones: 
 - `def meterComida(self, comida)` para meter una comida en la cesta, 
 - `def pesoTotal(self)`  devuelve el peso total de la comida de la cesta.
 - `def toString(self)` para mostrar toda la comida de la cesta.
@@ -4258,11 +4298,21 @@ muy fácilmente
 ### ¿Leyendo línea a línea?
 En el ejemplo anterior, hemos leído todo el contenido del fichero de golpe, guardándolo en una variable de texto. Pero a veces, puede que nos interese leer el fichero línea a línea. Para ello debemos utilizar la función `readline` como se ve a continuación:
 
+```python
+fichero = open("texto.txt", "r")
+lineas = fichero.readline()
+for linea in lineas:
+    print(linea)
+
+fichero.close()
+```
+
 ## Ficheros JSON
-Los ficheros de texto simples como el anterior pueden contener información, pero no se trata de datos muy manejables para un programa. Si queremos leer o guardar datos que un programa pueda manipular fácilmente, conviene usar algún formato concreto.
+Los ficheros de texto simples como el anterior pueden contener información, pero no son datos muy manejables para un programa. Si queremos leer o guardar datos que un programa pueda manipular fácilmente, conviene usar algún formato concreto.
 Uno de los formatos más populares en programación es el formato JSON. Es un formato que se parece a las estructuras de diccionario en Python. Incluso también tiene la opción de representar listas como las del lenguaje.
 El siguiente contenido está en formato JSON. Se trata de una lista que contiene varios objetos.
-```javascript
+Si te fijas, los objetos en JSON *¡son iguales a los diccionarios en Python!*
+```python
 [
     {"id": 66, "nombre": "Ada"},
     {"id": 2, "nombre": "Neko"},
@@ -4294,7 +4344,7 @@ Bug
 ```
 ## Escritura de ficheros
 Para escribir ficheros, el proceso es similar pero debemos hacer dos cosas:
-- Abrir el fichero en modo escritura
+- Abrir el fichero en modo escritura.
 - Utilizar la función `write` para escribir contenido.
 
 Con el siguiente código, escribiremos un par de líneas de texto en el fichero:
@@ -4314,7 +4364,7 @@ Escribo una línea
 Escribo otra línea
 ```
 
-Si queremos escribr añadiendo contenido, debemos abrir el fichero en modo`"a"`:
+Si queremos escribir añadiendo contenido, debemos abrir el fichero en modo `"a"`:
 
 ```python
 fichero = open("texto.txt", "a")
@@ -4337,7 +4387,7 @@ En el caso de un fichero en formato JSON, lo que nos tiene que preocupar es que 
 Por suerte para eso hay una función que lo hace de forma automática: `json.dumps()`
 
 En el siguiente ejemplo, se carga el contenido de un fichero json dentro de una variable.
-Luego añadimos un elemento a esa lista. Abrimos el fichero otra vez, en modo escritura, y hacemos un `write` utilizando json.dumps para convertir el contenido en texto:
+Luego añadimos un elemento a esa lista. Abrimos el fichero otra vez, en modo escritura, y hacemos un `write` utilizando `json.dumps` para convertir el contenido en texto:
 
 ```python
 import json
@@ -4419,7 +4469,7 @@ Resultado:
 g3ep-ahx
 ```
 
-Con las clases se puede hacer exactamente lo mismo. Supongamos que tenemos una clase llamada LectorPantalla en un fichero llamado lector_pantalla.py. Es una clase que nos permite leer datos desde la consola:
+Con las clases se puede hacer exactamente lo mismo. Supongamos que tenemos una clase llamada `LectorPantalla` en un fichero llamado `lector_pantalla.py`. Es una clase que nos permite leer datos desde la consola:
 
 ```python
 class LectorPantalla:
@@ -4432,7 +4482,7 @@ class LectorPantalla:
 		return texto
 ```
 
-Ahora podemos reutilizar esa clase en otro fichero, junto con nuestro fichero mates.
+Ahora podemos reutilizar esa clase en otro fichero, junto con nuestro fichero `mates`.
 
 ```python
 import lector_pantalla
@@ -4452,11 +4502,11 @@ Introduce un número: 6
 ```
 
 ### Ejercicio 6.1
-Define una clase llamada `Menu` que tenga los siguientes métodos:
-1. `def init__(self)`: recibe como parámetro un array de opciones (strings).
-2. `def mostrar (self)`: muestra las opciones precedidas de un número llamando a print
+Define una clase llamada `Menu` que tenga las siguientes funciones:
+1. `def init__(self)`: recibe como parámetro una lista de opciones (*strings*).
+2. `def mostrar (self)`: muestra las opciones precedidas de un número llamando a print.
 3. `def seleccionar(self, numero)`: devuelve `True` si el número seleccionado está en el menú, en caso contrario devuelve `False`.
-Debes exportar la clase, y utilizarla en otro fichero.
+Luego importa esa clase en el fichero 2.py y utilízala.
 
 Fichero `menu.py`:
 ```python
@@ -4495,15 +4545,14 @@ Resultado:
 Opción 1 presente
 ```
 
-
 ## Ejercicios propuestos
 
 ### Ejercicio 6.0
-Crea una clase llamada `Fichero` con los siguientes métodos:
+Crea una clase llamada `Fichero` con las siguientes funciones:
 1. `def __init__(self, fichero)`: recibe como parámetro el fichero a abrir.
 2. `def leer(self)`: devuelve una cadena con el contenido del fichero.
 3. `def escribir(self, contenido)`: escribe en el fichero el contenido que se le pasa como parámetro.
-	Debes exportar la clase, y utilizarla en otro fichero.
+Luego debes utilizar la clase importándola en otro fichero.
 
 Fichero `fichero.py`:
 ```python
@@ -4522,7 +4571,6 @@ class Fichero:
         fichero = open(self._nombreFichero, "w+")
         fichero.write(contenido)
         fichero.close()
-
 ```
 
 Fichero `6.0.py`:
@@ -4536,7 +4584,7 @@ miFichero = fichero.Fichero("6.0.txt")
 print("Contenido anterior: ", miFichero.leer())
 
 miFichero.escribir("Contenido cambiado!!! " + str(date.today()))
-print("Conten", miFichero.leer())
+print("Contenido: ", miFichero.leer())
 ```
 Fichero de texto `3.txt`:
 ```console
@@ -4546,16 +4594,16 @@ Resultado:
 
 ```console
 Contenido anterior:  Contenido cambiado!!! 2020-08-18
-Conten Contenido cambiado!!! 2020-08-23
+Contenido: Contenido cambiado!!! 2020-08-23
 ```
 
 ### Ejercicio 6.1
-Crea una clase llamada `Listado` con los siguientes métodos:
-1. `def __init__(self, fichero)`: recibe como parámetro el nombre de un fichero json cuyo contenido debe cargar en un array llamado `_datos` que se definirá como atributo. El contenido debe ser un array de objetos con el formato `{"id": 1, "nombre": "Juan"}`
+Crea una clase llamada `Listado` con las siguientes funciones:
+1. `def __init__(self, fichero)`: recibe como parámetro el nombre de un fichero json cuyo contenido debe cargar en una lista llamada `_datos` que se definirá como atributo. El contenido debe ser una lista de diccionarios con el formato `{"id": 1, "nombre": "Juan"}`
 2. `def existe(self, nombre)`: debe devolver `True`/`False` si el nombre que se pasa como parámetro existe en la lista.
 3. `def aMinusculas(self)`: debe pasar todos los nombres de la lista a minúsculas.
 4. `def posicion(self, nombre)`: debe devolver la posición donde se encuentra ese nombre.
-	Debes exportar la clase, y utilizarla en otro fichero.
+Luego debes utilizar la clase importándola en otro fichero.
 
 Fichero `listado.py`:
 ```python
@@ -4635,13 +4683,13 @@ Existe!
 ```
 
 ### Ejercicio 6.2
-Crea una clase llamada `Tareas` con los siguientes métodos:
-1- `def __init__(self)`: debe abrir el fichero llamado tareas.json y cargar en una lista los objetos que tendrán el siguiente formato: {id: 1, tarea: “Aprende algo”}. Esa lista será un atributo.
+Crea una clase llamada `Tareas` con las siguientes funciones:
+1- `def __init__(self)`: debe abrir el fichero llamado tareas.json y cargar en una lista los diccionarios que tendrán el siguiente formato: {id: 1, tarea: "Aprende algo"}. Esa lista será un atributo.
 2- `def crear(self, tarea)`: genera un nuevo objeto y lo guarda en la lista.
 3- `def eliminar(self, id)`: elimina una tarea de la lista que tenga ese id.
 4- `def guardar(self)`: guarda la lista en el fichero tareas.json.
 5- `def mostrar(self)`: devuelve todas las tareas en un string
-Debes exportar la clase, y utilizarla en otro fichero.
+Luego debes utilizar la clase importándola en otro fichero.
 
 Fichero `tareas.py`
 ```python
@@ -4729,17 +4777,15 @@ Resultado:
 ### Ejercicio 6.3
 Crea una clase llamada `Jugador` que contenga lo siguiente:
 1. `def __init__(self, nombre, dorsal)`: asigna los parámetros a los atributos `_nombre` y `_dorsal`.
-2. Métodos get/set para nombre y dorsal
-3. `def info(self)`: devuelve un string con la información del jugador.
-Haz que la clase sea exportable.
+2. Métodos get/set para `nombre` y `dorsal`.
+3. `def info(self)`: devuelve un *string* con la información del jugador.
 
 Crea una clase llamada `Equipo` que contenga lo siguiente:
-1. `def cargar(self)`: debe abrir un fichero llamado `jugadores.json` que contendrá un array de objetos jugador `[{nombre: "Pele", dorsal: 10},{…},…]`.
+1. `def cargar(self)`: debe abrir un fichero llamado `jugadores.json` que contendrá una lista de diccionarios de jugador `[{nombre: "Pele", dorsal: 10},{…},…]`.
 Y debe crear por cada objeto del fichero una instancia de la clase `Jugador` y meterla en una lista llamado `this._jugadores`.
 2. `def mostrar(self)`: debe mostrar toda la lista de jugadores.
 3. `def fichaje(self, nombre, dorsal)`: debe introducir un jugador nuevo en la lista, creando una instancia de `Jugador`.
 En la clase `Equipo` tendrás que importar la clase `Jugador` para poder utilizarla.
-Debes exportar la clase `Equipo`, y utilizarla en otro fichero.
 
 Fichero `jugador.py`:
 ```python
@@ -4834,14 +4880,14 @@ El objetivo no es aprender el lenguaje en si, lo esencial es aprender a programa
 
 Además, se trata de un lenguaje muy útil, muy extendido y utilizado profesionalmente. Por si eso fuera poco, es muy apreciado por los desarrolladores, lo cual supone una comunidad inmensa de personas aportando código, librerías y ayuda en la web.
 
-Python tiene dos versiones algo diferenciadas, la 2 y la 3. En este libro hemos procurado utillizar la sintaxis y el estilo de la 3, por utilizar la que está más al día.
+Python tiene dos versiones algo diferenciadas, la 2 y la 3. En este libro hemos procurado utilizar la sintaxis y el estilo de la 3, por utilizar la que está más al día.
 
 ## Instalando Python localmente
 
 Basta con ir al [site de python](https://www.python.org) y descargar el instalador de la versión 3. La instalación varía un poco en función de tu sistema pero básicamente sería la siguiente:
 - Windows: descargar el instalador, ejecutarlo y confirmar cada paso.
 - Mac: exactamente igual.
-- Linux: probablemente lo tengas instalado de serie o probablemente no necesites que te digan cómo instalarlo.
+- Linux: probablemente lo tengas instalado de serie o probablemente no necesites que te digan cómo instalarlo ;)
 
 ## Editores de código
 
@@ -4855,9 +4901,10 @@ Si quieres utilizar un editor para el código, dispones de muchos donde elegir p
 
 ## Test unitarios
 Los test unitarios son programas que comprueban que las funciones están bien hechas. Básicamente son programas que ejecutan las funciones y comprueban que el resultado que tienen es el correcto.
-Existen diferentes librerías para hacer tests, aunque en Python existe `unittest`por defecto, por tanto no hace falta instalar nada.
+Existen diferentes librerías para hacer tests, aunque en Python existe `unittest` por defecto, por tanto no hace falta instalar nada.
 
-Supongamos que tenemos la siguiente clase que representa una calculadora
+Supongamos que tenemos la siguiente clase que representa una calculadora:
+
 ```python
 class Calculadora:
     def sumar (self, a, b):
@@ -4875,7 +4922,7 @@ class Calculadora:
 
 Para hacer los test unitarios de esa clase, bastaría con crear esta otra clase, la cual hereda de una clase de testeo de la librería `unittest`. También tenemos que importar la propia clase calculadora ya que la tenemos que poner a prueba.
 
-Cada función de la clase hace una comprobación de cada función de calculadora. Se pueden hacer tantos tests como creas conveniente para probar que las funciones hacen lo que deben. Como puedes ver, cada test básicamente ejecuta una función y comprueba que el resultado es el esperado con assetEqual:
+Cada función de la clase hace una comprobación de cada función de calculadora. Se pueden hacer tantos tests como creas conveniente para probar que las funciones hacen lo que deben. Como puedes ver, cada test básicamente ejecuta una función y comprueba que el resultado es el esperado con `assertEqual`:
 
 ```python
     def test_sumar(self):
@@ -4922,7 +4969,7 @@ OK
 
 ## Iniciando un proyecto Python localmente
 
-Una forma recomendada de iniciar un proyecto python sería utilizar el paquete virtualenv, el cual instalaremos con el gestor de paquetes `pip3`. virtualenv crea una carpeta de proyecto que puede funcionar independientemente de nuestro sistema. Eso hace que el proyecto sea más flexible y más fácil de portar a otros ordenadores.
+Una forma recomendada de iniciar un proyecto python sería utilizar el paquete `virtualenv`, el cual instalaremos con el gestor de paquetes `pip3`. `virtualenv` crea una carpeta de proyecto que puede funcionar independientemente de nuestro sistema. Eso hace que el proyecto sea más flexible y más fácil de portar a otros ordenadores.
 
 Los siguientes comandos deberás escribirlos en la consola del sistema.
 
@@ -4941,7 +4988,7 @@ Con virtualenv ya podemos crear un nuevo proyecto:
 virtualenv proyecto
 ```
 
-Lo cual creará una carpeta llamada `proyecto`.+
+Lo cual creará una carpeta llamada `proyecto`.
 A continuación debemos activar el entorno virtual del proyecto ejecutando:
 
 ```console
@@ -4961,7 +5008,9 @@ Para ello conviene crear un fichero de texto llamado `requirements.txt` que debe
 # Para instalar la versión más reciente
 # nombre_paquete
 ```
+
 Por ejemplo, si queremos instalar pygame y un paquete de testing podríamos poner:
+
 ```console
 pygame==1.9.6
 unittest
